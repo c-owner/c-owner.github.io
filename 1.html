@@ -1,24 +1,81 @@
 <!doctype html>
 <html>
   <head>
-    <title>아이유 프로젝트</title>
+    <title>철구 랩</title>
     <meta charset="utf-8">
+    <style>
+    body{
+      margin:0;
+    }
+    /*
+    block level element
+    */
+
+    #grid{
+      display: grid;
+      grid-template-columns: 150px 1fr;
+    }
+    #article{
+      padding-left: 85px;
+    }
+    #grid ol{
+        border-right: 1px solid gray;
+        width:150px;
+        margin:1px;
+        padding:33px;
+      }
+
+    h1 {
+      border-bottom:1px solid black;
+      display:block;
+      padding:50px;
+      margin:0;
+      color:black;
+      font-size:45px;
+      text-align: center;
+    }
+    h2 {
+      color:blue;
+      font-size:35px;
+      text-align: center;
+    }
+    /*
+    inline element
+    */
+      a {
+        color:black;
+      }
+      /*
+    2. html 마다 수정을 해줘야하나??..다른 링크의 게시물로 이동하는 방법은 ?
+      */
+      @media(max-width:800px){
+        #grid{
+          display: block;
+        }
+        #grid ol{
+            border-right: none;
+          }
+        h1{
+          border-bottom: none;
+        }
+      }
+    </style>
   </head>
   <body>
-
     <h1> <a href="index.html">아이유 홈페이지</a></h1>
+<div id="grid">
+
     <ol>
-      <b>목차</b>
+      <b> 아이유 모음집 </b><br></br>
       <li><a href="1.html">철구랩</a></li>
       <li><a href="2.html">에잇</a></li>
       <li><a href="3.html">블루밍</a></li>
       <li><a href="Album.html">Album</a></li>
     </ol>
+    <div id="article">
   <center><h2>철구 맥도날드</h2></center>
 <!-- <a href="https://nowsims.tistory.com/" target="_blank" title="아이유의 블로그">IT 정보 Blog</a>
 -->
-      <center>
-
     <p>
       <iframe width="560" height="320" src="https://www.youtube.com/embed/8MS2kOqVwcY?amp;autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
@@ -56,7 +113,6 @@
       <br>요 째낏 커먼 요우 내 플로우를 한번 들어봐봐  박자를 제대로 타는 오우 감사드립니다 오엽
       <br>(나가서 1번구역으로 가세요) 오케 레츠고 빠이 요요 오케 굿빠이
     </p>
-    </center>
     <!--
     <strong>제일 중요한것은</strong>
     <br>검색엔진은 'span style="font-size ~~~"'으로 시각적으로 꾸며져 있는 제목보다
@@ -65,18 +121,7 @@
     <p>
     yup yup <strong> for creating <u>web</u> pages</strong> by hoon.
     </p>
-    <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5f0f2c9867771f3813c11a6b/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+ </div>
+</div>
   </body>
 </html>

@@ -3,27 +3,87 @@
   <head>
     <title>아이유 에잇 앨범</title>
     <meta charset="utf-8">
+    <style>
+    body{
+      margin:0;
+    }
+    /*
+    block level element
+    */
+
+    #grid{
+      display: grid;
+      grid-template-columns: 150px 1fr;
+    }
+    #article{
+      padding-left: 85px;
+    }
+    #grid ol{
+        border-right: 1px solid gray;
+        width:150px;
+        margin:1px;
+        padding:33px;
+      }
+
+    h1 {
+      border-bottom:1px solid black;
+      display:block;
+      padding:50px;
+      margin:0;
+      color:black;
+      font-size:45px;
+      text-align: center;
+    }
+    h2 {
+      color:blue;
+      font-size:35px;
+      text-align: center;
+    }
+    /*
+    inline element
+    */
+      a {
+        color:black;
+      }
+      /*
+    2. html 마다 수정을 해줘야하나??..다른 링크의 게시물로 이동하는 방법은 ?
+      */
+      @media(max-width:800px){
+        #grid{
+          display: block;
+        }
+        #grid ol{
+            border-right: none;
+          }
+        h1{
+          border-bottom: none;
+        }
+      }
+    </style>
   </head>
   <body>
     <h1> <a href="index.html">아이유 홈페이지</a></h1>
+  <div id="grid">
+
     <ol>
-      <b>목차</b>
+      <b> 아이유 모음집 </b><br></br>
       <li><a href="1.html">철구랩</a></li>
       <li><a href="2.html">에잇</a></li>
       <li><a href="3.html">블루밍</a></li>
       <li><a href="Album.html">Album</a></li>
     </ol>
+    <div id="article">
     <!-- <a href="https://nowsims.tistory.com/" target="_blank" title="아이유의 블로그">IT 정보 Blog</a>
     -->
-        <center> <h2>아이유 에잇 앨범</h2>
+        <center> <h2>아이유 에잇 앨범</h2> </center>
       <br>
 <iframe width="560" height="320" src="https://www.youtube.com/embed/CPXmqfu-9vs?amp;autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <br>
       <audio autoplay="autoplay"controls loop> <source src="music/iu-eight.mp3" allow="autoplay=1" type="audio/mp3">
       </audio>
       <br><img src="eight.jpg" width="20%">
-      <p style="margin-top:30px;">
-<p><b>  아이유 - 에잇 가사</b><br>
+      <p style="margin-top:30px;"></p>
+<p><b>  아이유 - 에잇 가사</b></p>
 <br>      So are you happy now?
 <br>      Finally happy now, are you?
 <br>      뭐 그대로야 난
@@ -66,20 +126,7 @@
 <br>      우우우 우우우우
 <br>      이런 악몽이라면 영영 깨지 않을게
 </p>
-</p>
-</center>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5f0f2c9867771f3813c11a6b/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+  </div>
+</div>
   </body>
 </html>

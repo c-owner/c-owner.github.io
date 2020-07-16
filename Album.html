@@ -3,18 +3,77 @@
   <head>
     <title>아이유 프로젝트</title>
     <meta charset="utf-8">
+    <style>
+    body{
+      margin:0;
+    }
+    /*
+    block level element
+    */
+
+    #grid{
+      display: grid;
+      grid-template-columns: 150px 1fr;
+    }
+    #article{
+      padding-left: 85px;
+    }
+    #grid ol{
+        border-right: 1px solid gray;
+        width:150px;
+        margin:1px;
+        padding:33px;
+      }
+
+    h1 {
+      border-bottom:1px solid black;
+      display:block;
+      padding:50px;
+      margin:0;
+      color:black;
+      font-size:45px;
+      text-align: center;
+    }
+    h2 {
+      color:blue;
+      font-size:35px;
+      text-align: center;
+    }
+    /*
+    inline element
+    */
+      a {
+        color:black;
+      }
+      /*
+    2. html 마다 수정을 해줘야하나??..다른 링크의 게시물로 이동하는 방법은 ?
+      */
+      @media(max-width:800px){
+        #grid{
+          display: block;
+        }
+        #grid ol{
+            border-right: none;
+          }
+        h1{
+          border-bottom: none;
+        }
+      }
+    </style>
   <title>IU Album</title>
  </head>
   <body>
     <h1> <a href="index.html">아이유 홈페이지</a></h1>
+  <div id="grid">
+
     <ol>
-      <b>목차</b>
+      <b> 아이유 모음집 </b><br></br>
       <li><a href="1.html">철구랩</a></li>
       <li><a href="2.html">에잇</a></li>
       <li><a href="3.html">블루밍</a></li>
       <li><a href="Album.html">Album</a></li>
     </ol>
-
+    <div id="article">
     <h1>album</h1>
 <img src="album/IMG_2082.JPG" width="20%">
 <img src="album/IMG_2567.JPG" width="15%">
@@ -39,7 +98,8 @@
 </video>
 <video controls src="album/RPReplay_IU_CUTE.mp4" width="800" height="400">
 </video>
-
+  </div>
+</div>
   </body>
 
 </html>

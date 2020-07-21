@@ -18,13 +18,18 @@
       <li><a href="3.html">블루밍</a></li>
       <li><a href="Album.html">갤러리</a></li>
       <li><a href="edm.html">힙합 EDM Playlist</a></li>
-      <input type="button" value="다크모드" onclick="
-      document.querySelector('body').style.backgroundColor='black';
-      document.querySelector('body').style.color='white';
-      ">
-      <input type="button" value="라이트모드" onclick="
-      document.querySelector('body').style.backgroundColor='white';
-      document.querySelector('body').style.color='black';
+      <input type="button" value="밤/낮 모드" onclick="
+      if(document.querySelector('body').dataset.mode === 'day'){
+        document.querySelector('body').style.backgroundColor = 'black';
+        document.querySelector('body').style.color = 'white';
+        document.querySelector('body').dataset.mode = 'night';
+        this.value = '낮';
+      } else {
+        document.querySelector('body').style.backgroundColor = 'white';
+        document.querySelector('body').style.color = 'black'
+        document.querySelector('body').dataset.mode = 'day';
+        this.value = '밤';
+      }
       ">
       <ul>
         <a href="ex2.html"> 연습공간 </a>
@@ -39,17 +44,13 @@
 <br>   낚쉬~     <input type="checkbox">
 <br>   이런게 인생 아니겄냐  <input type="checkbox">
 <p> 빈칸에 알맞는 말을 쓰시오.
-<br> 이두희 바퀴벌레<input type="text" onchange="alert('맞습니까?')">.
+<br> 이두희 바퀴벌레   <input type="text" onchange="alert('맞습니까?')">.
+<br>
 <br><input type="button" value="정답을 확인하세요." onclick="alert('더듬이')">
  </p>
     <p>
       <img src="coding.jpg" width="20%">
     <br><b>아이유 프로젝트</b></p>
-<!--    <p style="margin-top:30px;">
-
--->
-
-
     <p>
     IU homepage <strong> for creating <u>web</u> pages</strong> by hoon.
     </p>

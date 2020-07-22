@@ -6,6 +6,14 @@ body{
 block level element
 */
 
+/*네이버 검색엔진 */
+#header .search_area {
+    position: absolute;
+    top: 50%;
+    left: 268px;
+    margin-top: -27px;
+}
+
 #grid{
   display: grid;
   grid-template-columns: 150px 1fr;
@@ -20,7 +28,32 @@ block level element
     padding:33px;
   }
 
-
+.usedto {
+  text-align: right;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: pink;
+  font-size: 12px;
+}
+/* font-family 스타일 지정 */
+.돋움 {
+  font-family: "돋움";
+}
+.dotum {
+  font-family: "dotum";
+}
+.돋움체 {
+  font-family: "돋움체";
+}
+.굴림 {font-family: "굴림";}
+.굴림체 {font-family: "굴림체";}
+.gulim {font-family: "gulim";}
+.고딕 {font-family: "고딕";}
+.고딕체 {font-family: "고딕체";}
+.궁서 {font-family: "궁서";}
+.궁서체 {font-family: "궁서체";}
+.comic {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
 h1 {
   border-bottom:1px solid black;
   display:block;
@@ -38,10 +71,10 @@ h2 {
 /*
 inline element
 */
-  a {
-
-    text-decoration: none;
-  }
+  a:link { color: blue; text-decoration: none; }
+      a:visited { color: purple; text-decoration: none; }
+      a:hover { color: red; text-decoration: underline; }
+      a:active { color: white; background-color: green; }
   /*
 2. html 마다 수정을 해줘야하나??..다른 링크의 게시물로 이동하는 방법은 ?
   */

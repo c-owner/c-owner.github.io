@@ -16,13 +16,18 @@
           <li><a href="3.html">블루밍</a></li>
           <li><a href="Album.html">갤러리</a></li>
           <li><a href="edm.html">힙합 EDM Playlist</a></li>
-          <input type="button" value="다크모드" onclick="
-          document.querySelector('body').style.backgroundColor='black';
-          document.querySelector('body').style.color='white';
-          ">
-          <input type="button" value="라이트모드" onclick="
-          document.querySelector('body').style.backgroundColor='white';
-          document.querySelector('body').style.color='black';
+          <input type="button" value="밤/낮 모드" onclick="
+          if(document.querySelector('body').dataset.mode === 'day'){
+            document.querySelector('body').style.backgroundColor = 'black';
+            document.querySelector('body').style.color = 'white';
+            document.querySelector('body').dataset.mode = 'night';
+            this.value = '낮';
+          } else {
+            document.querySelector('body').style.backgroundColor = 'white';
+            document.querySelector('body').style.color = 'black'
+            document.querySelector('body').dataset.mode = 'day';
+            this.value = '밤';
+          }
           ">
           <ul>
             <a href="ex2.html"> 연습공간 </a>
@@ -30,8 +35,8 @@
         </ol>
       <div id="article">
         <h2> Hip Hop </h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Rd8_8qU2-tM?amp;autoplay=1" frameborder="0" allow="accelerometer;
-        autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Rd8_8qU2-tM?amp;autoplay=1" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
       </div>
     </div>

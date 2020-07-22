@@ -63,7 +63,11 @@ h1 {
   font-size:45px;
   text-align: center;
 }
-
+.copyright {
+  font-size: 9px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
 h2 {
   font-size:35px;
   text-align: center;
@@ -71,6 +75,10 @@ h2 {
 /*
 inline element
 */
+/*a:link - 방문하지 않은 링크
+a:visited - 방문했던 링크
+a:hover - 마우스가 올려진 링크
+a:active - 클릭하는 순간 링크*/
   a:link { color: blue; text-decoration: none; }
       a:visited { color: purple; text-decoration: none; }
       a:hover { color: red; text-decoration: underline; }
@@ -89,3 +97,45 @@ inline element
       border-bottom: none;
     }
   }
+
+  /* mobile */
+  #jb-container {
+      margin: 10px auto;
+      padding: 20px;
+      border: 1px solid #bcbcbc;
+    }
+    #jb-header {
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #bcbcbc;
+    }
+    #jb-content {
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #bcbcbc;
+    }
+    #jb-sidebar {
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #bcbcbc;
+    }
+    #jb-footer {
+      padding: 20px;
+      border: 1px solid #bcbcbc;
+    }
+    @media ( min-width: 481px ) {
+      #jb-container {
+        width: 940px;
+      }
+      #jb-content {
+        width: 580px;
+        float: left;
+      }
+      #jb-sidebar {
+        width: 260px;
+        float: right;
+      }
+      #jb-footer {
+        clear: both;
+      }
+    }

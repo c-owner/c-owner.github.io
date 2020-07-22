@@ -1,16 +1,43 @@
 <!doctype html>
 <html>
   <head>
-    <title>아이유 에잇 앨범</title>
+    <title>아이유 - 에잇</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
 <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <div id="jb-container">
+      <div id="jb-header">
     <h1 style="background-color:purple;"> <a href="index.html" style="color:white;">아이유 홈페이지</a></h1>
-    <div id="grid">
+  </div>
 
-        <ol>
-          <ul><b> 카테고리 </b></ul>
+      <div id="jb-sidebar">
+        <h2>카테고리</h2>
+        <ul>
+          <div id="search" class="search_area" data-clk-prefix="sch">
+             <form method=get action="http://www.google.co.kr/search" target="_blank" >
+              <table bgcolor="#FFFFFF">     <tr>       <td>
+                 <input type=text name=q size=25 maxlength=255 value="" /> <!-- 구글 검색 입력 창 -->
+                  <input type=submit name=btnG value="Google 검색" /> <!-- 검색 버튼 -->
+                  </td>     </tr>   </table> </form> <!-- Search Google -->
+          </div>
+          <!-- 네이버 검색엔진 -->
+              <div id="search" class="search_area" data-clk-prefix="sch">
+          <form id="sform" name="sform" action="https://search.naver.com/search.naver" method="get">
+          <fieldset>
+          <legend class="blind">네이버 검색</legend>
+
+          <div class="green_window" style="">
+          <input id="query" name="query" type="text" title="검색어 입력" maxlength="255" class="input_text" tabindex="1" accesskey="s" style="ime-mode:active;" autocomplete="off" onclick="document.getElementById('fbm').value=1;" value="">
+          </div>
+          <button id="search_btn" type="submit" title="검색" tabindex="3" class="btn_submit" onclick="window.nclick(this,'sch.action','','',event);" style="">
+          <span class="blind">확인</span>
+          <span class="ico_search_submit"></span>
+          </button>
+          </fieldset>
+          </form>
+          </div>
           <li><a href="1.html">철구랩</a></li>
           <li><a href="2.html">에잇</a></li>
           <li><a href="3.html">블루밍</a></li>
@@ -29,16 +56,14 @@
             this.value = '밤';
           }
           ">
-          <ul>
-            <a href="ex2.html"> 연습공간 </a>
-          </ul>
-        </ol>
-    <div id="article">
+        </ul>
+      </div>
+    <div id="jb-content">
     <!-- <a href="https://nowsims.tistory.com/" target="_blank" title="아이유의 블로그">IT 정보 Blog</a>
     -->
-        <center> <h2>아이유 에잇 앨범</h2> </center>
+        <center> <h2>아이유 에잇 앨범</h2>
       <br>
-<iframe width="560" height="320" src="https://www.youtube.com/embed/CPXmqfu-9vs?amp;autoplay=0" frameborder="0"
+<iframe width="600" height="420" src="https://www.youtube.com/embed/CPXmqfu-9vs?amp;autoplay=0" frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <br>
       <audio autoplay="autoplay"controls loop> <source src="music/iu-eight.mp3" allow="autoplay=1" type="audio/mp3">
@@ -88,6 +113,12 @@ allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
 <br>      우우우 우우우우
 <br>      이런 악몽이라면 영영 깨지 않을게
 </p>
+</center>
+  </div>
+  <div id="jb-footer">
+    <div class="copyright">
+  IU homepage <strong> for creating <u>web</u> pages</strong> by hoon.
+    </div>
   </div>
 </div>
   </body>

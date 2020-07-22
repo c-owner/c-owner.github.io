@@ -133,6 +133,9 @@ a:active - 클릭하는 순간 링크*/
       margin-bottom: 20px;
       border: 1px solid #bcbcbc;
     }
+    #jb-sidebar h2 {
+      font-family: cursive;
+    }
     #jb-footer {
       padding: 20px;
       border: 1px solid #bcbcbc;

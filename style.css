@@ -69,7 +69,7 @@ h1 {
   font-weight: bold;
 }
 h2 {
-  font-size:35px;
+  font-size:25px;
   text-align: center;
 }
 /*
@@ -109,10 +109,24 @@ a:active - 클릭하는 순간 링크*/
       margin-bottom: 20px;
       border: 1px solid #bcbcbc;
     }
+    #jb-header h1 {
+      font-family: fantasy;
+      background-color: purple;
+      color: white;
+    }
+    #jb-header a {
+      font-family: fantasy;
+      background-color: purple;
+      color: white;
+    }
     #jb-content {
       padding: 20px;
       margin-bottom: 20px;
       border: 1px solid #bcbcbc;
+    }
+    #jb-content h2 {
+      background-color:black; color: white;
+      font-family: fantasy;
     }
     #jb-sidebar {
       padding: 20px;

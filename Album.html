@@ -73,18 +73,33 @@
       <li><a href="Album.html">갤러리</a></li>
       <li><a href="edm.html">힙합 EDM Playlist</a></li>
       <li><a href="ex2.html"> 연습공간 </a> </li>
-      <input type="button" value="밤/낮 모드" onclick="
-      if(document.querySelector('body').dataset.mode === 'day'){
-        document.querySelector('body').style.backgroundColor = 'black';
-        document.querySelector('body').style.color = 'white';
-        document.querySelector('body').dataset.mode = 'night';
-        this.value = '낮';
+      <input type="button" value="라이트/다크 모드" onclick="
+      var target = document.querySelector('body');
+      if(target.dataset.mode === 'day'){
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
+        target.dataset.mode = 'night';
+        this.value = '라이트모드';
+
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while(i < alist.length){
+          alist[i].style.color = 'powderblue';
+          i = i + 1;
+        }
       } else {
-        document.querySelector('body').style.backgroundColor = 'white';
-        document.querySelector('body').style.color = 'black'
-        document.querySelector('body').dataset.mode = 'day';
-        this.value = '밤';
+        target.style.backgroundColor = 'white';
+        target.style.color = 'black';
+        target.dataset.mode = 'day';
+        this.value = '다크모드';
+
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while(i < alist.length){
+          alist[i].style.color = 'blue';
+          i = i + 1;
       }
+    }
       ">
     </ul>
   </div>

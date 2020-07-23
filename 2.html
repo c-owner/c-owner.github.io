@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
 <link rel="stylesheet" href="style.css">
+    <script src="colors.js"></script>
   </head>
   <body>
     <div id="jb-container">
@@ -45,32 +46,7 @@
           <li><a href="edm.html">힙합 EDM Playlist</a></li>
           <li><a href="ex2.html"> 연습공간 </a> </li>
           <input type="button" value="라이트/다크 모드" onclick="
-          var target = document.querySelector('body');
-          if(target.dataset.mode === 'day'){
-            target.style.backgroundColor = 'black';
-            target.style.color = 'white';
-            target.dataset.mode = 'night';
-            this.value = '라이트모드';
-
-            var alist = document.querySelectorAll('a');
-            var i = 0;
-            while(i < alist.length){
-              alist[i].style.color = 'powderblue';
-              i = i + 1;
-            }
-          } else {
-            target.style.backgroundColor = 'white';
-            target.style.color = 'black';
-            target.dataset.mode = 'day';
-            this.value = '다크모드';
-
-            var alist = document.querySelectorAll('a');
-            var i = 0;
-            while(i < alist.length){
-              alist[i].style.color = 'blue';
-              i = i + 1;
-          }
-        }
+           nightDayTogle(this);
           ">
         </ul>
       </div>

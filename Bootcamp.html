@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>MAC OS Bootcamp 오류 해결</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+        <script src="colors.js"></script>
+  </head>
+  <body>
+    <div id="jb-container">
+      <div id="jb-header">
+   <h1 style="background-color:purple;"> <a href="index.html" style="color:white;">IU PAGE</a></h1>
+      </div>
+      <div id="jb-content">
+        <center><h2 style="background-color:black;color:white"> Mac OS Bootcamp 드라이버 설치 오류 및 드라이버 자동인식 불가 현상 해결 </h2>
+    <br>0.Abstract
+    <br><strong>외장 ssd WTG 부팅시, 부트캠프 드라이버를 설치하더라도 작동불능, 장치관리자에서 드라이버를 수동설정을 하더라도 해결되지 않는 현상을 해결하기 위함.</strong>
+    <br>*참고사항*WTG 설치 방법을 숙지
+    <br>1. 문제 원인
+    <br>문제 원인은 밝혀내지 못했음, 신형 맥북의 경우 내장 ssd 부트캠프는 성공적으로 드라이버 설치가 되는 거스로 보아 하드웨어 호환성 문제가 있는 것으로 보임(추측)
+    <br><b>2. 준비물</b>
+    <br>- WTG 설치된 외장 ssd
+    <br>- 맥북
+    <br>- 3-1 페럴레즈
+    <br>- 3-2 윈도우10 설치된 다른 컴퓨터 (둘중 하나만 있으면 됨)
+    <br><b>3. 부트캠프 드라이버를 미리 다운</b>
+    <br> windowsSupport 가급적 경로는 - c\bootcamp\에 넣을것. (c\bootcamp\windowsSupport)
+    <br><b>4.cmd 관리자권한 실행</b>
+    <br><b>5. 미리 WTG 설치된 디스크의 드라이브 문자(c,d,e,g 등..)를 확인</b>
+    <br> ex) 메인디스크 C / WTG 설치된 드라이브 (H)라고 가정
+    <br><b>6. 다음과 같은 명령어를 cmd에 입력 </b>
+    <br>6-1.기본 드라이버 할당
+    <br>=> DISM /IMAGE:<strong>H:</strong> /ADD-DRIVER /DRIVER:<strong>C:\bootcamp\WindowsSupport\$WindPEDriver$</strong> /RECURSE /FORCEUNSIGNED
+    <br> (bold로 강조된 텍스트는 5번 예시와 같이 확인하여 주의해서 작성 바람.)
+    <br> 대략적으로 H의 윈도우에 비할당된 드라이버를 모두 C의 부트캠프파일로부터 할당을 해주는 구문임.
+    <br> 이렇게 되면 $WindPEDriver$ 의 파일의 드라이버를 설치하기 시작할 것임.
+    <br><b>6-2. 장치 드라이버 통합</b>
+    <br> ==> DISM /IMAGE:<strong>H:</strong> /ADD-DRIVER /DRIVER:<strong>C:\bootcamp\WindowsSupport\Drivers</strong> /RECURSE /FORCEUNSIGNED
+    <br><b>7. WTG를 통한 맥북 부팅</b>
+    <br> WTG를 통해 맥북 부팅을 한 뒤, 기존의 부트캠프 드라이버 설치 방법대로 우선 설치하고 재부팅
+    <br><b>8. 장치관리자 드라이버 수동 할당.</b>
+    <br><b>9. WTG 사용 </b>
+
+</center>
+      </div>
+        <div id="jb-sidebar">
+          <h2>MENU</h2>
+          <ul>
+            <div id="search" class="search_area" data-clk-prefix="sch">
+               <form method=get action="http://www.google.co.kr/search" target="_blank" >
+                <table bgcolor="#FFFFFF">     <tr>       <td>
+                   <input type=text name=q size=25 maxlength=255 value="" /> <!-- 구글 검색 입력 창 -->
+                    <input type=submit name=btnG value="Google 검색" /> <!-- 검색 버튼 -->
+                    </td>     </tr>   </table> </form> <!-- Search Google -->
+            </div>
+            <!-- 네이버 검색엔진 -->
+                <div id="search" class="search_area" data-clk-prefix="sch">
+            <form id="sform" name="sform" action="https://search.naver.com/search.naver" method="get">
+            <fieldset>
+            <legend class="blind">네이버 검색</legend>
+
+            <div class="green_window" style="">
+            <input id="query" name="query" type="text" title="검색어 입력" maxlength="255" class="input_text" tabindex="1" accesskey="s" style="ime-mode:active;" autocomplete="off" onclick="document.getElementById('fbm').value=1;" value="">
+            </div>
+            <button id="search_btn" type="submit" title="검색" tabindex="3" class="btn_submit" onclick="window.nclick(this,'sch.action','','',event);" style="">
+            <span class="blind">확인</span>
+            <span class="ico_search_submit"></span>
+            </button>
+            </fieldset>
+            </form>
+            </div>
+            <li><a href="1.html">철구랩</a></li>
+            <li><a href="2.html">에잇</a></li>
+            <li><a href="3.html">블루밍</a></li>
+            <li><a href="Album.html">갤러리</a></li>
+            <li><a href="edm.html">힙합 EDM Playlist</a></li>
+            <li><a href="ex2.html"> 연습공간 </a> </li>
+            <li><a href="Bootcamp.html"> MacOS-Bootcamp </a> </li>
+            <input type="button" value="라이트/다크 모드" onclick="
+             nightDayTogle(this);
+            ">
+        </div>
+        <div id="jb-footer">
+          <div class="copyright">
+            <script>
+              var coworkers = {
+                "Programmer":"corner",
+                "Designer":"dlwlrma"
+              };
+              coworkers.Bookkeeper = "garen";
+              coworkers["Data Scientist"] = "darius";
+            </script>
+            <script>
+              for(var key in coworkers) {
+                document.write('<span style="font-weight:bold">'+key+'  :  '+'</span>'+coworkers[key]+'<br>');
+              }
+            </script>
+        <br>IU homepage <strong> for creating <u>web</u> pages</strong> by hoon.
+          </div>
+        </div>
+    </div>
+  </body>
+</html>

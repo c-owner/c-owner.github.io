@@ -37,3 +37,14 @@ function nightDayTogle(self){
     Links.setColor('black');
   }
 }
+// 사이드바 메뉴 링크 호출
+  // function sidemenu(self){
+  // var target = document.write('sidemenu');
+  // }
+  //
+  // var sidemenu = ['index.html','1.html','2.html','3.html','album.html','edm.html'];
+  // var i = 0;
+  // while(i < sidemenu.length){
+  //   document.write('<li><a href="https://eight-corner.github.io/iu/'+sidemenu[i]+'">)'+sidemenu[i]+'</li>');
+  //   i = i + 1;
+  // }

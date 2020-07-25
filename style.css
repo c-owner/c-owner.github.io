@@ -83,7 +83,7 @@ a:active - 클릭하는 순간 링크*/
   a:link { color: blue; text-decoration: none; }
       a:visited { color: purple; text-decoration: none; }
       a:hover { color: red; text-decoration: underline; }
-      a:active { color: white; background-color: green; }
+      a:active { color: white; background-color: rgb(98, 212, 24); }
   /*
 2. html 마다 수정을 해줘야하나??..다른 링크의 게시물로 이동하는 방법은 ?
   */
@@ -112,12 +112,12 @@ a:active - 클릭하는 순간 링크*/
     }
     #jb-header h1 {
       font-family: fantasy;
-      background-color: purple;
+      background-color: rgb(125, 67, 143);
       color: white;
     }
     #jb-header a {
       font-family: fantasy;
-      background-color: purple;
+      background-color: rgb(125, 67, 143);
       color: white;
     }
     #jb-content {
@@ -136,6 +136,9 @@ a:active - 클릭하는 순간 링크*/
     }
     #jb-sidebar h2 {
       font-family: cursive;
+    }
+    #jb-sidebar a {
+      color:rgb(3, 10, 2);
     }
     #jb-footer {
       padding: 20px;

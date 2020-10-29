@@ -1,0 +1,13 @@
+package day3;
+
+public class array {
+
+	public static void main(String[] args) {
+		// 배열 
+		String[] stu = {"유재석","이광수","김종국","송지효","지석진"};		
+		
+		System.out.println(stu[1]);		
+		
+	}
+
+}

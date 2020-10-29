@@ -1,0 +1,23 @@
+package day3;
+
+public class array {
+
+	public static void main(String[] args) {
+		// 배열 
+		String[] stu = {"유재석","이광수","김종국","송지효","지석진"};		
+		
+		System.out.println(stu[1]);//인덱스의 번호를 주어서 찾아보기
+		
+		// for문을 이용해서 찾아보기
+		for(int i = 0; i<stu.length; i++) {
+			System.out.println(stu[i]);
+		}
+	
+		// 상담 기록 하기
+		for (int i = 0; i < stu.length; i++) {
+			String member = stu[i];
+			System.out.println(member + "이 상담을 받았습니다.");
+		}
+	}
+
+}

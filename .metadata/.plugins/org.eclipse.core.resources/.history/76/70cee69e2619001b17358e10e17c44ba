@@ -1,0 +1,44 @@
+package day3;
+
+import java.util.Scanner;
+
+public class array_exam {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		// 문제1 : 크기가 5인 int 배열을 선언,
+		// 요소 입력(자연수 범위), 짝수의 개수 출력
+/*
+		int [] arr = new int[5];
+		for (int i=0; i<5; i++) {
+			arr[i] = sc.nextInt();
+		}
+		int count = 0; //개수를 카운팅할 변수 선언
+		for (int v : arr ) {
+			if (v%2 == 0 ) { //짝수일 경우 
+				count++; // 카운트 1씩 증가
+			}
+			System.out.println("짝수 개수는 = "+count+" 개 입니다.");
+		}
+		
+		*/
+		// 문제2 : 크기 순서가 뒤죽박죽인 배열에서 최대값을 찾고
+		// 몇번째 인덱스의 위치해 있는지 확인 출력 
+		
+		int[] data = new int[] {2,3,5,6,8,1,4,7,15,10};
+		int max = data[0]; // 최대값을 가질 변수선언
+		int maxIndex = 1;
+		
+		for (int i=1; i<data.length; i++) {
+			if (max < data[i]) {
+				//max의 값보다 data[i]이 크면 max = data[i] (data)의 값을 max에 대입)
+				max = data[i];
+				maxIndex=i;
+						
+			}
+		}
+
+	}
+
+}

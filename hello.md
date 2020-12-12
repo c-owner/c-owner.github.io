@@ -1,11 +1,12 @@
 ---
+
 layout: post
 title: "환영합니다."
-summary: This is a sample post 2 by corner !
+summary: This is a sample post 2
 author: corner
 date: '2020-12-12 10:41:00 +1000'
 category: hoon
-thumbnail: /assets/img/posts/code.jpg
+thumbnail: '/assets/img/posts/code.jpg'
 # 첫 글입니다.
 
 ---

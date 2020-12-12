@@ -1,0 +1,162 @@
+body{
+  margin:0;
+
+}
+/*
+block level element
+*/
+
+/*네이버 검색엔진 */
+
+#header .search_area {
+    position: absolute;
+    top: 50%;
+    left: 268px;
+    margin-top: -27px;
+}
+
+#grid{
+  display: grid;
+  grid-template-columns: 150px 1fr;
+}
+#article{
+  padding-left: 85px;
+}
+#grid ol{
+    border-right: 1px solid gray;
+    width:150px;
+    margin:1px;
+    padding:33px;
+  }
+
+.usedto {
+  text-align: right;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: pink;
+  font-size: 12px;
+}
+/* font-family 스타일 지정 */
+.돋움 {
+  font-family: "돋움";
+}
+.dotum {
+  font-family: "dotum";
+}
+.돋움체 {
+  font-family: "돋움체";
+}
+.굴림 {font-family: "굴림";}
+.굴림체 {font-family: "굴림체";}
+.gulim {font-family: "gulim";}
+.고딕 {font-family: "고딕";}
+.고딕체 {font-family: "고딕체";}
+.궁서 {font-family: "궁서";}
+.궁서체 {font-family: "궁서체";}
+.comic {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+h1 {
+  border-bottom:1px solid black;
+  display:block;
+  padding:50px;
+  margin:0;
+  color:black;
+  font-size:45px;
+  text-align: center;
+}
+.copyright {
+  font-size: 9px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+h2 {
+  font-size:25px;
+  text-align: center;
+}
+/*
+inline element
+*/
+/*a:link - 방문하지 않은 링크
+a:visited - 방문했던 링크
+a:hover - 마우스가 올려진 링크
+a:active - 클릭하는 순간 링크*/
+  a:link { color: blue; text-decoration: none; }
+      a:visited { color: purple; text-decoration: none; }
+      a:hover { color: red; text-decoration: underline; }
+      a:active { color: white; background-color: rgb(98, 212, 24); }
+  /*
+2. html 마다 수정을 해줘야하나??..다른 링크의 게시물로 이동하는 방법은 ?
+  */
+  @media(max-width:800px){
+    #grid{
+      display: block;
+    }
+    #grid ol{
+        border-right: none;
+      }
+    h1{
+      border-bottom: none;
+    }
+  }
+
+  /* mobile */
+  #jb-container {
+      margin: 10px auto;
+      padding: 20px;
+      border: 1px solid #bcbcbc;
+    }
+    #jb-header {
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #bcbcbc;
+    }
+    #jb-header h1 {
+      font-family: fantasy;
+      background-color: rgb(125, 67, 143);
+      color: white;
+    }
+    #jb-header a {
+      font-family: fantasy;
+      background-color: rgb(125, 67, 143);
+      color: white;
+    }
+    #jb-content {
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #bcbcbc;
+    }
+    #jb-content h2 {
+      background-color:black; color: white;
+      font-family: fantasy;
+    }
+    #jb-sidebar {
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #bcbcbc;
+    }
+    #jb-sidebar h2 {
+      font-family: cursive;
+    }
+    #jb-sidebar a {
+      color:rgb(3, 10, 2);
+    }
+    #jb-footer {
+      padding: 20px;
+      border: 1px solid #bcbcbc;
+    }
+    @media ( min-width: 481px ) {
+      #jb-container {
+        width: 940px;
+      }
+      #jb-content {
+        width: 580px;
+        float: left;
+      }
+      #jb-sidebar {
+        width: 260px;
+        float: right;
+      }
+      #jb-footer {
+        clear: both;
+      }
+    }

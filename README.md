@@ -9,7 +9,7 @@
 
 <!-- [GatsbyJS](https://www.gatsbyjs.org)를 사용하여 개발되었으며, [Netlify](https://www.netlify.com/)로 빌드&배포 됩니다. -->
 
-포스트 저장소는 [blog-posts](https://eight-corner.github.io/blog/posts)입니다.
+포스트 저장소는 [blog-posts](https://eight-corner.github.io/blog/Posts/gistfile1.md)입니다.
 
 Inspiration
 -----------

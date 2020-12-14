@@ -1,3 +1,5 @@
+<meta charset="utf-8">
+
 [[Programmer/JAVA] - JAVA (자바) - 람다식 기본 문법(2)](http://github.com/eight-corner/blog/Posts/Lamda2.md)
 
 [[Programmer/JAVA] - JAVA(자바) - 람다식이란?](http://github.com/eight-corner/blog/Posts/Lamda.md)

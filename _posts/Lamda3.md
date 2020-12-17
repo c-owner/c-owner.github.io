@@ -1,0 +1,237 @@
+<meta charset="utf-8">
+
+[[Programmer/JAVA] - JAVA (자바) - 람다식 기본 문법(2)](http://github.com/eight-corner/blog/Posts/Lamda2.md)
+
+[[Programmer/JAVA] - JAVA(자바) - 람다식이란?](http://github.com/eight-corner/blog/Posts/Lamda.md)
+
+---
+
+#JAVA (자바) - 람다식, 타겟 타입과 함수적 인터페이스
+
+###개요
+-------
+
+####✓ 타겟 타입(target type)
+
+#####➡️ 람다식이 대입되는 인터페이스를 말한다.
+
+-	인터페이스 변수 = 람다식;  
+-	여기서 인터페이스는 타겟타입이다.  
+
+#####➡️ 익명 구현 객체를 만들 때 사용할 인터페이스이다.
+
+#### ✅ 함수적 인터페이스 (functional interface)
+
+#####➡️ 모든 인터페이스는 람다식의 타겟 타입이 될 수 없다.
+
+-	람다식은 하나의 메소드를 정의하기 때문에  
+-	하나의 추상 메소드만 선언된 인터페이스만 타겟 타입이 될 수 있다.  
+
+#####➡️ 함수적 인터페이스
+
+-	하나의 추상 메소드만 선언된 인터페이스를 말한다.  
+
+➡️ @FunctionalIntefrface 어노테이션
+
+하나의 추상 메소드만을 가지는지 컴파일러가 체크하도록 함 두 개 이상의 추상 메소드가 선언되어 있으면 컴파일 오류 발생
+
+#### ✅매개 변수와 리턴값이 없는 람다식
+
+```
+@FunctionalInterface
+	 public interface MyFunctionalInterface {
+
+	public void method();
+
+  }
+```
+
+위와 코드처럼 정의했다고 했을 때, FunctionalInterface 어노테이션이 붙어있으면 하나의 메소드만 정의할 수 있다.
+
+method(); 이외에 method1(); 등 추가적으로 넣게되면 컴파일 오류가 발생한다.
+
+아래의 코드는 위의 코드를 작성 했을 때, 아래 코드의 메소드에 매개 변수가 없기 때문에
+
+리턴 타입이 void(즉 ,아무것도 없다) 이라면 return 타입을 작성할 필요가 없다. 익명 구현 객체를 만들어 주며, 람다식의 method를 호출한다.
+
+```
+MyFunctionalInterface fi = () -> { ... }    
+fi.method();   
+```
+
+#####설명 코드
+
+```
+package no_return_type;
+
+public class MyFunctionalInterfaceExample {
+
+	public static void main(String[] args) {
+		MyFunctionalInterface fi;
+			fi = () -> {
+				String str = "method call1";
+				System.out.println(str);
+			}; // 람다식, 인터페이스의 익명 구현 객체
+			fi.method(); // 매소드 호출=실행
+
+			/*
+			 위 메소드와 아래 메소드의 차이점은 , 위에는 실행블록안에 실행문이 2개
+			 아래는 실행블록안에 실행문이 1개만 들어간 것. 결국 같다.
+			 단 , 실행문이 하나일 경우 중괄호 블럭은 생략이 가능하다.
+			 */
+			fi = () -> { System.out.println("method call2"); };
+			fi.method();
+			fi = () -> System.out.println("method call3"); // 약식표현
+			fi.method();
+
+			fi = new MyFunctionalInterface() {
+				// 메소드 재정의
+				@Override
+				public void method() {
+					System.out.println("method call4");
+				}
+			};
+		// 이 코드는 위의 익명 구현 객체와 동일하다.
+			fi.method();
+
+
+
+	}
+
+}
+```
+
+```
+package no_return_type;
+
+@FunctionalInterface // 어노테이션
+public interface MyFunctionalInterface { // 함수적 인터페이스가 되었다.
+
+	public void method(); // 메소드 하나를 정의
+	// 이렇게 메소드 하나를 정의하면 인터페이스는 함수적 인터페이스가 된다. 확실하게 하기 위해서는 어노테이션을 넣는 것.
+//	public void method2(); // 하나를 더 선언하면 컴파일 오류 발생
+
+}
+```
+
+###매개변수가 있는 람다식
+
+```
+@FunctionalInterface
+public interface MyFunctionalInterface {
+	public void method(int x);
+   }   
+```
+
+int x 라는 매개 변수를 가지고 있고, 리턴 값이 void이기 때문에 람다식으로는
+
+```
+MyFunctionalInterface fi = (x) -> { ... } 또는 x -> { ... }
+fi.method(5);
+```
+
+이런 식으로 익명 구현 객체(람다식)으로 작성할 수 있다.
+
+---
+
+##### 예제
+
+```
+package Exam02;
+
+@FunctionalInterface // 어노테이션
+public interface MyFunctionalInterface { // 함수적 인터페이스가 되었다.
+
+	public void method(int x);
+
+}   
+
+
+package Exam02;   
+
+public class MyFunctionalInterfaceExample {
+
+	public static void main(String[] args) {
+		MyFunctionalInterface fi;
+
+			fi = (x) -> {
+				int result = x*5;
+				System.out.println(result);
+			};
+			fi.method(2); // 2는 x값으로 대입된다. 2*5 = 10
+
+			fi = x -> System.out.println(x*5); // 약식 작성
+			fi.method(2);
+
+
+
+	}   
+
+}   
+```
+
+---
+
+#### 리턴값이 있는 람다식
+
+```
+@FunctionalInterface
+public interface MyFunctionalInterface {
+	public int method(int x, int y);
+
+  }   
+```
+
+int 라는 리턴 값일 경우, 아래의 코드 처럼 익명 구현 객체를 작성할 수 있다.
+
+```
+MyFunctionalInterface fi (x,y) -> { ...; return 값; }
+
+int result = fi.method(2, 5);
+````   
+
+---
+```
+
+package Exam03;
+
+@FunctionalInterface // 어노테이션 public interface MyFunctionalInterface { // 함수적 인터페이스가 되었다.
+
+```
+public int method(int x, int y);
+```
+
+\} package Exam03;
+
+public class MyFunctionalInterfaceExample {
+
+```
+public static void main(String[] args) {
+    MyFunctionalInterface fi;
+
+        fi = (x,y) -> {
+            int result = x+y;
+            return result;
+        };
+        System.out.println(fi.method(2, 5));
+
+        // 약식 작성
+
+    fi = (x,y) -> {return x + y; };
+    System.out.println(fi.method(2, 5));
+
+    //중괄호 블럭안에 리턴문 return x+y; 만 있을 경우
+    // return과 중괄호 색량 가능
+        fi = (x,y) -> x+y;
+        System.out.println(fi.method(2, 5));
+
+        // 아래 메소드를 이용한 람다식
+    fi = (x, y)  -> sum(x, y);
+    System.out.println(fi.method(2, 5));
+
+}
+```
+
+// 함수 하나 정의 public static int sum(int x,int y) { return (x+y); } }\`\`\`
+
+#### 이 코드를 참고하여 어떻게 리턴이 되는지 이해를 하여야 한다.

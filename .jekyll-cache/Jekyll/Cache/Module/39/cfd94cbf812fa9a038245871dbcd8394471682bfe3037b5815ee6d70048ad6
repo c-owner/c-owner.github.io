@@ -1,0 +1,294 @@
+I"� 
+
+
+
+
+
+<article id="post-java-lecture-2020-12-20-Lamda3" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        자바 - 람다식, 타겟 타입과 함수적 인터페이스
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <time datetime="2020-12-20T14:39:21+09:00">20 Dec 2020</time>
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+in <span>Java</span> / <span>Lecture</span>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+
+  </header>
+
+  
+    <p><a href="https://eight-corner.github.io/blog/Lamda2/">[Programmer/JAVA] - JAVA (자바) - 람다식 기본 문법(2)</a></p>
+
+<p><a href="https://eight-corner.github.io/blog/lamda/">[Programmer/JAVA] - JAVA(자바) - 람다식이란?</a></p>
+
+<hr />
+
+<p>#JAVA (자바) - 람다식, 타겟 타입과 함수적 인터페이스</p>
+
+<h2 id="개요">###개요</h2>
+
+<p>####✓ 타겟 타입(target type)</p>
+
+<p>#####➡️ 람다식이 대입되는 인터페이스를 말한다.</p>
+
+<ul>
+  <li>인터페이스 변수 = 람다식;</li>
+  <li>여기서 인터페이스는 타겟타입이다.</li>
+</ul>
+
+<p>#####➡️ 익명 구현 객체를 만들 때 사용할 인터페이스이다.</p>
+
+<h4 id="-함수적-인터페이스-functional-interface">✅ 함수적 인터페이스 (functional interface)</h4>
+
+<p>#####➡️ 모든 인터페이스는 람다식의 타겟 타입이 될 수 없다.</p>
+
+<ul>
+  <li>람다식은 하나의 메소드를 정의하기 때문에</li>
+  <li>하나의 추상 메소드만 선언된 인터페이스만 타겟 타입이 될 수 있다.</li>
+</ul>
+
+<p>#####➡️ 함수적 인터페이스</p>
+
+<ul>
+  <li>하나의 추상 메소드만 선언된 인터페이스를 말한다.</li>
+</ul>
+
+<p>➡️ @FunctionalIntefrface 어노테이션</p>
+
+<p>하나의 추상 메소드만을 가지는지 컴파일러가 체크하도록 함 두 개 이상의 추상 메소드가 선언되어 있으면 컴파일 오류 발생</p>
+
+<h4 id="매개-변수와-리턴값이-없는-람다식">✅매개 변수와 리턴값이 없는 람다식</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@FunctionalInterface
+	 public interface MyFunctionalInterface {
+
+	public void method();
+
+  }
+</code></pre></div></div>
+
+<p>위와 코드처럼 정의했다고 했을 때, FunctionalInterface 어노테이션이 붙어있으면 하나의 메소드만 정의할 수 있다.</p>
+
+<p>method(); 이외에 method1(); 등 추가적으로 넣게되면 컴파일 오류가 발생한다.</p>
+
+<p>아래의 코드는 위의 코드를 작성 했을 때, 아래 코드의 메소드에 매개 변수가 없기 때문에</p>
+
+<p>리턴 타입이 void(즉 ,아무것도 없다) 이라면 return 타입을 작성할 필요가 없다. 익명 구현 객체를 만들어 주며, 람다식의 method를 호출한다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MyFunctionalInterface fi = () -&gt; { ... }    
+fi.method();   
+</code></pre></div></div>
+
+<p>#####설명 코드</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>package no_return_type;
+
+public class MyFunctionalInterfaceExample {
+
+	public static void main(String[] args) {
+		MyFunctionalInterface fi;
+			fi = () -&gt; {
+				String str = "method call1";
+				System.out.println(str);
+			}; // 람다식, 인터페이스의 익명 구현 객체
+			fi.method(); // 매소드 호출=실행
+
+			/*
+			 위 메소드와 아래 메소드의 차이점은 , 위에는 실행블록안에 실행문이 2개
+			 아래는 실행블록안에 실행문이 1개만 들어간 것. 결국 같다.
+			 단 , 실행문이 하나일 경우 중괄호 블럭은 생략이 가능하다.
+			 */
+			fi = () -&gt; { System.out.println("method call2"); };
+			fi.method();
+			fi = () -&gt; System.out.println("method call3"); // 약식표현
+			fi.method();
+
+			fi = new MyFunctionalInterface() {
+				// 메소드 재정의
+				@Override
+				public void method() {
+					System.out.println("method call4");
+				}
+			};
+		// 이 코드는 위의 익명 구현 객체와 동일하다.
+			fi.method();
+
+
+
+	}
+
+}
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>package no_return_type;
+
+@FunctionalInterface // 어노테이션
+public interface MyFunctionalInterface { // 함수적 인터페이스가 되었다.
+
+	public void method(); // 메소드 하나를 정의
+	// 이렇게 메소드 하나를 정의하면 인터페이스는 함수적 인터페이스가 된다. 확실하게 하기 위해서는 어노테이션을 넣는 것.
+//	public void method2(); // 하나를 더 선언하면 컴파일 오류 발생
+
+}
+</code></pre></div></div>
+
+<p>###매개변수가 있는 람다식</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@FunctionalInterface
+public interface MyFunctionalInterface {
+	public void method(int x);
+   }   
+</code></pre></div></div>
+
+<p>int x 라는 매개 변수를 가지고 있고, 리턴 값이 void이기 때문에 람다식으로는</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MyFunctionalInterface fi = (x) -&gt; { ... } 또는 x -&gt; { ... }
+fi.method(5);
+</code></pre></div></div>
+
+<p>이런 식으로 익명 구현 객체(람다식)으로 작성할 수 있다.</p>
+
+<hr />
+
+<h5 id="예제">예제</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>package Exam02;
+
+@FunctionalInterface // 어노테이션
+public interface MyFunctionalInterface { // 함수적 인터페이스가 되었다.
+
+	public void method(int x);
+
+}   
+
+
+package Exam02;   
+
+public class MyFunctionalInterfaceExample {
+
+	public static void main(String[] args) {
+		MyFunctionalInterface fi;
+
+			fi = (x) -&gt; {
+				int result = x*5;
+				System.out.println(result);
+			};
+			fi.method(2); // 2는 x값으로 대입된다. 2*5 = 10
+
+			fi = x -&gt; System.out.println(x*5); // 약식 작성
+			fi.method(2);
+
+
+
+	}   
+
+}   
+</code></pre></div></div>
+
+<hr />
+
+<h4 id="리턴값이-있는-람다식">리턴값이 있는 람다식</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@FunctionalInterface
+public interface MyFunctionalInterface {
+	public int method(int x, int y);
+
+  }   
+</code></pre></div></div>
+
+<p>int 라는 리턴 값일 경우, 아래의 코드 처럼 익명 구현 객체를 작성할 수 있다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MyFunctionalInterface fi (x,y) -&gt; { ...; return 값; }
+
+int result = fi.method(2, 5);
+</code></pre></div></div>
+
+<hr />
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+package Exam03;
+
+@FunctionalInterface // 어노테이션 public interface MyFunctionalInterface { // 함수적 인터페이스가 되었다.
+
+</code></pre></div></div>
+<p>public int method(int x, int y);</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+\} package Exam03;
+
+public class MyFunctionalInterfaceExample {
+
+</code></pre></div></div>
+<p>public static void main(String[] args) {
+    MyFunctionalInterface fi;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    fi = (x,y) -&gt; {
+        int result = x+y;
+        return result;
+    };
+    System.out.println(fi.method(2, 5));
+
+    // 약식 작성
+
+fi = (x,y) -&gt; {return x + y; };
+System.out.println(fi.method(2, 5));
+
+//중괄호 블럭안에 리턴문 return x+y; 만 있을 경우
+// return과 중괄호 색량 가능
+    fi = (x,y) -&gt; x+y;
+    System.out.println(fi.method(2, 5));
+
+    // 아래 메소드를 이용한 람다식
+fi = (x, y)  -&gt; sum(x, y);
+System.out.println(fi.method(2, 5));
+</code></pre></div></div>
+
+<p>}
+```</p>
+
+<p>// 함수 하나 정의 public static int sum(int x,int y) { return (x+y); } }```</p>
+
+<h4 id="이-코드를-참고하여-어떻게-리턴이-되는지-이해를-하여야-한다">이 코드를 참고하여 어떻게 리턴이 되는지 이해를 하여야 한다.</h4>
+
+  
+</article>
+:ET

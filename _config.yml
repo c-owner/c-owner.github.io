@@ -72,12 +72,29 @@ compress_html:
 sass:
   style:               compressed
 
+# plugins:
+#  - jekyll-paginate
+# paginate: 5
+#  - jekyll-sitemap
+#  - jekyll-gist
+#  - jekyll-feed
+#  - jemoji
+#  - jekyll-include-cache
+# Plugins (previously gems:)
 plugins:
   - jekyll-paginate
-paginate: 5
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
+  #- jemoji               # 주석처리
+  - jekyll-include-cache  # 추가
+
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  #- jemoji                  # 주석처리
+  - jekyll-include-cache  #추가
 

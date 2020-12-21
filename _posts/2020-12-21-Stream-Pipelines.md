@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "📝 JAVA- Stream pipeline(스트림 파이프라인)"
-date:   2020-12-21 10:38:00 +0900
+date:   2020-12-21 12:38:00 +0900
 categories: JAVA LECTURE
 
 
@@ -43,7 +43,7 @@ categories: JAVA LECTURE
 
 **sorted**
 
-![a1](https://cafeptthumb-phinf.pstatic.net/MjAyMDEyMTlfODMg/MDAxNjA4MzMwMDk2MDI0.dfH6M2oN7DX7v7QrZ09cEl5NYW5nInSTt_042g1592Mg.qWjLs5qOcSWnvBakf8gLIqqgZmqs4X6BxyKTqyn6voEg.PNG/a1.png?type=w1600)
+![a1](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/StreamImg/a1.png?raw=true)
 
 
 
@@ -168,7 +168,7 @@ public class LoopingEx {
 
 **집계 메소드**
 
-![a2](https://cafeptthumb-phinf.pstatic.net/MjAyMDEyMTlfNjMg/MDAxNjA4MzMxMDQwNDgy.X9lqSou5gjrunUK1_06Hj9yZVzAeTYeCST0u3xy9RUog.D4xVOojMKYWPjSdd2glBVvWyrwrtDZY2I7zdxIb_yeIg.PNG/a1.png?type=w1600)
+![a2](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/StreamImg/a2.png?raw=true)
 
 
 
@@ -222,7 +222,7 @@ public class AggregateEx {
 
 **메소드들**
 
-![Optional](https://cafeptthumb-phinf.pstatic.net/MjAyMDEyMTlfOTUg/MDAxNjA4MzMxMTkwODE3.PYC2GWGwIS6G8m9ro7kYtXf-FZ_ROLgBlf2tnAf8lAwg.F5sD69M1aRf7QFvnWDOtvhyA1Nvc4NDR7qKN0PSLxlMg.PNG/a1.png?type=w1600)
+![a3](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/StreamImg/a3.png?raw=true)
 
 
 
@@ -287,7 +287,7 @@ public class AggregateEx {
 
 
 
-![reduce](https://cafeptthumb-phinf.pstatic.net/MjAyMDEyMjBfMzEg/MDAxNjA4NDMyODk2NDA0.FEXzQpizDSUwcm5N1WZ6tDkbC8OgSsH0R7PmnEdncT8g.84kT-ADFaB9awZW9Z3AwyHN5MCRMOKdpZthJ_VdNZ1gg.PNG/a1.png?type=w1600)
+![a3-2](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/StreamImg/a3-2.png?raw=true)
 
 
 
@@ -354,7 +354,7 @@ public class ReductionEx {
 
 Stream의 collect(Collector<T,A,R> collector) 메소드는 필터링 또는 매핑된 요소들을 새로운 컬렉션에 수집하고 이 컬렉션을 리턴한다.
 
-![collect1](https://cafeptthumb-phinf.pstatic.net/MjAyMDEyMjBfMjM0/MDAxNjA4NDMzMjUwMDQw.eK2zSQ0plan4TAaBo14wHpGadhthIbejb7rmeVG-RQ8g.jjQf4uMNTNTEZ8fLPVQHxgwgBe04j86w5XvU7A7Mpi4g.PNG/a1.png?type=w1600)
+![a4](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/StreamImg/a4.png?raw=true)
 
 
 
@@ -368,7 +368,7 @@ T요소를 A누적기가  R에 저장한다는 뜻
 
 **Collector 클래스의 다양한 정적 메소드**
 
-![collector](https://cafeptthumb-phinf.pstatic.net/MjAyMDEyMjBfMTU3/MDAxNjA4NDMzNDA3MjIx.3bKeSEabMU87NBNOlp_hZ-vNIUfpzPdbZohZ9YnXN4Ig.oy4eSDU0rXX7gNRLqsh4Lmo-H1MqXMwSYYi69kUTYB8g.PNG/a1.png?type=w1600)
+![a5](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/StreamImg/a5.png?raw=true)
 
 
 
@@ -503,6 +503,261 @@ public class Student {
 	}	
 }
 ```
+
+
+
+
+
+---
+
+# 사용자 정의 컨테이너에 수집하기
+
+- 사용자 정의 컨테이너 객체에 수집하는 방법
+
+![a6](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/StreamImg/a6.png?raw=true)
+
+- 첫번째 Supplier는 요소들이 수집될 컨테이너 객체(R)를 생성하는 역할을 한다.
+  순차처리(싱글 스레드) 스트림에서는 단 한 번 Supplier가 실행되고 하나의 컨테이너 객체를 생성한다.
+  스트림에서는 여러번 Supplier가 실행되고 스레드별로 여러 개의 컨테이너 객체를 생성한다.
+  하지만 최종적으로 하나의 컨테이너 객체로 결합된다.
+
+- 두번재 XXXConsumer는 컨테이너 객체(R)에 요소(T)를 수집하는 역할을 한다. 스트림에서 요소를 컨테이너에 수집할 때마다 XXXConsumer가 실행된다.
+- 세번째  BiConsumer는 컨테이너 객체(R)를 결합하는 역할을 한다. 순차처리 스트림에서는 호출되지 않고 병렬처리 스트림에서만 호출되어 스레드 별로 생성된 컨테이너 객체를 결합해서 최종 컨테이너 객체를 완성한다.
+
+```java
+//전체 학생 List에서 stream을 얻는다.
+Stream<Student> totalStream = totalList.stream();
+
+//남학생만 필터링해서 Stream을 얻는다.
+ Stream<Student> maleStream = totalStream.filter(s->s.getSex() == Student.Sex.MALE);
+
+//MaleStudent를 공급하는   Supplier를 얻는다. 
+Supplier<MaleStudnet> supplier = ()->new MaleStudent();
+
+///MaleStudent의 accumulate()메소드로 Student를 수집하는 BiConsumer를 얻는다.
+BiConsumer<MaleStudent, Student> accumulator = (ms, s) -> ms.acculate(s);
+
+
+// MaleStudent를 매개값으로 받아 combine()메소드로 결합하는 BiConsumer를 얻는다.
+BiConsumer<MaleStudent, MaleStudent> combiner = (ms1, ms2) -> ms1.combine(ms2);
+
+//supplier가 제공하는 MaleStudent에  accumulator가  Studnet를 수집해서 최종 처리된 MaleStudent를 얻는다.
+MaleStudent maleStudent = maleStream.collect(supplier, accumulator, combiner);
+
+==> 람다식 표현
+MaleStudent maleStudent = totalList.stream()
+      .filter(s->s.getSEx() == Student.Sex.MALE)
+      .collect(
+         ()->new MaleStudent(), 
+         (r, t) -> r.accumulate(t),
+         (r1, r2) -> r1.combine(r2) );
+
+==> 메소드 참조로 표현
+MaleStudent maleStudent = totalList.stream()
+     .filter(s->s.getSEx() == Student.Sex.MALE)
+    .collect(MaleStudent::new, MaleStudent::accumulate, MaleStudent::combine);
+```
+
+
+
+#### 사용 예
+
+- MaleStudent Class (**이전의 수집(collect()) 부분에서 사용한  Student 클래스를 임포트하여 사용한다.**)
+
+```java
+package 컨테이너수집;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import 수집collect.Student;
+// (이전의 수집(collect()) 부분에서 사용한  Student 클래스를 임포트하여 사용한다.)
+
+public class MaleStudent {
+	private List<Student> list;
+	public MaleStudent() {
+		list = new ArrayList<Student>();
+		System.out.println("[ "+Thread.currentThread().getName()+" ] MaleStudent()");
+		// 생성자를 호출하는 스레드 이름
+	}
+	
+	// 요소를 수집하는 메소드
+	public void accumulate(Student student) { 
+		list.add(student);
+		System.out.println("["+Thread.currentThread().getName()+"] accumulate()");
+		// accumulate() 메소드를 호출할 스레드 이름
+	}
+	
+	// 두 MaleStudent를 결합하는 메소드(병렬처리 시에만 호출)
+	public void combine(MaleStudent other) { 
+		list.addAll(other.getList());
+		System.out.println("["+Thread.currentThread().getName()+"] combine()");
+		// combine()을 호출한 스레드 이름
+	}
+	
+	//요소가 저장된 컬렉션을 리턴
+	public List<Student> getList(){ 
+		return list;
+	}
+	
+}
+
+```
+
+- **MaleStudentEx 메인 클래스**
+
+```java
+package 컨테이너수집;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.BiConsumer;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
+
+import 수집collect.Student;
+
+public class MaleStudentEx {
+	public static void main(String[] args) {
+		List<Student> totalList = Arrays.asList(
+				new Student("홍길동", 10, Student.Sex.MALE, Student.City.Busan),
+				new Student("김수애", 6, Student.Sex.FEMALE, Student.City.Seoul),
+				new Student("신용권", 10, Student.Sex.MALE, Student.City.Busan),
+				new Student("박수미", 6, Student.Sex.FEMALE, Student.City.Seoul)
+				);
+		/* 1.  
+		Stream<Student> totalStream = totalList.stream();// 오리지널 스트림 
+		Stream<Student> maleStream = totalStream.filter(s->s.getSex()==Student.Sex.MALE);//남자만
+		Supplier<MaleStudent> supplier = () -> new MaleStudent(); // 매개변수 정의 후 객체 생성
+		// Supplier<T> t.get()이라는 메소드 오버라이드 한거임. 
+		// #공급
+		
+		BiConsumer<MaleStudent, Student> accmulator = (m,s) -> m.accumulate(s);
+		// 전체 학생에서 남자만 뽑아서 리스트에 넣어주는 거임!
+		// #수집
+		
+		BiConsumer<MaleStudent, MaleStudent> combiner = (ms1,ms2)-> ms1.combine(ms2);
+		// MaleStudent를 매개값으로 받아 combine() 메소드로 결합하는 BiConsumer를 얻는다.
+		// #결합
+		
+//		MaleStudent maleStudent = maleStream.collect(supplier, accmulator, combiner);
+		// #최종수집
+System.out.println("--------------");
+System.out.println(maleStream);		
+System.out.println("---------------");
+//System.out.println(maleStudent.getList());
+		*/ // 1. 주석
+
+		/*
+		// ==> 2. 람다식으로 표현
+		MaleStudent maleStudent = totalList.stream()
+				.filter(s-> s.getSex()==Student.Sex.MALE)
+				.collect( () -> new MaleStudent(), (m,s)->m.accumulate(s), (ms1, ms2) -> ms1.combine(ms2) );
+		System.out.println(maleStudent.getList()+"~~~");
+*/		
+		
+		// ==> 3. 메소드 참조로 표현
+		// ------ 남학생을 MaleStudent에 누적 
+		MaleStudent maleStudent = totalList.stream() 
+				.filter(s -> s.getSex() == Student.Sex.MALE) // 남자만 필터링
+		// 방법1
+//				.collect(MaleStudent::new, MaleStudent::accumulate, MaleStudent:: combine);
+		// 방법2
+				.collect( () -> new MaleStudent(), (r,t) -> r.accumulate(t), (r1, r2) -> r1.combine(r2));
+		maleStudent.getList().stream()
+		.forEach(s -> System.out.println(s.getName()));
+		
+	
+				
+	}
+}
+
+```
+
+
+
+---
+
+### 
+
+### 요소를 그룹핑(groupingBy)해서 수집하기
+
+#1
+
+- <span style="color:green">collect()</span>메소드는 컬렉션의 요소들을 그룹핑해서  Map객체를 생성하는 기능을 제공한다.
+- <span style="color:green">collect()</span>를 호출할 때 <span style="color:purple">Collectors</span>의 <span style="color:green">groupingBy()</span>또는 <span style="color:green">groupingByConcurrent()</span>가 리턴하는 <span style="color:green">Collector()</span>를 매개값으로 대입하면 된다.
+- <span style="color:green">groupingBy</span>는 스레드에 안전하지 않은 Map을 생성하지만 ,<span style="color:green">groupingByConcurrent()</span>는 스레드에 안전한 ConcurrentMap에 생성한다.
+
+
+
+
+
+![a7](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/StreamImg/a7.png?raw=true)
+
+
+
+### 사용 예  
+
+```java
+package 그룹핑;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import 수집collect.Student; // 이전에 사용한 Student를 사용한다.
+public class GroupingByEx {
+	public static void main(String[] args) {
+		List<Student> totalList = Arrays.asList(
+				new Student("홍길동", 10, Student.Sex.MALE, Student.City.Busan),
+				new Student("김수애", 6, Student.Sex.FEMALE, Student.City.Seoul),
+				new Student("신용권", 10, Student.Sex.MALE, Student.City.Busan),
+				new Student("박수미", 6, Student.Sex.FEMALE, Student.City.Seoul),
+				new Student("박수호", 6, Student.Sex.MALE, Student.City.Seoul)
+				);
+		
+		Stream<Student> totalStream = totalList.stream();
+		//Student 객체가 입력되어서 Student.City가 리턴됨
+		Function<Student, Student.City> classisfier = Student :: getCity;
+		
+		// Student 객체가 입력되어서 Student의 name이 리턴됨
+		Function<Student, String> mapper = Student :: getName;
+		
+		
+		// 이름을 List에 수집하는 Collector를 얻는다.
+		Collector<String, ?, List<String>> collector1 = Collectors.toList();
+		
+		// Collectors의 mapping() 메소드로 Student 이름을 List에 수집하는 Colletor를 얻는다.
+		Collector<Student, ?, List<String>> collector2 = Collectors.mapping(mapper, collector1);
+
+		// Student.City가 키이고 그룹핑된 이름 List가 값이 Map을 생성하는 Collector를 얻는다.
+		Collector<Student, ?, Map<Student.City, List<String>>> collector3 =
+					Collectors.groupingBy(classisfier,collector2);
+		
+		// Stream의 collect()메소드로 Student를 Student.City별로 그룹핑해서 Map을 얻는다.
+		Map<Student.City, List<String>> mapByCity = totalStream.collect(collector3);
+		
+		System.out.println("서울 사람들 : "+mapByCity.get(Student.City.Seoul));
+		System.out.println("부산 싸나이 : "+mapByCity.get(Student.City.Busan));
+		
+	}
+}
+
+```
+
+
+
+
+
+---
+
+[@CHANGELOG](CHANGELOG.md)
+
+
 
 
 

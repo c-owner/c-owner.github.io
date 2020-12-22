@@ -1,3 +1,14 @@
+# 🌱LOG 2020-12-22
+
+- **[스트림](https://github.com/Eight-Corner/koreaIT/tree/main/스트림/src/그룹핑리덕션)**
+- **[파일 입출력](https://github.com/Eight-Corner/koreaIT/tree/main/파일%20입출력%20패키지/src)**
+
+
+
+
+
+---
+
 # 🌱LOG 2020-12-21
 
 - home layout update

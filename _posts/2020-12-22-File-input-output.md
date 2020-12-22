@@ -29,13 +29,13 @@ categories: JAVA Lecture # 카테고리
 
 파일 및 디렉토리 생성 및 삭제 메소드
 
-![a1](/Users/corner/Sites/_posts/file-input-output/a1.png)
+![a1](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/a1.png?raw=true)
 
 
 
 파일 및 디렉토리의 정보를 리턴하는 메소드
 
-![a2](/Users/corner/Sites/_posts/file-input-output/a2.png)
+![a2](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/a2.png?raw=true)
 
 
 
@@ -111,7 +111,7 @@ public class FileEx {
 
 ---
 
-#### FileInputStream
+#### 2. FileInputStream
 
 - 파일로부터 바이트 단위로 읽어들일 때 사용하는 바이트 기반 입력 스트림
 - 그림, 오디오, 비디오, 텍스트 파일 등 모든 종류의 파일을 읽어올 수 있다.
@@ -134,7 +134,7 @@ public class FileEx {
 
 
 
-FileOutputStream
+3. #### FileOutputStream
 
 ```java
 		
@@ -158,9 +158,23 @@ FileOutputStream
 
 
 
-4. FileReader
+4. #### FileReader
 
 ```java
-
+	public static void main(String[] args) throws Exception {
+		
+		FileReader fr = new FileReader("/Users/corner/trash/test.txt");
+		
+		int readCharNo;
+		char[] cbuf = new char[100];
+		while((readCharNo = fr.read(cbuf)) != -1 ) {
+			String data = new String(cbuf, 0, readCharNo);
+			System.out.println(data);
+		}
+		fr.close();
+		
+	}
 ```
+
+
 

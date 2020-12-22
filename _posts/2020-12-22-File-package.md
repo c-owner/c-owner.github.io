@@ -25,7 +25,7 @@ categories: JAVA Lecture # 카테고리
 
 ### -입력 스트림과 출력 스트림
 
-![1-1](/Users/corner/Sites/_posts/file-input-output/1-1.png)
+![1-1](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/1-1.png?raw=true)
 
 
 
@@ -37,13 +37,13 @@ categories: JAVA Lecture # 카테고리
 
 
 
-![1-2](/Users/corner/Sites/_posts/file-input-output/1-2.png)
+![1-2](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/1-2.png?raw=true)
 
 
 
 #### java.io 패키지의 주요 클래스
 
-![1-3](/Users/corner/Sites/_posts/file-input-output/1-3.png)
+![1-3](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/1-3.png?raw=true)
 
 
 
@@ -59,9 +59,9 @@ categories: JAVA Lecture # 카테고리
 
 - 문자만 받고 보낼 수 있도록 특화되어 있다.
 
-![1-4](/Users/corner/Sites/_posts/file-input-output/1-4.png)
+![1-4](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/1-4.png?raw=true)
 
-![1-5](/Users/corner/Sites/_posts/file-input-output/1-5.png)
+![1-5](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/1-5.png?raw=true)
 
 
 
@@ -74,9 +74,9 @@ categories: JAVA Lecture # 카테고리
   * 바이트 기반 입력 스트림의 최상위 클래스로 추상 클래스이다.
   * 모든 바이트 기반 입력 스트림은 이 클래스를 상속 받아서 만들어진다.
 
-  ![1-6](/Users/corner/Sites/_posts/file-input-output/1-6.png)
+  ![1-6](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/1-6.png?raw=true)
 
-  ![1-7](/Users/corner/Sites/_posts/file-input-output/1-7.png)
+  ![1-7](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/1-7.png?raw=true)
 
 
 
@@ -184,9 +184,9 @@ public class ReadExample3 {
 
 
 
-![2-1](/Users/corner/Sites/_posts/file-input-output/2-1.png)
+![2-1](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/2-1.png?raw=true)
 
-![2-2](/Users/corner/Sites/_posts/file-input-output/2-2.png)
+![2-2](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/2-2.png?raw=true)
 
 
 
@@ -252,9 +252,9 @@ public class WriteExample3 {
 
 
 
-![2-3](/Users/corner/Sites/_posts/file-input-output/2-3.png)
+![2-3](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/2-3.png?raw=true)
 
-![2-4](/Users/corner/Sites/_posts/file-input-output/2-4.png)
+![2-4](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/2-4.png?raw=true)
 
 
 
@@ -349,13 +349,13 @@ public class ReadExample3 {
 
 **개요**
 
-![2-5](/Users/corner/Sites/_posts/file-input-output/2-5.png)
+![2-5](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/2-5.png?raw=true)
 
 
 
 
 
-![2-6](/Users/corner/Sites/_posts/file-input-output/2-6.png)
+![2-6](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/2-6.png?raw=true)
 
 #### 사용 예
 
@@ -396,7 +396,7 @@ public class WriterExample1 {
 
 
 
-![2-7](/Users/corner/Sites/_posts/file-input-output/2-7.png)
+![2-7](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/2-7.png?raw=true)
 
 
 

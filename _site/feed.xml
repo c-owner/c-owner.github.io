@@ -1,5 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2020-12-23T13:22:55+09:00</updated><id>/feed.xml</id><title type="html">Corner</title><entry><title type="html"></title><link href="/2020/12/23/2020-12-23-Object-File-Stream.html" rel="alternate" type="text/html" title="" /><published>2020-12-23T13:22:55+09:00</published><updated>2020-12-23T13:22:55+09:00</updated><id>/2020/12/23/2020-12-23-Object-File-Stream</id><content type="html" xml:base="/2020/12/23/2020-12-23-Object-File-Stream.html">&lt;h1 id=&quot;객체-입출력-보조-스트림&quot;&gt;객체 입출력 보조 스트림&lt;/h1&gt;</content><author><name></name></author></entry><entry><title type="html">testPost</title><link href="/java/2020/12/23/Testpost.html" rel="alternate" type="text/html" title="testPost" /><published>2020-12-23T10:13:00+09:00</published><updated>2020-12-23T10:13:00+09:00</updated><id>/java/2020/12/23/Testpost</id><content type="html" xml:base="/java/2020/12/23/Testpost.html">&lt;h1 id=&quot;test-post&quot;&gt;test post&lt;/h1&gt;
-&lt;h2 id=&quot;test-post-1&quot;&gt;test post&lt;/h2&gt;</content><author><name></name></author><category term="JAVA" /><summary type="html">test post test post</summary></entry><entry><title type="html">JAVA - 입출력 패키지</title><link href="/java/lecture/2020/12/22/File-package.html" rel="alternate" type="text/html" title="JAVA - 입출력 패키지" /><published>2020-12-22T13:22:00+09:00</published><updated>2020-12-22T13:22:00+09:00</updated><id>/java/lecture/2020/12/22/File-package</id><content type="html" xml:base="/java/lecture/2020/12/22/File-package.html">&lt;!-- 본문 --&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2020-12-25T22:39:34+09:00</updated><id>/feed.xml</id><title type="html">Corner</title><entry><title type="html"></title><link href="/2020/12/25/2020-12-23-Object-File-Stream.html" rel="alternate" type="text/html" title="" /><published>2020-12-25T22:39:34+09:00</published><updated>2020-12-25T22:39:34+09:00</updated><id>/2020/12/25/2020-12-23-Object-File-Stream</id><content type="html" xml:base="/2020/12/25/2020-12-23-Object-File-Stream.html">&lt;h1 id=&quot;객체-입출력-보조-스트림&quot;&gt;객체 입출력 보조 스트림&lt;/h1&gt;</content><author><name></name></author></entry><entry><title type="html">JAVA(자바) - 1-1. JavaFx</title><link href="/java/lecture/2020/12/24/JavaFx1-1.html" rel="alternate" type="text/html" title="JAVA(자바) - 1-1. JavaFx" /><published>2020-12-24T13:07:00+09:00</published><updated>2020-12-24T13:07:00+09:00</updated><id>/java/lecture/2020/12/24/JavaFx1-1</id><content type="html" xml:base="/java/lecture/2020/12/24/JavaFx1-1.html">&lt;h1 id=&quot;java자바---1-1-javafx&quot;&gt;JAVA(자바) - 1-1. JavaFx&lt;/h1&gt;
+
+&lt;h2 id=&quot;1-개요&quot;&gt;1. 개요&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;JavaFx&lt;/strong&gt;란 크로스 플랫폼에서 실행하는 리치 클라이언트 애플리케이션(Rich Client Application)을 개발하기 위한 그래픽과 미디어 패키지를 말한다. JavaFx는 자바 표준 UI 엿던 라이브러리였던 Swing을 대체하기 위해 만들어졌으며 더 가볍고 더 강력해진 라이브러리이다.&lt;/li&gt;
+  &lt;li&gt;JDK 11부터는 JavaFx는 별도로 분리되었기 때문에 설치 및 설정이 필요하다. 이번 글은 JavaFx 설치하고 간단한 프로젝트를 만드는 방법이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;2-1-javafx-sdk-다운로드&quot;&gt;2-1. &lt;strong&gt;JavaFx SDK 다운로드&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;먼저, JavaFx SDK를 다운로드하기 위해 아래 링크를 통해 다운로드한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:Purple&quot;&gt;&lt;strong&gt;&lt;a href=&quot;https://gluonhq.com/products/javafx/&quot;&gt;JavaFx SDK Download Page&lt;/a&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;OS&lt;/strong&gt; 버전에 맞게 SDK 파일로 다운로드 하고, 압축 해제한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-2-eclipse-plugin-설치&quot;&gt;2-2. Eclipse plugin 설치&lt;/h3&gt;
+
+&lt;p&gt;JavaFx의 프로젝트 관리 및 설정을 할 수 있는 e(fx)clipse plugin을 설치&lt;/p&gt;
+
+&lt;p&gt;먼저 이클립스에서 &lt;strong&gt;&lt;em&gt;[help] –&amp;gt; [eclipse marketplace]&lt;/em&gt;&lt;/strong&gt; 을 클릭 후, &lt;strong&gt;[Eclipse Marketplace]&lt;/strong&gt; 대화창에 “javafx”을 검색 후, e(fx)clipse의 [install]을 누른다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/javaFx/javaFx.png?raw=true&quot; alt=&quot;javaFx&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-3-javafx-프로젝트-생성하기&quot;&gt;&lt;strong&gt;2-3. JavaFx 프로젝트 생성하기&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;JavaFx 프로젝트 생성 (new -&amp;gt; other -&amp;gt; JavaFx Project 선택)&lt;/p&gt;
+
+&lt;p&gt;만약, JavaFx 프로젝트가 보이지 않는다면&lt;/p&gt;
+
+&lt;p&gt;환경설정에서 JavaFX에서 다운받은 JavaFX 11+ SDK 브라우저를 설정해줍니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/javaFx/javaFx2.png?raw=true&quot; alt=&quot;javaFx2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;프로젝트 생성 후 에러가 발생한다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/javaFx/javaFx3.png?raw=true&quot; alt=&quot;javaFx3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/javaFx/javaFx4.png?raw=true&quot; alt=&quot;javaFx4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;add External Archives…를 선택하고&lt;/p&gt;
+
+&lt;p&gt;SDK 폴더에서 lib 폴더내에 jar. 파일들만 추가하면 된다.&lt;/p&gt;</content><author><name></name></author><category term="JAVA" /><category term="Lecture" /><summary type="html">JAVA(자바) - 1-1. JavaFx</summary></entry><entry><title type="html">JAVA - 입출력 패키지</title><link href="/java/lecture/2020/12/22/File-package.html" rel="alternate" type="text/html" title="JAVA - 입출력 패키지" /><published>2020-12-22T13:22:00+09:00</published><updated>2020-12-22T13:22:00+09:00</updated><id>/java/lecture/2020/12/22/File-package</id><content type="html" xml:base="/java/lecture/2020/12/22/File-package.html">&lt;!-- 본문 --&gt;
 
 &lt;h1 id=&quot;java---입출력-패키지&quot;&gt;JAVA - 입출력 패키지&lt;/h1&gt;
 

@@ -133,7 +133,7 @@ form을 서버에 전송하는 방식으로, 두 가지 HTTP 메소드 지정할
 
 Servlet Program의 기본적인 동작 과정
 
-![Servlet Programming](servlet-program.png)
+![Servlet Programming](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/servlet/servlet-program.png?raw=true)
 
 
 
@@ -165,7 +165,7 @@ Servlet Program의 기본적인 동작 과정
 
 ##### Servlet Life Cycle
 
-![Life Cycle](servlet-life-cycle.png)
+![Life Cycle](https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/servlet/servlet-life-cycle.png?raw=true)
 
 
 

@@ -1,3 +1,10 @@
+# 🌱LOG 2020-12-26
+
+- new POST : [JSP-Servlet 이란?](/jsp/lecture/2020/12/26/jsp-servlet이란.html) 
+- new POST : [JSP와 Servlet의 차이](/jsp/lecture/2020/12/26/jsp-servlet-차이.html)
+
+
+
 # 🌱LOG 2020-12-22
 
 - **[스트림](https://github.com/Eight-Corner/koreaIT/tree/main/스트림/src/그룹핑리덕션)**

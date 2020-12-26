@@ -1,4 +1,266 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2020-12-25T22:39:34+09:00</updated><id>/feed.xml</id><title type="html">Corner</title><entry><title type="html"></title><link href="/2020/12/25/2020-12-23-Object-File-Stream.html" rel="alternate" type="text/html" title="" /><published>2020-12-25T22:39:34+09:00</published><updated>2020-12-25T22:39:34+09:00</updated><id>/2020/12/25/2020-12-23-Object-File-Stream</id><content type="html" xml:base="/2020/12/25/2020-12-23-Object-File-Stream.html">&lt;h1 id=&quot;객체-입출력-보조-스트림&quot;&gt;객체 입출력 보조 스트림&lt;/h1&gt;</content><author><name></name></author></entry><entry><title type="html">JAVA(자바) - 1-1. JavaFx</title><link href="/java/lecture/2020/12/24/JavaFx1-1.html" rel="alternate" type="text/html" title="JAVA(자바) - 1-1. JavaFx" /><published>2020-12-24T13:07:00+09:00</published><updated>2020-12-24T13:07:00+09:00</updated><id>/java/lecture/2020/12/24/JavaFx1-1</id><content type="html" xml:base="/java/lecture/2020/12/24/JavaFx1-1.html">&lt;h1 id=&quot;java자바---1-1-javafx&quot;&gt;JAVA(자바) - 1-1. JavaFx&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2020-12-26T11:51:43+09:00</updated><id>/feed.xml</id><title type="html">Corner</title><entry><title type="html"></title><link href="/2020/12/26/2020-12-23-Object-File-Stream.html" rel="alternate" type="text/html" title="" /><published>2020-12-26T11:51:43+09:00</published><updated>2020-12-26T11:51:43+09:00</updated><id>/2020/12/26/2020-12-23-Object-File-Stream</id><content type="html" xml:base="/2020/12/26/2020-12-23-Object-File-Stream.html">&lt;h1 id=&quot;객체-입출력-보조-스트림&quot;&gt;객체 입출력 보조 스트림&lt;/h1&gt;</content><author><name></name></author></entry><entry><title type="html">[Web] Servlet과 JSP의 차이와 관계</title><link href="/jsp/lecture/2020/12/26/jsp-servlet-%EC%B0%A8%EC%9D%B4.html" rel="alternate" type="text/html" title="[Web] Servlet과 JSP의 차이와 관계" /><published>2020-12-26T11:05:00+09:00</published><updated>2020-12-26T11:05:00+09:00</updated><id>/jsp/lecture/2020/12/26/jsp-servlet-%EC%B0%A8%EC%9D%B4</id><content type="html" xml:base="/jsp/lecture/2020/12/26/jsp-servlet-%EC%B0%A8%EC%9D%B4.html">&lt;h1 id=&quot;servlet과-jsp의-차이와-관계&quot;&gt;🖥Servlet과 JSP의 차이와 관계&lt;/h1&gt;
+
+&lt;h4 id=&quot;servlet과-jsp의-개념&quot;&gt;Servlet과 JSP의 개념&lt;/h4&gt;
+
+&lt;p&gt;: 기능의 차이는 없고 역할의 차이가 있다.&lt;/p&gt;
+
+&lt;h4 id=&quot;servlet이란&quot;&gt;Servlet이란&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;웹 기반의 요청에 대한 동적인 처리가 가능한 Server Side에서 돌아가는 Java Program&lt;/li&gt;
+  &lt;li&gt;Java 코드 안에 HTML 코드 (하나의 클래스)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;웹 개발을 위해 만든 표준&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color:black&quot;&gt;&lt;strong&gt;&lt;a href=&quot;/jsp/lecture/2020/12/26/jsp-servlet이란.html&quot;&gt;Servlet이란?&lt;/a&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;jsp란&quot;&gt;JSP란&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Java 언어를 기반으로 하는 Server Side 스크립트 언어&lt;/li&gt;
+  &lt;li&gt;HTML 코드 안에 Java 코드&lt;/li&gt;
+  &lt;li&gt;Servlet을 보완하고 기술을 확장한 스크립트 방식 표준
+    &lt;ul&gt;
+      &lt;li&gt;Servlet의 모든 기능 + 추가적인 기능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;servlet과-jsp의-차이&quot;&gt;Servlet과 JSP의 차이&lt;/h3&gt;
+
+&lt;h4 id=&quot;servlet&quot;&gt;Servlet&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Java 코드 안에 HTML 코드 (하나의 클래스)&lt;/li&gt;
+  &lt;li&gt;Data Processing(Controller)에 좋다.&lt;/li&gt;
+  &lt;li&gt;DB와의 통신, Business Logic 호출, 데이터를 읽고 확인하는 작업 등에 유용하다.&lt;/li&gt;
+  &lt;li&gt;Servlet이 수정된 경우 Java 코드를 컴파일(.class 파일 생성) 한 후 동적인 페이지를 처리하기 때문에 전체 코드를
+업데이트하고 다시 컴파일한 후 재배포하는 작업이 필요하다. (생산성 저하)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;####&lt;/p&gt;
+
+&lt;h4 id=&quot;jsp&quot;&gt;JSP&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;HTML 코드 안에 Java 코드&lt;/li&gt;
+  &lt;li&gt;Presentation(View)에 좋다.&lt;/li&gt;
+  &lt;li&gt;요청 결과를 나타내는 HTML 작성하는데 유용하다.&lt;/li&gt;
+  &lt;li&gt;JSP가 수정된 경우 재배포할 필요가 없이 WAS가 알아서 처리한다. (쉬운 배포)&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="JSP" /><category term="Lecture" /><summary type="html">🖥Servlet과 JSP의 차이와 관계</summary></entry><entry><title type="html">[Web] Servlet이란?</title><link href="/jsp/lecture/2020/12/26/jsp-servlet%EC%9D%B4%EB%9E%80.html" rel="alternate" type="text/html" title="[Web] Servlet이란?" /><published>2020-12-26T11:05:00+09:00</published><updated>2020-12-26T11:05:00+09:00</updated><id>/jsp/lecture/2020/12/26/jsp-servlet%EC%9D%B4%EB%9E%80</id><content type="html" xml:base="/jsp/lecture/2020/12/26/jsp-servlet%EC%9D%B4%EB%9E%80.html">&lt;p&gt;&lt;a href=&quot;/jsp/lecture/2020/12/26/jsp-servlet-차이.html&quot;&gt;Servlet과 JSP의 차이&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;-servlet이란&quot;&gt;🌱 Servlet이란?&lt;/h1&gt;
+
+&lt;h3 id=&quot;web-service의-기본적인-동작-과정&quot;&gt;Web Service의 기본적인 동작 과정&lt;/h3&gt;
+
+&lt;p&gt;HTML Form -&amp;gt; Servlet -&amp;gt; HTML Page&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;사용자가 웹 페이지 form(HTML Form)을 통해 자신의 정보를 입력한다. (input)&lt;/li&gt;
+  &lt;li&gt;Servlet의 doGet() 또는 doPost() 메소드는 입력한 form data에 맞게 DB 또는 다른 소스에서 관련된 정보를 검색한다.&lt;/li&gt;
+  &lt;li&gt;이 정보를 이용하여 사용자의 요청에 맞는 적절한 동적 콘텐츠(HTML Page)를 만들어서 제공 (Output)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;#1.html-form&quot;&gt;1.HTML Form&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;1html-form&quot;&gt;1.HTML Form&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;span style=&quot;color:grey&quot;&gt; input elements(Ex. 텍스트 상자)가 포함된 웹피이지의 한 부분(section)&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사용자가 입력한 정보 (form contents)를 웹 서버로 전송하기 위한 submit element(Ex, 버튼)가 존재한다.&lt;/li&gt;
+  &lt;li&gt;action에는 form을 처리하는 서버 쪽 URL을 명시한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;####&lt;/p&gt;
+
+&lt;h4 id=&quot;클라이언트browser가-요청하는-url-정보&quot;&gt;클라이언트(browser)가 요청하는 URL 정보&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;요청을 보낼 서버의 IP 주소 : Port 번호 / App 이름 / 달라고 요청하는 HTML&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;Ex) localhost:8080/FormHandingServlet/LoginForm.html&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;IP 주소
+    &lt;ul&gt;
+      &lt;li&gt;요청을 보낼 서버의 “위치”를 의미한다.&lt;/li&gt;
+      &lt;li&gt;browser와 WAS(tomcat)가 같은 PC에 있으면 “IP 주소 = localhost “ or “127.0.0.1”&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Port 번호
+    &lt;ul&gt;
+      &lt;li&gt;해당 위치 안의 “특정 사람”을 의미한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;HTML 이름
+    &lt;ul&gt;
+      &lt;li&gt;HTML 이름에 해당하는 HTML 문서를 받아온다.&lt;/li&gt;
+      &lt;li&gt;broweser를 받아온 HTML 문서 안의 html 태그들 (ex, h2, br 등)을 parsing(기계어 번역)한다.&lt;/li&gt;
+      &lt;li&gt;이 내용을 browser에서 rendering(그리기)을 한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-jsp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;form&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;loginForm&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;loginServlet&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  Username: &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;username&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;br/&amp;gt;&lt;/span&gt;
+  Password: &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;password&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;password&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&amp;lt;br/&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;submit&quot;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Login&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;method = “post”
+    &lt;ul&gt;
+      &lt;li&gt;원하는 동작에 따라 HTTP 메소드를 사용한다.&lt;/li&gt;
+      &lt;li&gt;method=”get”&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;action=”loginServlet”
+    &lt;ul&gt;
+      &lt;li&gt;URL of the servlet&lt;/li&gt;
+      &lt;li&gt;해당 url로 request가 간다. 즉, WAS에서의 어떤 Servlet인지 지정하는 것이다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;type=”submit”
+    &lt;ul&gt;
+      &lt;li&gt;버튼을 누르면 사용자가 입력한 인자들이 Servlet으로 넘어간다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;form-tag-속성&quot;&gt;Form Tag 속성&lt;/h4&gt;
+
+&lt;p&gt;Form Tag 속성을 이용하여 어디로, 어떤 방식으로 전송할지 정한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;action:&lt;/strong&gt; form을 전송할 서버 쪽 스크립트 파일 지정&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;name:&lt;/strong&gt; form을 식별하기 위한 이름 지정&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;accept-charset:&lt;/strong&gt; form 전송에 사용할 문자 인코딩을 지정&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;target:&lt;/strong&gt; action에서 지정한 스크립트 파일을 현재 창이 아닌 다른 위치에서 열리도록 지정&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;method:&lt;/strong&gt; form을 서버에 전송하는 방식으로, HTTP 메소드 지정 (GET 또는 POST)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;enctype:&lt;/strong&gt; 넘기는 Content의 Type 지정 (주로 파일을 넘길 때 사용)
+    &lt;ul&gt;
+      &lt;li&gt;type은 &lt;code&gt;multipart/form-data&lt;/code&gt; 로 지정해서 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;form-methods&quot;&gt;Form Methods&lt;/h4&gt;
+
+&lt;p&gt;form을 서버에 전송하는 방식으로, 두 가지 HTTP 메소드 지정할 수 있다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;GET Method
+    &lt;ul&gt;
+      &lt;li&gt;사용자가 입력한 내용(form data)이 URL 뒤이 텍스트 문자열로 추가된다.&lt;/li&gt;
+      &lt;li&gt;크기 제한: 1024 characters&lt;/li&gt;
+      &lt;li&gt;data는 ?를 기준으로 action URL과 분리된다.&lt;/li&gt;
+      &lt;li&gt;ex. &lt;code&gt;http://www.test.com/hello?key1=value1&amp;amp;key2=value2&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;브라우저에서 웹 서버로 정보를 전달하는 기본 메서드(Default Method)
+        &lt;ul&gt;
+          &lt;li&gt;HTTP 메서드를 지정하지 않으면 GET Method를 호출한다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;서버에 전달하는 data에 암호와 같은 민감한 정보가 있는 경우 GET Method를 사용하지 않는다.
+        &lt;ul&gt;
+          &lt;li&gt;URL은 모두에게 노출되는 정보이기 때문에 보안상 적절하지 않다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;GET 메서드의 사용
+        &lt;ul&gt;
+          &lt;li&gt;Query-Type actions: DB에 영향을 주지 안흔ㄴ 단순히 읽기 위주(read operation)의 작업&lt;/li&gt;
+          &lt;li&gt;Idempotemt actions: 몇 번이고 같은 연산을 반복해도 같은 값이 나오는 작업&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;POST Method
+    &lt;ul&gt;
+      &lt;li&gt;사용자가 입력한 내용(form data)을 별도의 메시지로 보낸다.&lt;/li&gt;
+      &lt;li&gt;Request Body에 data를 추가한다.
+        &lt;ul&gt;
+          &lt;li&gt;URL에 직접적으로 data가 노출되지 않기 때문에 GET Method보다 보안상으로 조금 더 안전하다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;POST 메서드의 사용
+        &lt;ul&gt;
+          &lt;li&gt;actions with side-effects: DB에 영향을 주는 작업&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;servlet이란&quot;&gt;Servlet이란&lt;/h2&gt;
+
+&lt;h4 id=&quot;servlet의-개념&quot;&gt;Servlet의 개념&lt;/h4&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:purple&quot;&gt;웹 기반의 요청에 대한 동적인 처리가 가능한 하나의 클래스&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Server Side에서 돌아가는 Java Program&lt;/li&gt;
+  &lt;li&gt;개발자가 작성해야 하는 부분&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Servlet Program의 기본적인 동작 과정&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;servlet-program.png&quot; alt=&quot;Servlet Programming&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Web Server는 HTTP request를 Web Container(Servlet Container)에게 위임한다.
+    &lt;ul&gt;
+      &lt;li&gt;web.xml 설정에서 어떤 URL과 매핑되어 있는지 확인&lt;/li&gt;
+      &lt;li&gt;클라이언트(browser)의 요청 URL을 보고 적절한 Servlet을 실행&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Web Container는 service() 메소드를 호출하기 전에 Servlet 객체를 메모리에 올린다.
+    &lt;ul&gt;
+      &lt;li&gt;Web Container는 적절한 Servlet 파일을 컴파일(.class 파일 생성) 한다.&lt;/li&gt;
+      &lt;li&gt;.class 파일을 메모리에 올려 servlet 객체를 만든다.&lt;/li&gt;
+      &lt;li&gt;메모리에 로드될 때 Servlet 객체를 초기화하는 init() 메소드가 실행된다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Web Container는 Request가 올 때마다 thread를 생성하여 처리한다.
+    &lt;ul&gt;
+      &lt;li&gt;각 thread는 Servlet의 단일 객체에 대한 service() 메소드를 실행한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;servlet-program에서-thread의-역할&quot;&gt;Servlet Program에서 Thread의 역할&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;**Trhead란	** 운영체제로부터 시스템 자원을 할당받는 작업의 단위&lt;/li&gt;
+  &lt;li&gt;Servlet Program에서 thread가 수행할 메소드가 지정/할당되면
+    &lt;ul&gt;
+      &lt;li&gt;thread는 생성 후 즉시 해당 메소드만 열심히 수행한다.&lt;/li&gt;
+      &lt;li&gt;해당 메소드가 return하면 thread는 종료되고 제거된다.&lt;/li&gt;
+      &lt;li&gt;즉, 실제로 thread의 역할: &lt;strong&gt;Servlet의 doGet() 또는 doPost()를 호출&lt;/strong&gt;하는 것이다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Web Container(Servlet Container)는 thread의 생성과 제거를 담당한다.
+    &lt;ul&gt;
+      &lt;li&gt;하지만 thread의 생성과 제거의 반복은 큰 오버헤드를 만든다.&lt;/li&gt;
+      &lt;li&gt;이를 위해 Tomcat(WAS)은 “Thread pool” (미리 thread를 만들어 놓음) 이라는 적절한 메커니즘을 사용하여 오버헤드를 줄인다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;즉, WAS는 Servlet의 life cycle을 담당한다.
+    &lt;ul&gt;
+      &lt;li&gt;웹 브라우저 클라이언트의 요청이 들어왔을 때 Servlet 객체 생성은 WAS가 알아서 처리한다.&lt;/li&gt;
+      &lt;li&gt;WAS 위에서 Servlet이 돌아다니고 개발자는 이 Servlet을 만들어야 한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;servlet-life-cycle&quot;&gt;Servlet Life Cycle&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&quot;servlet-life-cycle.png&quot; alt=&quot;Life Cycle&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="JSP" /><category term="Lecture" /><summary type="html">Servlet과 JSP의 차이</summary></entry><entry><title type="html">JAVA(자바) - 1-1. JavaFx</title><link href="/java/lecture/2020/12/24/JavaFx1-1.html" rel="alternate" type="text/html" title="JAVA(자바) - 1-1. JavaFx" /><published>2020-12-24T13:07:00+09:00</published><updated>2020-12-24T13:07:00+09:00</updated><id>/java/lecture/2020/12/24/JavaFx1-1</id><content type="html" xml:base="/java/lecture/2020/12/24/JavaFx1-1.html">&lt;h1 id=&quot;java자바---1-1-javafx&quot;&gt;JAVA(자바) - 1-1. JavaFx&lt;/h1&gt;
 
 &lt;h2 id=&quot;1-개요&quot;&gt;1. 개요&lt;/h2&gt;
 
@@ -1629,82 +1891,4 @@ System.out.println(&quot;---------------&quot;);
 
 &lt;hr /&gt;
 
-&lt;p&gt;오라클 + jsp&lt;/p&gt;</content><author><name></name></author><category term="JAVA" /><category term="LECTURE" /><summary type="html">📜수업 안내</summary></entry><entry><title type="html">람다식의 개요</title><link href="/java/lecture/2020/12/20/lamda.html" rel="alternate" type="text/html" title="람다식의 개요" /><published>2020-12-20T14:39:21+09:00</published><updated>2020-12-20T14:39:21+09:00</updated><id>/java/lecture/2020/12/20/lamda</id><content type="html" xml:base="/java/lecture/2020/12/20/lamda.html">&lt;h1 id=&quot;람다식이란&quot;&gt;람다식이란..&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;함수적-프로그래밍&quot;&gt;함수적 프로그래밍&lt;/h2&gt;
-
-&lt;p&gt;-&amp;gt; y = f(x) 형태의 함수로 구성된 프로그래밍 기법&lt;/p&gt;
-
-&lt;p&gt;데이터를 매개값으로 전달하고 결과를 받는 코드들로 구성 객체 지향 프로그래밍 보다는 효율적인 경우&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;대용량 데이터의 처리시에 유리&lt;/li&gt;
-  &lt;li&gt;데이터 포장 객체를 생성후 처리하는 것 보다, 데이터를 바로 처리하는 것이 속도에 유리&lt;/li&gt;
-  &lt;li&gt;멀티 코어 CPU에서 데이터를 병렬 처리하고 취업할 때 객체보다는 함수가 유리&lt;/li&gt;
-  &lt;li&gt;이벤트 지향 프로그래밍 (이벤트가 발생하면 핸들러 함수 실행)에 적합&lt;/li&gt;
-  &lt;li&gt;반복적 이벤트 처리는 핸들러 객체보다는 핸들러 함수가 적합&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;현대적-프로그래밍-기법&quot;&gt;현대적 프로그래밍 기법&lt;/h2&gt;
-
-&lt;p&gt;객체 지향 프로그래밍 + 함수적 프로그래밍 자바 8부터 함수적 프로그래밍 지원&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;blockquote&gt;
-    &lt;p&gt;람다식(Lamda Expressions)을 언어 차원에서 제공&lt;/p&gt;
-  &lt;/blockquote&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;람다 계산법에서 사용된 식을 프로그래밍 언어에 접목&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;익명 함수(anonymous function)을 생성하기 위한 식&lt;br /&gt;
-(타입 매개변수, … ) -&amp;gt; ( 실행문; … ) » 자바에서 람다식을 수용한 이유&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;코드가 매우 간결해진다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;컬렉션 요소(대용량 데이터)를 필터링 또는 매핑해서 쉽게 집계할 수 있다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;자바는-람다식을-함수적-인터페이스의-익명-구현-객체로-취급한다&quot;&gt;자바는 람다식을 함수적 인터페이스의 익명 구현 객체로 취급한다.&lt;/h4&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;람다식 -&amp;gt; 매개변수를 가진 코드 블록 -&amp;gt; 익명 구현 객체&lt;/code&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;함수적 인터페이스는 한 개의 메소드를 가지고있는 메소드를 함수적 인터페이스라고 한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;한 개의 메소드를 정의하고있는 인터페이스의 익명 구현 객체로 람다식으로 취급을 한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;어떤 인터페이스를 구현할지는 대입되는 인터페이스에 달려있다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Runnable runnable = () -&amp;gt; { ... }; // 람다식
-
-Runnable runnable = new Runnable() {
-	public void run() { ... }
-
-    };    
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;쓰레드에서 작업 객체를 만들 때 Runnable이라는 인터페이스를 살펴보았을 것이다.&lt;/p&gt;
-
-&lt;p&gt;Runnable 인터페이스는 run()이라는 메소드를 하나만 가지고 있다.&lt;/p&gt;
-
-&lt;p&gt;이것을 함수적 인터페이스라고 한다. 위의 코드처럼 익명 구현 객체를 만들 때 똑같은 문법을 만드는 것이 람다식이다.&lt;/p&gt;</content><author><name></name></author><category term="JAVA" /><category term="Lecture" /><summary type="html">람다식이란..</summary></entry><entry><title type="html">Blog 시작</title><link href="/info/update/2020/12/20/first-post.html" rel="alternate" type="text/html" title="Blog 시작" /><published>2020-12-20T14:39:21+09:00</published><updated>2020-12-20T14:39:21+09:00</updated><id>/info/update/2020/12/20/first-post</id><content type="html" xml:base="/info/update/2020/12/20/first-post.html">&lt;p&gt;GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.
-GitHub Blog 서비스의 이름은 Pages이다.&lt;/p&gt;
-
-&lt;p&gt;Pages가 다른 블로그 플랫폼 보다 편한 것 같아서 마음에 든다.
-다른 사람들도 같이 많이 사용했으면 좋겠다는 생각이 든다.&lt;/p&gt;
-
-&lt;p&gt;YFM에서 정의한 제목을 이중 괄호 구문으로 본문에 추가할 수 있다.
-이 글의 제목은 Blog 시작이고
-마지막으로 수정된 시간은 이다.&lt;/p&gt;</content><author><name></name></author><category term="info" /><category term="update" /><summary type="html">GitHub Blog 서비스인 github.io 블로그 시작하기로 했다. GitHub Blog 서비스의 이름은 Pages이다.</summary></entry></feed>
+&lt;p&gt;오라클 + jsp&lt;/p&gt;</content><author><name></name></author><category term="JAVA" /><category term="LECTURE" /><summary type="html">📜수업 안내</summary></entry></feed>

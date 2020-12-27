@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2020-12-26T11:53:17+09:00</updated><id>/feed.xml</id><title type="html">Corner</title><entry><title type="html"></title><link href="/2020/12/26/2020-12-23-Object-File-Stream.html" rel="alternate" type="text/html" title="" /><published>2020-12-26T11:53:17+09:00</published><updated>2020-12-26T11:53:17+09:00</updated><id>/2020/12/26/2020-12-23-Object-File-Stream</id><content type="html" xml:base="/2020/12/26/2020-12-23-Object-File-Stream.html">&lt;h1 id=&quot;객체-입출력-보조-스트림&quot;&gt;객체 입출력 보조 스트림&lt;/h1&gt;</content><author><name></name></author></entry><entry><title type="html">[Web] Servlet과 JSP의 차이와 관계</title><link href="/jsp/lecture/2020/12/26/jsp-servlet-%EC%B0%A8%EC%9D%B4.html" rel="alternate" type="text/html" title="[Web] Servlet과 JSP의 차이와 관계" /><published>2020-12-26T11:05:00+09:00</published><updated>2020-12-26T11:05:00+09:00</updated><id>/jsp/lecture/2020/12/26/jsp-servlet-%EC%B0%A8%EC%9D%B4</id><content type="html" xml:base="/jsp/lecture/2020/12/26/jsp-servlet-%EC%B0%A8%EC%9D%B4.html">&lt;h1 id=&quot;servlet과-jsp의-차이와-관계&quot;&gt;🖥Servlet과 JSP의 차이와 관계&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2020-12-27T11:27:08+09:00</updated><id>/feed.xml</id><title type="html">Corner</title><entry><title type="html">[Web] Servlet과 JSP의 차이와 관계</title><link href="/jsp/lecture/2020/12/26/jsp-servlet-%EC%B0%A8%EC%9D%B4.html" rel="alternate" type="text/html" title="[Web] Servlet과 JSP의 차이와 관계" /><published>2020-12-26T11:05:00+09:00</published><updated>2020-12-26T11:05:00+09:00</updated><id>/jsp/lecture/2020/12/26/jsp-servlet-%EC%B0%A8%EC%9D%B4</id><content type="html" xml:base="/jsp/lecture/2020/12/26/jsp-servlet-%EC%B0%A8%EC%9D%B4.html">&lt;h1 id=&quot;servlet과-jsp의-차이와-관계&quot;&gt;🖥Servlet과 JSP의 차이와 관계&lt;/h1&gt;
 
 &lt;h4 id=&quot;servlet과-jsp의-개념&quot;&gt;Servlet과 JSP의 개념&lt;/h4&gt;
 
@@ -1891,4 +1891,64 @@ System.out.println(&quot;---------------&quot;);
 
 &lt;hr /&gt;
 
-&lt;p&gt;오라클 + jsp&lt;/p&gt;</content><author><name></name></author><category term="JAVA" /><category term="LECTURE" /><summary type="html">📜수업 안내</summary></entry></feed>
+&lt;p&gt;오라클 + jsp&lt;/p&gt;</content><author><name></name></author><category term="JAVA" /><category term="LECTURE" /><summary type="html">📜수업 안내</summary></entry><entry><title type="html">테이블 뷰 구현 이론</title><link href="/swift/update/2020/12/20/TableViewTheory.html" rel="alternate" type="text/html" title="테이블 뷰 구현 이론" /><published>2020-12-20T14:39:21+09:00</published><updated>2020-12-20T14:39:21+09:00</updated><id>/swift/update/2020/12/20/TableViewTheory</id><content type="html" xml:base="/swift/update/2020/12/20/TableViewTheory.html">&lt;h1 id=&quot;테이블-뷰-구현-이론&quot;&gt;테이블 뷰 구현 이론&lt;/h1&gt;
+
+&lt;p&gt;Step 1. 테이블 뷰 배치&lt;/p&gt;
+
+&lt;p&gt;Step 2. 프로토타입 셀 디자인, 셀 아이덴티파이어 지정&lt;/p&gt;
+
+&lt;p&gt;Step 3. 데이터 소스, 델리게이트 연결&lt;/p&gt;
+
+&lt;p&gt;Step 4. 데이터 소스 구현&lt;/p&gt;
+
+&lt;p&gt;Step 5. 델리게이트 구현&lt;/p&gt;
+
+&lt;p&gt;Table View == 🤪&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;테이블 뷰는 객체이기 때문에 데이터 소스에 구현 되어있는 메소드를 호출하는 방식&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;return 방식으로 대답&lt;/p&gt;
+
+    &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;tableView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;tableView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UITableView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                       &lt;span class=&quot;n&quot;&gt;numberOfRowsInSection&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;section&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Memo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dummyMemoList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;tableView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;tableView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UITableView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cellForRowAt&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;IndexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UITableViewCell&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;cell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tableView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;dequeueReusableCell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;withIdentifier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;cell&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  
+        &lt;span class=&quot;c1&quot;&gt;// Configure the cell...&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Memo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dummyMemoList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;textLabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;content&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;detailTextLabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;insertDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;description&lt;/span&gt;
+          
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;몇번째 셀인지는 어떻게 판단하는가?&lt;/p&gt;
+
+    &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;indexPath파라미터는 인덱스 목록에서 특정 셀 위치의 목록을 표현할 때 사용한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;dequeueReusableCell 메소드로 호출하는데, 우리가 지정한 “cell” 셀 아이덴티파이어이다.&lt;/p&gt;
+
+    &lt;p&gt;위 Cell을 cell이라는 상수에 지정해주는 것이다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;indexPath.row 속성에서 접근하면 몇번째 셀인지 확인할 수 있다.&lt;/li&gt;
+      &lt;li&gt;실제 데이터를 셀이 추가되어있는 레이블에 표시되어있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;만약, 이런 이벤트를 처리하고 싶다면 델리게이트를 연결하고 필요 메소드를 구현해야한다.&lt;/p&gt;
+
+&lt;p&gt;데이터 소스는 &lt;strong&gt;필수&lt;/strong&gt;지만, 델리게이터는 필수가 아니기 때문에 구현하지 않아도 괜찮다.&lt;/p&gt;</content><author><name></name></author><category term="swift" /><category term="update" /><summary type="html">테이블 뷰 구현 이론</summary></entry></feed>

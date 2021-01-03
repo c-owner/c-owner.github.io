@@ -1,32 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2020-12-31T10:51:15+09:00</updated><id>/feed.xml</id><title type="html">Corner</title><entry><title type="html">MySQL Workbench 사용</title><link href="/database/mysql/2020/12/31/db-mysql.html" rel="alternate" type="text/html" title="MySQL Workbench 사용" /><published>2020-12-31T10:24:00+09:00</published><updated>2020-12-31T10:24:00+09:00</updated><id>/database/mysql/2020/12/31/db-mysql</id><content type="html" xml:base="/database/mysql/2020/12/31/db-mysql.html">&lt;h1 id=&quot;mysql-workbench-사용하기&quot;&gt;🌐MySQL Workbench 사용하기&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2021-01-02T13:07:38+09:00</updated><id>/feed.xml</id><title type="html">Corner</title><entry><title type="html">MySQL Workbench 사용</title><link href="/database/mysql/2020/12/31/db-mysql.html" rel="alternate" type="text/html" title="MySQL Workbench 사용" /><published>2020-12-31T10:24:00+09:00</published><updated>2020-12-31T10:24:00+09:00</updated><id>/database/mysql/2020/12/31/db-mysql</id><content type="html" xml:base="/database/mysql/2020/12/31/db-mysql.html">&lt;h1 id=&quot;mysql-workbench-사용하기&quot;&gt;🌐MySQL Workbench 사용하기&lt;/h1&gt;
 
 &lt;h2 id=&quot;workbench에서-db-table-생성-시&quot;&gt;workbench에서 DB, table 생성 시&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;이미 생성을 했다면&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;images/workbench1.png&quot; alt=&quot;1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/images/workbench1.png?raw=true&quot; alt=&quot;1&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;오른쪽 수리 아이콘 클릭&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;images/workbench2.png&quot; alt=&quot;2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/images/workbench2.png?raw=true&quot; alt=&quot;2&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;위와 같이 charset/collation 설정을 해준다.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;images/workbench3.png&quot; alt=&quot;3&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/images/workbench3.png?raw=true&quot; alt=&quot;3&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;SQL 문에서 9번,10번줄 실행 (Ctrl + Enter)&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;root 권한을 허용하는 것임&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;images/workbench4.png&quot; alt=&quot;4&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/images/workbench4.png?raw=true&quot; alt=&quot;4&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;**마찬가지로 table 처음 생성하거나 수정에서 charset/collation을 위와 같이 설정해준다. **&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;images/workbench5.png&quot; alt=&quot;5&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/images/workbench5.png?raw=true&quot; alt=&quot;5&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;왼쪽 바에서 빈 공간에서 우클릭 후 새로고침을 진행한다.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;images/workbench6.png&quot; alt=&quot;6&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/images/workbench6.png?raw=true&quot; alt=&quot;6&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;새로고침 진행 후 db와 table이 정상적으로 잘 보인다면&lt;/strong&gt;&lt;/p&gt;
 
@@ -34,7 +34,7 @@
 
 &lt;p&gt;data import (불러오기)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;images/workbench7.png&quot; alt=&quot;7&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/images/workbench7.png?raw=true&quot; alt=&quot;7&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;export to Dump Project Folde 를 체크&lt;/strong&gt; 한 뒤 본인의 뜻대로 경로를 지정하고 &lt;strong&gt;include create scheme&lt;/strong&gt;를 체크한 뒤&lt;/p&gt;
 
@@ -44,7 +44,7 @@
 
 &lt;h4 id=&quot;불러오는-법&quot;&gt;불러오는 법&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&quot;images/workbench8.png&quot; alt=&quot;불러오기&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/images/workbench8.png?raw=true&quot; alt=&quot;불러오기&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;프로젝트 폴더를 받아 Load Folder Contents를 눌러 새로고침 후&lt;/p&gt;
 

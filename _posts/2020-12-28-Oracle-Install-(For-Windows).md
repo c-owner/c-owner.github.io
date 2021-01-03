@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Oracle 설치(for Windows)"
+date: 2020-12-28 18:00:00 +0900
+comments: true # 코멘트 허용
 ---
 
 

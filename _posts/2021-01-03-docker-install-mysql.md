@@ -2,6 +2,7 @@
 layout: post
 title:  "(mac os)Docker install MySQL"
 date: 2021-01-03 16:16:00 +0900
+comments: true # 코멘트 허용
 categories: Database MySQL
 ---
 

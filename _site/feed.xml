@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2021-01-05T09:16:32+09:00</updated><id>/feed.xml</id><title type="html">Corner</title><entry><title type="html">(mac os)Apache2와 Tomcat 연동하기</title><link href="/server/2021/01/05/mac-apache2-tomcat-%EC%97%B0%EB%8F%99.html" rel="alternate" type="text/html" title="(mac os)Apache2와 Tomcat 연동하기" /><published>2021-01-05T09:11:00+09:00</published><updated>2021-01-05T09:11:00+09:00</updated><id>/server/2021/01/05/mac-apache2-tomcat-%EC%97%B0%EB%8F%99</id><content type="html" xml:base="/server/2021/01/05/mac-apache2-tomcat-%EC%97%B0%EB%8F%99.html">&lt;h1 id=&quot;macos맥-아파치-톰캣-연동&quot;&gt;MacOS(맥) 아파치 톰캣 연동&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2021-01-05T09:19:56+09:00</updated><id>/feed.xml</id><title type="html">Corner</title><entry><title type="html">(mac os)Apache2와 Tomcat 연동하기</title><link href="/server/2021/01/05/mac-apache2-tomcat-%EC%97%B0%EB%8F%99.html" rel="alternate" type="text/html" title="(mac os)Apache2와 Tomcat 연동하기" /><published>2021-01-05T09:11:00+09:00</published><updated>2021-01-05T09:11:00+09:00</updated><id>/server/2021/01/05/mac-apache2-tomcat-%EC%97%B0%EB%8F%99</id><content type="html" xml:base="/server/2021/01/05/mac-apache2-tomcat-%EC%97%B0%EB%8F%99.html">&lt;h1 id=&quot;macos맥-아파치-톰캣-연동&quot;&gt;MacOS(맥) 아파치 톰캣 연동&lt;/h1&gt;
 
 &lt;p&gt;&lt;strong&gt;환경&lt;/strong&gt;&lt;/p&gt;
 
@@ -122,7 +122,9 @@ checking size of pthread_t... 8
 
 &lt;p&gt;또한 /usr/local/Cellar/httpd/2.4.46/lib/httpd/modules에 자동으로 파일이 생성됩니다.&lt;/p&gt;
 
-&lt;p&gt;파일이 없다면 mod_jk.so을 /usr/local/Cellar/httpd/2.4.46/lib/httpd/modules에 복사합니다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;파일이 없다면 mod_jk.so을 /usr/local/Cellar/httpd/2.4.46/lib/httpd/modules에 복사합니다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Mac에서 아파치 모듈 경로 /usr/libexec/apache2/&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;톰캣-설정&quot;&gt;&lt;a href=&quot;https://joolib.tistory.com/13#톰캣 설정&quot;&gt;톰캣 설정&lt;/a&gt;&lt;/h3&gt;
 
@@ -288,7 +290,179 @@ sudo apachectl start
  &lt;span class=&quot;n&quot;&gt;fprintf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;%d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pthread_t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;  
  &lt;span class=&quot;n&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="Server" /><summary type="html">MacOS(맥) 아파치 톰캣 연동</summary></entry><entry><title type="html">(mac os)Docker install MySQL</title><link href="/database/mysql/2021/01/03/docker-install-mysql.html" rel="alternate" type="text/html" title="(mac os)Docker install MySQL" /><published>2021-01-03T16:16:00+09:00</published><updated>2021-01-03T16:16:00+09:00</updated><id>/database/mysql/2021/01/03/docker-install-mysql</id><content type="html" xml:base="/database/mysql/2021/01/03/docker-install-mysql.html">&lt;h3 id=&quot;1-도커-이미지-다운받기&quot;&gt;1. 도커 이미지 다운받기&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;다른-방식&quot;&gt;다른 방식&lt;/h2&gt;
+
+&lt;h1 id=&quot;jk-connector-설치하기&quot;&gt;JK Connector 설치하기&lt;/h1&gt;
+
+&lt;p&gt;아래의 톰캣 홈페이지에서 하거나 curl을 통해서 다운로드하셔도 됩니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://tomcat.apache.org/download-connectors.cgi&quot;&gt;링크: JK Connector 다운로드&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl &lt;span class=&quot;nt&quot;&gt;-O&lt;/span&gt; http://archive.apache.org/dist/tomcat/tomcat-connectors/jk/tomcat-connectors-1.2.41-src.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Bash&lt;/p&gt;
+
+&lt;p&gt;tar 압축을 해제하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd 압축해제위치/native&lt;/code&gt; 명령어로 이동합니다. 그리고 다음과 같은 명령어를 실행합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./configure &lt;span class=&quot;nt&quot;&gt;--with-apxs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/sbin/apxs 
+&lt;span class=&quot;c&quot;&gt;# 또는 아래 명령어를 실행한다.&lt;/span&gt;
+./configure &lt;span class=&quot;nv&quot;&gt;CFLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'-arch x86_64'&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;APXSLDFLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'-arch x86_64'&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-apxs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/sbin/apxs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Bash&lt;/p&gt;
+
+&lt;p&gt;혹시나 위 과정에서 에러가 발생했다면, 대부분 컴파일러를 못 찾아서 발생하는 경우가 많습니다. 다음과 같은 명령어를 타이핑하여 소프트 링크를 만듭니다. (OSX El Capitan 기준)&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /Applications/Xcode.app/Contents/Developer/Toolchains
+&lt;span class=&quot;nb&quot;&gt;sudo ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; XcodeDefault.xctoolchain ./OSX10.11.xctoolchain
+
+&lt;span class=&quot;c&quot;&gt;# 1과 2를 묶어서 타이핑하셔도 됩니다. 1번 과정의 주소를 2번 과정의 src와 dest 앞에 두면 됩니다.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 그리고 다시 위의 ./configure ~ 과정을 진행합니다.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Bash&lt;/p&gt;
+
+&lt;p&gt;마지막으로 아래와 같이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;make&lt;/code&gt; 명령어를 실행합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 먼저 타이핑하여 실행합니다.&lt;/span&gt;
+make
+
+&lt;span class=&quot;c&quot;&gt;# sudo 명령어는 설치되는 경로의 접근을 위함입니다. &lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Bash&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;make&lt;/code&gt; 과정에서도 apr_lib.h 오류가 나는 경우가 있습니다. 아래 방법으로 해결합시다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# apr_lib.h 경로를 확인합니다.&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;find / &lt;span class=&quot;nt&quot;&gt;-name&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;apr_lib.h&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 다음 명령어를 실행합니다.&lt;/span&gt;
+./configure &lt;span class=&quot;nv&quot;&gt;CFLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'-arch x86_64'&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;APXSLDFLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'-arch x86_64'&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;LDFLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'-L/usr/include/apr-1'&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;CFLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'-I/usr/include/apr-1'&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-apxs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/sbin/apxs
+
+&lt;span class=&quot;c&quot;&gt;# 이후 make와 sudo make install을 진행합니다.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Bash&lt;/p&gt;
+
+&lt;p&gt;정상적으로 진행되었다면 native 디렉터리 밑 apache-2.0 디렉터리 내에 mod_jk.so가 생성됩니다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;install: /usr/libexec/apache2/mod_jk.so: Operation not permitted&lt;/code&gt; 에러가 발생해도 생성됩니다&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;아파치가 설치된 경로의 modules 디렉터리 밑에 mod_jk를 넣도록 합니다.&lt;/strong&gt; modules가 없다면 생성하면 됩니다. 다른 이름으로 하는 경우 httpd.conf의 mod_jk.so 위치와 일치해야 합니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;톰캣-설정하기&quot;&gt;톰캣 설정하기&lt;/h1&gt;
+
+&lt;p&gt;톰캣에서는 설정할 부분이 적습니다. 설치 후에 변경이 없었다면 이 과정은 진행하지 않아도 됩니다. 그래도 혹시 모르니 확인은 해봅시다. 다음 명령어를 통해 톰캣의 설정 부분으로 진입합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 설치한 톰캣 디렉터리가 Desktop에 존재한다고 가정&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /Desktop/설치된 톰캣 디렉터리 이름/conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Bash&lt;/p&gt;
+
+&lt;p&gt;이후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;server.xml&lt;/code&gt;을 열어 아래 설정이 있는지 확인합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vi server.xml
+
+&lt;span class=&quot;c&quot;&gt;# 위 명령어를 통해 에디터를 열은 후 다음과 같은 설정 부분이 있는지 확인합니다.&lt;/span&gt;
+
+&amp;lt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; Define an AJP 1.3 Connector on port 8009 &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&amp;lt;Connector &lt;span class=&quot;nv&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;8009&quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;protocol&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;AJP/1.3&quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;redirectPort&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;8443&quot;&lt;/span&gt; /&amp;gt;
+
+&lt;span class=&quot;c&quot;&gt;# 주석은 없어도 됩니다. 포트 번호가 8009인지 확인하면 됩니다.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 아예 위 부분이 통째로 주석처리 되있다면 해제해주면 되겠지요.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Bash&lt;/p&gt;
+
+&lt;h1 id=&quot;아파치-설정하기&quot;&gt;아파치 설정하기&lt;/h1&gt;
+
+&lt;p&gt;이제 아파치를 설정하면 됩니다. 연동할 톰캣의 리스트를 나타낼 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;workers.properties&lt;/code&gt; 파일을 하나 만들어줍니다. 위치는 아파치가 설치된 디렉터리 하위의 conf 디렉터리 밑으로 하지요.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /etc/apache2/conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Bash&lt;/p&gt;
+
+&lt;p&gt;여기서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vi workers.properties&lt;/code&gt; 명령어를 통해 에디터를 열고 아래와 같이 입력합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;worker.list&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;worker1
+
+worker.worker1.type&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ajp13
+worker.worker1.host&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;localhost
+worker.worker1.port&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;8009
+
+&lt;span class=&quot;c&quot;&gt;# 만일, 2개 이상의 톰캣을 사용하는 경우 다음과 같이 작성합니다.&lt;/span&gt;
+
+worker.list&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;worker1,worker2
+
+worker.worker1.type&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ajp13
+worker.worker1.host&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;localhost
+worker.worker1.port&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;8009 &lt;span class=&quot;c&quot;&gt;# 포트번호&lt;/span&gt;
+worker.worker1.lbfactor&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2 &lt;span class=&quot;c&quot;&gt;# 서버 밸런스 비율&lt;/span&gt;
+
+worker.worker2.type&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ajp13
+worker.worker2.host&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;localhost
+worker.worker2.port&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;8010 &lt;span class=&quot;c&quot;&gt;# 포트번호&lt;/span&gt;
+worker.worker2.lbfactor&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1 &lt;span class=&quot;c&quot;&gt;# 서버 밸런스 비율&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Bash&lt;/p&gt;
+
+&lt;p&gt;여기서 worker의 이름은 임의로 지정한 것입니다. 바꾸셔도 됩니다. 서버 밸런스 비율을 뜻하는 lbfactor의 경우도 마찬가지입니다. 또한 port 번호의 경우도 worker끼리 중첩되지 않으면 됩니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;아파치-httpdconf-수정&quot;&gt;아파치 httpd.conf 수정&lt;/h1&gt;
+
+&lt;p&gt;명령어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd /etc/apache2&lt;/code&gt;를 통해 apache가 설치된 디렉터리로 이동합니다. 디렉터리 이동 후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vi httpd.conf&lt;/code&gt; 명령어를 통해서 httpd.conf에 mod_jk를 추가합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 위 명령어로 에디터가 열리면 다음 문장을 추가해줍니다.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 아무것도 변경하지 않았을 때, 맥에 설치된 아파치의 기본 ServerRoot는 '/usr' 입니다.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 기존 설정을 유지한채 앞에 /etc/apache2/를 붙이는 것으로 진행합니다.&lt;/span&gt;
+
+
+LoadModule jk_module /etc/apache2/modules/mod_jk.so
+&lt;span class=&quot;c&quot;&gt;# mod_jk.so의 위치입니다. modules는 위의 install 과정에서의 디렉터리 이름입니다.&lt;/span&gt;
+
+JkWorkersFile /etc/apache2/conf/workers.properties
+&lt;span class=&quot;c&quot;&gt;# workers 설정 파일 위치&lt;/span&gt;
+
+JkLogFile /etc/apache2/logs/mod_jk.log
+&lt;span class=&quot;c&quot;&gt;# 로그파일 위치&lt;/span&gt;
+
+JkShmFile /etc/apache2/logs/mod_jk.shm
+&lt;span class=&quot;c&quot;&gt;# Load balancing workers will not function properly 오류 대응, httpd의 권한&lt;/span&gt;
+
+JkMount /&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; worker1
+&lt;span class=&quot;c&quot;&gt;# URL에 따른 요청 처리 설정&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Bash&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;중요하게 살펴봐야 하는 부분은 JkMount 입니다.&lt;/strong&gt; 이 부분에서 어떤 URL로 오는 경우 어떤 worker(톰캣)가 처리할지 설정할 수 있습니다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/*.jsp&lt;/code&gt;도 설정할 수 있고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/*.php&lt;/code&gt;도 가능합니다. 톰캣을 여러 대 설정하였다면 workers.properties에서 설정한 worker.list의 각 worker 이름에 따라서 설정합니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;확인해보기&quot;&gt;확인해보기&lt;/h1&gt;
+
+&lt;p&gt;설정은 모두 끝났고 이제 브라우저를 열어서 확인해보면 됩니다. Tomcat의 포트는 8080이고 Apache는 80포트입니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 톰캣 실행 : 톰캣의 bin 디렉터리에서 아래처럼 스크립트를 실행하면 됩니다.&lt;/span&gt;
+./startup.sh
+
+&lt;span class=&quot;c&quot;&gt;# 아파치 실행 : 아래 명령어를 터미널에서 실행하면 됩니다.&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apachectl start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Bash&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://localhost&lt;/code&gt; 만을 입력했을 때, Tomcat의 Web Root의 index.jsp가 보여야 합니다. 연동 전에는 포트 번호를 붙여야 하지만, 이후에는 아래 비교된 이미지처럼 포트 번호 없이 접속이 가능해야 합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://madplay.github.io/img/post/2018-01-05-apache-tomcat-modjk-2.png&quot; alt=&quot;연동 전 후&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Server" /><summary type="html">MacOS(맥) 아파치 톰캣 연동</summary></entry><entry><title type="html">(mac os)Docker install MySQL</title><link href="/database/mysql/2021/01/03/docker-install-mysql.html" rel="alternate" type="text/html" title="(mac os)Docker install MySQL" /><published>2021-01-03T16:16:00+09:00</published><updated>2021-01-03T16:16:00+09:00</updated><id>/database/mysql/2021/01/03/docker-install-mysql</id><content type="html" xml:base="/database/mysql/2021/01/03/docker-install-mysql.html">&lt;h3 id=&quot;1-도커-이미지-다운받기&quot;&gt;1. 도커 이미지 다운받기&lt;/h3&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker pull mariadb (or mysql)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;

@@ -1,4 +1,197 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2021-01-05T09:21:59+09:00</updated><id>/feed.xml</id><title type="html">Corner</title><entry><title type="html">(mac os)hosts 파일 수정하기</title><link href="/server/2021/01/05/mac-hosts-%ED%8C%8C%EC%9D%BC%EC%88%98%EC%A0%95.html" rel="alternate" type="text/html" title="(mac os)hosts 파일 수정하기" /><published>2021-01-05T09:21:00+09:00</published><updated>2021-01-05T09:21:00+09:00</updated><id>/server/2021/01/05/mac-hosts-%ED%8C%8C%EC%9D%BC%EC%88%98%EC%A0%95</id><content type="html" xml:base="/server/2021/01/05/mac-hosts-%ED%8C%8C%EC%9D%BC%EC%88%98%EC%A0%95.html">&lt;p&gt;hosts 파일는 DNS보다 먼저 호스트명을 IP로 변경해주는 파일이다. 주로 개발을 하거나, 특별한 이유로 호스트명으로 통신을 해야 하는 경우에 변경하여 사용할 수 있다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2021-01-07T14:10:52+09:00</updated><id>/feed.xml</id><title type="html">Corner</title><entry><title type="html">오라클Oracle - SQL : 제약 조건</title><link href="/database/2021/01/07/oracle-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4.html" rel="alternate" type="text/html" title="오라클Oracle - SQL : 제약 조건" /><published>2021-01-07T14:00:00+09:00</published><updated>2021-01-07T14:00:00+09:00</updated><id>/database/2021/01/07/oracle-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4</id><content type="html" xml:base="/database/2021/01/07/oracle-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4.html">&lt;h1 id=&quot;제약-조건에-관하여&quot;&gt;&lt;a href=&quot;https://iu-corner.tistory.com/entry/Oracle-SQL-제약조건?category=905491&quot;&gt;제약 조건에 관하여&lt;/a&gt;&lt;/h1&gt;</content><author><name></name></author><category term="Database" /><summary type="html">제약 조건에 관하여</summary></entry><entry><title type="html">오라클Oracle - SQL : 서브 쿼리(Sub Query)</title><link href="/database/2021/01/07/oracle-%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC.html" rel="alternate" type="text/html" title="오라클Oracle - SQL : 서브 쿼리(Sub Query)" /><published>2021-01-07T14:00:00+09:00</published><updated>2021-01-07T14:00:00+09:00</updated><id>/database/2021/01/07/oracle-%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC</id><content type="html" xml:base="/database/2021/01/07/oracle-%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC.html">&lt;h1 id=&quot;sub-query에-관하여&quot;&gt;&lt;a href=&quot;https://iu-corner.tistory.com/entry/Oracle-Sub-Query-서브-쿼리&quot;&gt;(Sub Query)에 관하여&lt;/a&gt;&lt;/h1&gt;</content><author><name></name></author><category term="Database" /><summary type="html">(Sub Query)에 관하여</summary></entry><entry><title type="html">오라클Oracle - SQL : JOIN</title><link href="/database/2021/01/07/oracle-join.html" rel="alternate" type="text/html" title="오라클Oracle - SQL : JOIN" /><published>2021-01-07T11:30:00+09:00</published><updated>2021-01-07T11:30:00+09:00</updated><id>/database/2021/01/07/oracle-join</id><content type="html" xml:base="/database/2021/01/07/oracle-join.html">&lt;h1 id=&quot;oracle-sql--join&quot;&gt;Oracle SQL : JOIN&lt;/h1&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+oracle-lecture0107.sql
+
+-- 사원번호, 사원이름, 부서이름
+-- Equi join : 서로 다른 테이블에 자료를 외래키로 연결된 것으로 이용하여 검색할 때
+select empno, ename, dname from emp, dept where emp.deptno = dept.deptno;
+ 
+8     -- test data eng sql import , 2021-01-07
+9     
+10    
+11    
+12    select * FROM student;
+13    SELECT
+14        *
+15    FROM professor;
+16    
+17    -- 학생이름과 담당 지도교수 명 출력
+18    select s.name 학생이름, p.name 지도교수이름
+19    from student s, department d, professor p
+20    where s.deptno1 = d.deptno
+21    and s.profno = p.profno;
+22    
+23    -- ANSI Join 
+24    select s.name as &quot;학생이름&quot;, p.name as &quot;지도교수이름&quot;
+25    from student s join professor p on s.profno = p.profno;
+26   
+27   -- 학생이름과 학과 담당 지도교수 명 출력
+28   -- 학생 테이블과 학과 테이블, 교수 테이블을 join 하여 학생명,학과명, 교수명 출력
+29   --Oracle inner join
+30   SELECT s.name, d.dname, p.name from student s, professor p, department d
+31       where s.deptno1 = d.deptno and s.profno = p.profno;
+32   -- Ansi Join
+33    select s.name 학생이름, d.dname 학과, p.name 지도교수
+34    from student s 
+35    JOIN department d ON s.deptno1 = d.deptno
+36     JOIN professor p ON s.profno = p.profno;
+37    
+38    -- student 전공이 101번인 학생들의 학생이름과 지도교수 이름을 출력
+39   
+40   -- oracle join 구문
+41   select s.name 학생명, p.name 교수명
+42   from student s, PROFESSOR p
+43   where s.profno = p.PROFNO --조인조건
+44   and s.deptno1 = 101; -- 검색조건
+45   
+46   -- Ansi Join 구문
+47   select s.name 학생명, p.name 교수명
+48   from student s JOIN PROFESSOR p
+49   on ( s.profno = p.PROFNO )
+50   and s.DEPTNO1 = 101;
+51   
+52   select * from student where deptno1=101; -- 101번이 몇명인지 확인해보기
+53   
+54   -- Non Equi Join
+55   select * from CUSTOMER;
+56   select * from gift;
+57   
+58   -- customer 테이블과 gift 테이블을 join 하여 고객의 마일리지 포인트별로 받을 수 있는 상품 조회
+59   select c.gname 고객명, to_char(c.point, '999,999') 포인트, g.gname 상품명
+60   from CUSTOMER c, gift g
+61   where c.POINT between g.g_start and g.g_end;
+62   
+63   --Ansi 구문
+64   select c.gname 고객명, to_char(c.point, '999,999') 포인트, g.gname 상품명
+65   from CUSTOMER c join GIFT G on c.POINT between g.G_START and g.G_END;
+66   
+67   --student 테이블과 score 테이블, hakjum테이블 조회하여 학생들의 이름과 점수 , 학점 출력
+68   select * from STUDENT;
+69   select * from score;
+70   select * from hakjum;
+71   
+72   -- inner join 중에서
+73   -- Non Equi Join
+74   select s.name 학생명, sc.total 점수, h.grade 학점
+75   
+76   from student s, score sc,HAKJUM h
+77   where s.STUDNO = sc.studno
+78   and sc.total between h.MIN_POINT and h.MAX_POINT;
+79   
+80   -- ANSI 구문
+81   select s.name 학생명, sc.total 점수, h.grade 학점
+82   from student s JOIN score sc on s.STUDNO = sc.STUDNO
+83                   JOIN hakjum h on sc.total between h.min_point and h.max_point;
+84   
+85   
+86   -- student 테이블과 Professor 테이블을 Join하여 학생이름과 지도교수 이름을 출력
+87   -- Oracle join 구문
+88   select s.name 학생이름, p.name 지도교수
+89   from student s, professor p
+90   where s.profno = p.profno(+); -- 지도교수가 없는쪽에 +표시
+91   
+92   -- ANSI join 구문
+93   select s.name 학생이름, p.name 지도교수
+94   from student s LEFT OUTER JOIN professor p
+95   on s.profno = p.profno; -- =기준으로 데이터가 있는 쪽에 방향에 따라 LEFT OUTER JOIN / RIGHT OUTER JOIN이 됨
+96   
+97   select s.name 학생이름, p.name 지도교수
+98   from student s, professor p
+99   where s.profno(+) = p.profno;
+100  -- 데이터가 없는 학생쪽에 +표시
+101  
+102  select s.name 학생이름, p.name 지도교수
+103  from student s RIGHT OUTER JOIN professor p -- =을 기준으로 데이터가 있는 오른쪽 방향으로 아우터 조인
+104  on s.profno = p.profno;-- (+) 방향의 반대 데이터
+105  
+106  
+107  -- student 테이블과 professor 테이블을 join하여 학생이름과 지도교수 이름을 출력
+108  -- 단, 지도학생이 결정 안된 명단과 지도교수가 결정되지 않은 학생 명단을 한꺼번에 출력하라.
+109  -- ** Oracle Join 구문에서 where s.profno(+) = p.profno(+) 와 같이 사용할 수 없다. ERROR
+110  -- Oracle Join
+111  
+112  select s.name 학생, p.name 교수
+113  from student s, professor p
+114  where s.PROFNO = p.PROFNO(+)
+115  union
+116  select s.name 학생, p.name 교수
+117  from student s,PROFESSOR p
+118  where s.profno(+) = p.PROFNO; -- 앞의 두 문제의 결과를 합쳐서 출력하는 구문
+119  
+120  -- ANSI Join 구문
+121  select s.name 학생, p.name 교수
+122  from student s FULL OUTER JOIN professor p
+123  on s.profno = p.profno;
+124  
+125  
+126  -- SELF JOIN
+127  -- 원하는 데이터가 하나의 테이블에 다 들어있는 경우 사용하는 방법
+128  -- 하나의 테이블을 메모리상에서 별명을 두 개로 사용하여 가상으로 2개의 테이블로 만든 후 Join 작업을 수행
+129  -- 반드시 별명을 사용해야 함
+130  
+131  -- emp 테이블에서 사원명, 매니저명 출력
+132  select e.ENAME, m.ename from emp e, emp m where e.mgr = m.EMPNO;
+133  select e.ENAME, m.ename from emp e JOIN emp m on e.mgr = m.empno;
+134  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="Database" /><summary type="html">Oracle SQL : JOIN</summary></entry><entry><title type="html">(JSP/MySQL) JSP-MySQL 한글 깨짐현상</title><link href="/server/2021/01/06/jsp-db%ED%95%9C%EA%B8%80%EA%B9%A8%EC%A7%90.html" rel="alternate" type="text/html" title="(JSP/MySQL) JSP-MySQL 한글 깨짐현상" /><published>2021-01-06T22:31:00+09:00</published><updated>2021-01-06T22:31:00+09:00</updated><id>/server/2021/01/06/jsp-db%ED%95%9C%EA%B8%80%EA%B9%A8%EC%A7%90</id><content type="html" xml:base="/server/2021/01/06/jsp-db%ED%95%9C%EA%B8%80%EA%B9%A8%EC%A7%90.html">&lt;h1 id=&quot;jspmysql-jsp-mysql-한글-깨짐현상&quot;&gt;(JSP/MySQL) JSP-MySQL 한글 깨짐현상&lt;/h1&gt;
+
+&lt;p&gt;각각의 jsp 상단에는&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;%@ page pageEncoding=&quot;UTF-8&quot; contentType=&quot;text/html; charset=UTF-8&quot; %&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;로 선언하여 utf-8을 설정하였고, mysql database 역시 utf8로 설정하였다.&lt;/p&gt;
+
+&lt;p&gt;그런데… 그런데 한글이 자꾸 깨진다. 그래서 처음 확인했던 것은  join.jsp 까지 데이터가 정상적으로 오는지 확인하였다.&lt;/p&gt;
+
+&lt;p&gt;확인 결과 깨진다. 즉, post 전달 되는 도중에 에러가 발생한 것이다.
+그래서 구글링 검색 후 다음과 같은 코드를 jsp 가장 상단에 추가하였다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;%&lt;/span&gt; 
+&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setCharacterEncoding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;utf-8&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;%&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;그 후에 정상적으로 동작을 확인했다. 하지만… mysql 내부에서는 여전히 깨졌다. 물론 깨지는 형태는 변했다. 알아 볼 수 없는 문자열에서 “?????”로 변한것이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;참고로 DB 커넥션 연결 URL 부분에서&lt;/li&gt;
+  &lt;li&gt;jsp에서 mysql 접속 할 때 인코딩이 깨진다면 다음과 같이 셋팅 되어야 한다.&lt;/li&gt;
+  &lt;li&gt;timezone,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;jdbc:mysql://localhost:3306/[database_name]?characterEncoding=UTF-8&amp;amp;&quot;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;serverTimezone=UTC&amp;amp;useSSL=false&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;성공이다.&lt;/p&gt;</content><author><name></name></author><category term="Server" /><summary type="html">(JSP/MySQL) JSP-MySQL 한글 깨짐현상</summary></entry><entry><title type="html">(Windows 10 os) tomcat server 오류 발생시</title><link href="/server/2021/01/06/windows-server.html" rel="alternate" type="text/html" title="(Windows 10 os) tomcat server 오류 발생시" /><published>2021-01-06T10:21:00+09:00</published><updated>2021-01-06T10:21:00+09:00</updated><id>/server/2021/01/06/windows-server</id><content type="html" xml:base="/server/2021/01/06/windows-server.html">&lt;h1 id=&quot;이클립스-tomcat-server-실행시-오류-발생&quot;&gt;이클립스 tomcat server 실행시 오류 발생&lt;/h1&gt;
+
+&lt;h4 id=&quot;오류-내용&quot;&gt;&lt;span style=&quot;color: red&quot;&gt;&lt;strong&gt;오류 내용&lt;/strong&gt;&lt;/span&gt;&lt;/h4&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Starting&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Tomcat&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v9&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Server&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;localhost&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;has&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;encountered&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;problem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+  
+  &lt;span class=&quot;nc&quot;&gt;Server&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8005&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;required&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tomcat&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v9&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Server&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;localhost&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;are&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;already&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;....&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;~~~&lt;/span&gt;
+  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위와 같은 내용으로 볼 때 이미 포트를 사용중이므로 겹쳐서 실행할 수 없다는 뜻의 내용으로 에러 로그를 출력해준다.&lt;/p&gt;
+
+&lt;h4 id=&quot;cmd를-관리자-권한으로-열기&quot;&gt;CMD를 관리자 권한으로 열기&lt;/h4&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;netstat -a -n -o -p tcp
+명령어 실행
+&lt;span class=&quot;p&quot;&gt;
+0.&lt;/span&gt;0.0.0:80 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;TCP 0.0.0.0 중에서 오류에서 발생하는 8005, 80, 8009, 8080 의 포트를 찾아 프로세스를 종료해주어야 한다.&lt;/p&gt;
+
+&lt;p&gt;포트를 찾았다면 PID 의 번호를 입력하여 아래와 같이 명령어를 수행한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-tex highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;taskkill /f /pid 6340 (6340 부분이 PID 번호가 되겠다.)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="Server" /><summary type="html">이클립스 tomcat server 실행시 오류 발생</summary></entry><entry><title type="html">(mac os)hosts 파일 수정하기</title><link href="/server/2021/01/05/mac-hosts-%ED%8C%8C%EC%9D%BC%EC%88%98%EC%A0%95.html" rel="alternate" type="text/html" title="(mac os)hosts 파일 수정하기" /><published>2021-01-05T09:21:00+09:00</published><updated>2021-01-05T09:21:00+09:00</updated><id>/server/2021/01/05/mac-hosts-%ED%8C%8C%EC%9D%BC%EC%88%98%EC%A0%95</id><content type="html" xml:base="/server/2021/01/05/mac-hosts-%ED%8C%8C%EC%9D%BC%EC%88%98%EC%A0%95.html">&lt;p&gt;hosts 파일는 DNS보다 먼저 호스트명을 IP로 변경해주는 파일이다. 주로 개발을 하거나, 특별한 이유로 호스트명으로 통신을 해야 하는 경우에 변경하여 사용할 수 있다.&lt;/p&gt;
 
 &lt;h2 id=&quot;터미널에서-편집기를-연다&quot;&gt;터미널에서 편집기를 연다&lt;/h2&gt;
 
@@ -617,839 +810,4 @@ default-character-set=utf8
   &lt;li&gt;
     &lt;p&gt;&lt;strong&gt;예외처리하기&lt;/strong&gt;&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="JAVA" /><category term="Lecture" /><summary type="html">Member 프로젝트 진행</summary></entry><entry><title type="html">Oracle 설치(for Windows)</title><link href="/2020/12/28/Oracle-Install-(For-Windows).html" rel="alternate" type="text/html" title="Oracle 설치(for Windows)" /><published>2020-12-28T18:00:00+09:00</published><updated>2020-12-28T18:00:00+09:00</updated><id>/2020/12/28/Oracle-Install-(For-Windows)</id><content type="html" xml:base="/2020/12/28/Oracle-Install-(For-Windows).html">&lt;h2 id=&quot;oracle-database-11g-express-edition&quot;&gt;Oracle Database 11g Express Edition&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/xe-prior-releases-5172097.html&quot;&gt;Download&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;**설치 -&amp;gt; 경로 지정 -&amp;gt; 포트 설정 **&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Corner 포트 세팅&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;TNS Port : 1025&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;MTS Port : 2030&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;HTTP Port : 8080&lt;/strong&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;원래의 포트&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;TNS : 1521&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;MTS : 2030&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;HTTP Port :8080&lt;/strong&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;암호 : [* * * *]&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;dir : H:\Oracleexe\app\oracle\product\11.2.0\server\&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;SQL Developer 설치&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html&quot;&gt;SQL Developer Download&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;oracle-설정&quot;&gt;Oracle 설정&lt;/h3&gt;
-
-&lt;h4 id=&quot;cmd-&quot;&gt;CMD :&lt;/h4&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; sqlplus / as sysdba
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;다음과 같은 순서로 명령어를 실행&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;(sys 계정으로 로그인하는 명령어, 여기서 oracle은 데이터베이스를 설치할 때 설정해주었던 비밀번호)&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;alter user corner identified by password account unlock
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;corner 계정의 비밀번호를 password로 설정하고 잠겨있던 계정의 잠금을 해제하는 명령어이다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Developer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;오류&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;시&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;sql-developer-실행-시-java-path-msvcr100dll-관련-오류가-나올-때&quot;&gt;SQL Developer 실행 시 java path, msvcr100.dll 관련 오류가 나올 때&lt;/h3&gt;
-
-&lt;p&gt;Java\jdk1.8.0_271\jre\bin 경로에 넣어주면 된다.&lt;/p&gt;
-
-&lt;h3 id=&quot;sql-developer-jdk-경로-변경하고-싶을-때&quot;&gt;SQL Developer JDK 경로 변경하고 싶을 때&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;사용자\AppData\Roaming\sqldeveloper\버전\product.conf 파일을 메모장이나 코드 프로그램으로 열어서 
-경로에 맞게 지정, ex) java\jdk1.8.0_271&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;</content><author><name></name></author><summary type="html">Oracle Database 11g Express Edition</summary></entry><entry><title type="html">[Web] Servlet이란?</title><link href="/jsp/lecture/2020/12/26/jsp-servlet%EC%9D%B4%EB%9E%80.html" rel="alternate" type="text/html" title="[Web] Servlet이란?" /><published>2020-12-26T11:05:00+09:00</published><updated>2020-12-26T11:05:00+09:00</updated><id>/jsp/lecture/2020/12/26/jsp-servlet%EC%9D%B4%EB%9E%80</id><content type="html" xml:base="/jsp/lecture/2020/12/26/jsp-servlet%EC%9D%B4%EB%9E%80.html">&lt;p&gt;&lt;a href=&quot;/jsp/lecture/2020/12/26/jsp-servlet-차이.html&quot;&gt;Servlet과 JSP의 차이&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;-servlet이란&quot;&gt;🌱 Servlet이란?&lt;/h1&gt;
-
-&lt;h3 id=&quot;web-service의-기본적인-동작-과정&quot;&gt;Web Service의 기본적인 동작 과정&lt;/h3&gt;
-
-&lt;p&gt;HTML Form -&amp;gt; Servlet -&amp;gt; HTML Page&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;사용자가 웹 페이지 form(HTML Form)을 통해 자신의 정보를 입력한다. (input)&lt;/li&gt;
-  &lt;li&gt;Servlet의 doGet() 또는 doPost() 메소드는 입력한 form data에 맞게 DB 또는 다른 소스에서 관련된 정보를 검색한다.&lt;/li&gt;
-  &lt;li&gt;이 정보를 이용하여 사용자의 요청에 맞는 적절한 동적 콘텐츠(HTML Page)를 만들어서 제공 (Output)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;a href=&quot;#1.html-form&quot;&gt;1.HTML Form&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;1html-form&quot;&gt;1.HTML Form&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;span style=&quot;color:grey&quot;&gt; input elements(Ex. 텍스트 상자)가 포함된 웹피이지의 한 부분(section)&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;사용자가 입력한 정보 (form contents)를 웹 서버로 전송하기 위한 submit element(Ex, 버튼)가 존재한다.&lt;/li&gt;
-  &lt;li&gt;action에는 form을 처리하는 서버 쪽 URL을 명시한다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;####&lt;/p&gt;
-
-&lt;h4 id=&quot;클라이언트browser가-요청하는-url-정보&quot;&gt;클라이언트(browser)가 요청하는 URL 정보&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;요청을 보낼 서버의 IP 주소 : Port 번호 / App 이름 / 달라고 요청하는 HTML&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code&gt;Ex) localhost:8080/FormHandingServlet/LoginForm.html&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;IP 주소
-    &lt;ul&gt;
-      &lt;li&gt;요청을 보낼 서버의 “위치”를 의미한다.&lt;/li&gt;
-      &lt;li&gt;browser와 WAS(tomcat)가 같은 PC에 있으면 “IP 주소 = localhost “ or “127.0.0.1”&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Port 번호
-    &lt;ul&gt;
-      &lt;li&gt;해당 위치 안의 “특정 사람”을 의미한다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;HTML 이름
-    &lt;ul&gt;
-      &lt;li&gt;HTML 이름에 해당하는 HTML 문서를 받아온다.&lt;/li&gt;
-      &lt;li&gt;broweser를 받아온 HTML 문서 안의 html 태그들 (ex, h2, br 등)을 parsing(기계어 번역)한다.&lt;/li&gt;
-      &lt;li&gt;이 내용을 browser에서 rendering(그리기)을 한다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-jsp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;form&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;loginForm&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;loginServlet&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  Username: &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;username&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;br/&amp;gt;&lt;/span&gt;
-  Password: &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;password&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;password&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&amp;lt;br/&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;submit&quot;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Login&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;method = “post”
-    &lt;ul&gt;
-      &lt;li&gt;원하는 동작에 따라 HTTP 메소드를 사용한다.&lt;/li&gt;
-      &lt;li&gt;method=”get”&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;action=”loginServlet”
-    &lt;ul&gt;
-      &lt;li&gt;URL of the servlet&lt;/li&gt;
-      &lt;li&gt;해당 url로 request가 간다. 즉, WAS에서의 어떤 Servlet인지 지정하는 것이다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;type=”submit”
-    &lt;ul&gt;
-      &lt;li&gt;버튼을 누르면 사용자가 입력한 인자들이 Servlet으로 넘어간다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;form-tag-속성&quot;&gt;Form Tag 속성&lt;/h4&gt;
-
-&lt;p&gt;Form Tag 속성을 이용하여 어디로, 어떤 방식으로 전송할지 정한다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;action:&lt;/strong&gt; form을 전송할 서버 쪽 스크립트 파일 지정&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;name:&lt;/strong&gt; form을 식별하기 위한 이름 지정&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;accept-charset:&lt;/strong&gt; form 전송에 사용할 문자 인코딩을 지정&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;target:&lt;/strong&gt; action에서 지정한 스크립트 파일을 현재 창이 아닌 다른 위치에서 열리도록 지정&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;method:&lt;/strong&gt; form을 서버에 전송하는 방식으로, HTTP 메소드 지정 (GET 또는 POST)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;enctype:&lt;/strong&gt; 넘기는 Content의 Type 지정 (주로 파일을 넘길 때 사용)
-    &lt;ul&gt;
-      &lt;li&gt;type은 &lt;code&gt;multipart/form-data&lt;/code&gt; 로 지정해서 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;form-methods&quot;&gt;Form Methods&lt;/h4&gt;
-
-&lt;p&gt;form을 서버에 전송하는 방식으로, 두 가지 HTTP 메소드 지정할 수 있다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;GET Method
-    &lt;ul&gt;
-      &lt;li&gt;사용자가 입력한 내용(form data)이 URL 뒤이 텍스트 문자열로 추가된다.&lt;/li&gt;
-      &lt;li&gt;크기 제한: 1024 characters&lt;/li&gt;
-      &lt;li&gt;data는 ?를 기준으로 action URL과 분리된다.&lt;/li&gt;
-      &lt;li&gt;ex. &lt;code&gt;http://www.test.com/hello?key1=value1&amp;amp;key2=value2&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;브라우저에서 웹 서버로 정보를 전달하는 기본 메서드(Default Method)
-        &lt;ul&gt;
-          &lt;li&gt;HTTP 메서드를 지정하지 않으면 GET Method를 호출한다.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;서버에 전달하는 data에 암호와 같은 민감한 정보가 있는 경우 GET Method를 사용하지 않는다.
-        &lt;ul&gt;
-          &lt;li&gt;URL은 모두에게 노출되는 정보이기 때문에 보안상 적절하지 않다.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;GET 메서드의 사용
-        &lt;ul&gt;
-          &lt;li&gt;Query-Type actions: DB에 영향을 주지 안흔ㄴ 단순히 읽기 위주(read operation)의 작업&lt;/li&gt;
-          &lt;li&gt;Idempotemt actions: 몇 번이고 같은 연산을 반복해도 같은 값이 나오는 작업&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;POST Method
-    &lt;ul&gt;
-      &lt;li&gt;사용자가 입력한 내용(form data)을 별도의 메시지로 보낸다.&lt;/li&gt;
-      &lt;li&gt;Request Body에 data를 추가한다.
-        &lt;ul&gt;
-          &lt;li&gt;URL에 직접적으로 data가 노출되지 않기 때문에 GET Method보다 보안상으로 조금 더 안전하다.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;POST 메서드의 사용
-        &lt;ul&gt;
-          &lt;li&gt;actions with side-effects: DB에 영향을 주는 작업&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;servlet이란&quot;&gt;Servlet이란&lt;/h2&gt;
-
-&lt;h4 id=&quot;servlet의-개념&quot;&gt;Servlet의 개념&lt;/h4&gt;
-
-&lt;p&gt;&lt;span style=&quot;color:purple&quot;&gt;웹 기반의 요청에 대한 동적인 처리가 가능한 하나의 클래스&lt;/span&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Server Side에서 돌아가는 Java Program&lt;/li&gt;
-  &lt;li&gt;개발자가 작성해야 하는 부분&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Servlet Program의 기본적인 동작 과정&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/servlet/servlet-program.png?raw=true&quot; alt=&quot;Servlet Programming&quot; /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Web Server는 HTTP request를 Web Container(Servlet Container)에게 위임한다.
-    &lt;ul&gt;
-      &lt;li&gt;web.xml 설정에서 어떤 URL과 매핑되어 있는지 확인&lt;/li&gt;
-      &lt;li&gt;클라이언트(browser)의 요청 URL을 보고 적절한 Servlet을 실행&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Web Container는 service() 메소드를 호출하기 전에 Servlet 객체를 메모리에 올린다.
-    &lt;ul&gt;
-      &lt;li&gt;Web Container는 적절한 Servlet 파일을 컴파일(.class 파일 생성) 한다.&lt;/li&gt;
-      &lt;li&gt;.class 파일을 메모리에 올려 servlet 객체를 만든다.&lt;/li&gt;
-      &lt;li&gt;메모리에 로드될 때 Servlet 객체를 초기화하는 init() 메소드가 실행된다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Web Container는 Request가 올 때마다 thread를 생성하여 처리한다.
-    &lt;ul&gt;
-      &lt;li&gt;각 thread는 Servlet의 단일 객체에 대한 service() 메소드를 실행한다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;servlet-program에서-thread의-역할&quot;&gt;Servlet Program에서 Thread의 역할&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;**Trhead란	** 운영체제로부터 시스템 자원을 할당받는 작업의 단위&lt;/li&gt;
-  &lt;li&gt;Servlet Program에서 thread가 수행할 메소드가 지정/할당되면
-    &lt;ul&gt;
-      &lt;li&gt;thread는 생성 후 즉시 해당 메소드만 열심히 수행한다.&lt;/li&gt;
-      &lt;li&gt;해당 메소드가 return하면 thread는 종료되고 제거된다.&lt;/li&gt;
-      &lt;li&gt;즉, 실제로 thread의 역할: &lt;strong&gt;Servlet의 doGet() 또는 doPost()를 호출&lt;/strong&gt;하는 것이다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Web Container(Servlet Container)는 thread의 생성과 제거를 담당한다.
-    &lt;ul&gt;
-      &lt;li&gt;하지만 thread의 생성과 제거의 반복은 큰 오버헤드를 만든다.&lt;/li&gt;
-      &lt;li&gt;이를 위해 Tomcat(WAS)은 “Thread pool” (미리 thread를 만들어 놓음) 이라는 적절한 메커니즘을 사용하여 오버헤드를 줄인다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;즉, WAS는 Servlet의 life cycle을 담당한다.
-    &lt;ul&gt;
-      &lt;li&gt;웹 브라우저 클라이언트의 요청이 들어왔을 때 Servlet 객체 생성은 WAS가 알아서 처리한다.&lt;/li&gt;
-      &lt;li&gt;WAS 위에서 Servlet이 돌아다니고 개발자는 이 Servlet을 만들어야 한다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;servlet-life-cycle&quot;&gt;Servlet Life Cycle&lt;/h5&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/servlet/servlet-life-cycle.png?raw=true&quot; alt=&quot;Life Cycle&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="JSP" /><category term="Lecture" /><summary type="html">Servlet과 JSP의 차이</summary></entry><entry><title type="html">[Web] Servlet과 JSP의 차이와 관계</title><link href="/jsp/lecture/2020/12/26/jsp-servlet-%EC%B0%A8%EC%9D%B4.html" rel="alternate" type="text/html" title="[Web] Servlet과 JSP의 차이와 관계" /><published>2020-12-26T11:05:00+09:00</published><updated>2020-12-26T11:05:00+09:00</updated><id>/jsp/lecture/2020/12/26/jsp-servlet-%EC%B0%A8%EC%9D%B4</id><content type="html" xml:base="/jsp/lecture/2020/12/26/jsp-servlet-%EC%B0%A8%EC%9D%B4.html">&lt;h1 id=&quot;servlet과-jsp의-차이와-관계&quot;&gt;🖥Servlet과 JSP의 차이와 관계&lt;/h1&gt;
-
-&lt;h4 id=&quot;servlet과-jsp의-개념&quot;&gt;Servlet과 JSP의 개념&lt;/h4&gt;
-
-&lt;p&gt;: 기능의 차이는 없고 역할의 차이가 있다.&lt;/p&gt;
-
-&lt;h4 id=&quot;servlet이란&quot;&gt;Servlet이란&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;웹 기반의 요청에 대한 동적인 처리가 가능한 Server Side에서 돌아가는 Java Program&lt;/li&gt;
-  &lt;li&gt;Java 코드 안에 HTML 코드 (하나의 클래스)&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;웹 개발을 위해 만든 표준&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;span style=&quot;color:black&quot;&gt;&lt;strong&gt;&lt;a href=&quot;/jsp/lecture/2020/12/26/jsp-servlet이란.html&quot;&gt;Servlet이란?&lt;/a&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;jsp란&quot;&gt;JSP란&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Java 언어를 기반으로 하는 Server Side 스크립트 언어&lt;/li&gt;
-  &lt;li&gt;HTML 코드 안에 Java 코드&lt;/li&gt;
-  &lt;li&gt;Servlet을 보완하고 기술을 확장한 스크립트 방식 표준
-    &lt;ul&gt;
-      &lt;li&gt;Servlet의 모든 기능 + 추가적인 기능&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;servlet과-jsp의-차이&quot;&gt;Servlet과 JSP의 차이&lt;/h3&gt;
-
-&lt;h4 id=&quot;servlet&quot;&gt;Servlet&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Java 코드 안에 HTML 코드 (하나의 클래스)&lt;/li&gt;
-  &lt;li&gt;Data Processing(Controller)에 좋다.&lt;/li&gt;
-  &lt;li&gt;DB와의 통신, Business Logic 호출, 데이터를 읽고 확인하는 작업 등에 유용하다.&lt;/li&gt;
-  &lt;li&gt;Servlet이 수정된 경우 Java 코드를 컴파일(.class 파일 생성) 한 후 동적인 페이지를 처리하기 때문에 전체 코드를
-업데이트하고 다시 컴파일한 후 재배포하는 작업이 필요하다. (생산성 저하)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;####&lt;/p&gt;
-
-&lt;h4 id=&quot;jsp&quot;&gt;JSP&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;HTML 코드 안에 Java 코드&lt;/li&gt;
-  &lt;li&gt;Presentation(View)에 좋다.&lt;/li&gt;
-  &lt;li&gt;요청 결과를 나타내는 HTML 작성하는데 유용하다.&lt;/li&gt;
-  &lt;li&gt;JSP가 수정된 경우 재배포할 필요가 없이 WAS가 알아서 처리한다. (쉬운 배포)&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="JSP" /><category term="Lecture" /><summary type="html">🖥Servlet과 JSP의 차이와 관계</summary></entry><entry><title type="html">JAVA(자바) - 1-1. JavaFx</title><link href="/java/lecture/2020/12/24/JavaFx1-1.html" rel="alternate" type="text/html" title="JAVA(자바) - 1-1. JavaFx" /><published>2020-12-24T13:07:00+09:00</published><updated>2020-12-24T13:07:00+09:00</updated><id>/java/lecture/2020/12/24/JavaFx1-1</id><content type="html" xml:base="/java/lecture/2020/12/24/JavaFx1-1.html">&lt;h1 id=&quot;java자바---1-1-javafx&quot;&gt;JAVA(자바) - 1-1. JavaFx&lt;/h1&gt;
-
-&lt;h2 id=&quot;1-개요&quot;&gt;1. 개요&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;JavaFx&lt;/strong&gt;란 크로스 플랫폼에서 실행하는 리치 클라이언트 애플리케이션(Rich Client Application)을 개발하기 위한 그래픽과 미디어 패키지를 말한다. JavaFx는 자바 표준 UI 엿던 라이브러리였던 Swing을 대체하기 위해 만들어졌으며 더 가볍고 더 강력해진 라이브러리이다.&lt;/li&gt;
-  &lt;li&gt;JDK 11부터는 JavaFx는 별도로 분리되었기 때문에 설치 및 설정이 필요하다. 이번 글은 JavaFx 설치하고 간단한 프로젝트를 만드는 방법이다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;2-1-javafx-sdk-다운로드&quot;&gt;2-1. &lt;strong&gt;JavaFx SDK 다운로드&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;먼저, JavaFx SDK를 다운로드하기 위해 아래 링크를 통해 다운로드한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;span style=&quot;color:Purple&quot;&gt;&lt;strong&gt;&lt;a href=&quot;https://gluonhq.com/products/javafx/&quot;&gt;JavaFx SDK Download Page&lt;/a&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;OS&lt;/strong&gt; 버전에 맞게 SDK 파일로 다운로드 하고, 압축 해제한다.&lt;/p&gt;
-
-&lt;h3 id=&quot;2-2-eclipse-plugin-설치&quot;&gt;2-2. Eclipse plugin 설치&lt;/h3&gt;
-
-&lt;p&gt;JavaFx의 프로젝트 관리 및 설정을 할 수 있는 e(fx)clipse plugin을 설치&lt;/p&gt;
-
-&lt;p&gt;먼저 이클립스에서 &lt;strong&gt;&lt;em&gt;[help] –&amp;gt; [eclipse marketplace]&lt;/em&gt;&lt;/strong&gt; 을 클릭 후, &lt;strong&gt;[Eclipse Marketplace]&lt;/strong&gt; 대화창에 “javafx”을 검색 후, e(fx)clipse의 [install]을 누른다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/javaFx/javaFx.png?raw=true&quot; alt=&quot;javaFx&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;2-3-javafx-프로젝트-생성하기&quot;&gt;&lt;strong&gt;2-3. JavaFx 프로젝트 생성하기&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;JavaFx 프로젝트 생성 (new -&amp;gt; other -&amp;gt; JavaFx Project 선택)&lt;/p&gt;
-
-&lt;p&gt;만약, JavaFx 프로젝트가 보이지 않는다면&lt;/p&gt;
-
-&lt;p&gt;환경설정에서 JavaFX에서 다운받은 JavaFX 11+ SDK 브라우저를 설정해줍니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/javaFx/javaFx2.png?raw=true&quot; alt=&quot;javaFx2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;프로젝트 생성 후 에러가 발생한다.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/javaFx/javaFx3.png?raw=true&quot; alt=&quot;javaFx3&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/javaFx/javaFx4.png?raw=true&quot; alt=&quot;javaFx4&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;add External Archives…를 선택하고&lt;/p&gt;
-
-&lt;p&gt;SDK 폴더에서 lib 폴더내에 jar. 파일들만 추가하면 된다.&lt;/p&gt;</content><author><name></name></author><category term="JAVA" /><category term="Lecture" /><summary type="html">JAVA(자바) - 1-1. JavaFx</summary></entry><entry><title type="html">JAVA - 입출력 패키지</title><link href="/java/lecture/2020/12/22/File-package.html" rel="alternate" type="text/html" title="JAVA - 입출력 패키지" /><published>2020-12-22T13:22:00+09:00</published><updated>2020-12-22T13:22:00+09:00</updated><id>/java/lecture/2020/12/22/File-package</id><content type="html" xml:base="/java/lecture/2020/12/22/File-package.html">&lt;!-- 본문 --&gt;
-
-&lt;h1 id=&quot;java---입출력-패키지&quot;&gt;JAVA - 입출력 패키지&lt;/h1&gt;
-
-&lt;h3 id=&quot;-개요&quot;&gt;-개요&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;프로그램에서 데이터를 외부에서 읽고 다시 외부로 출력하는 작업이 빈번히 일어난다. 데이터는 사용자로부터 키보드를 통해 입력될 수도 잇고, 파일 또는 네트워크로부터 입력 될 수도 있다.&lt;/li&gt;
-  &lt;li&gt;모니터로 출력될 수도 있고, 파일로 출력되어 저장될 수도 있으며 네트워크로 출력되어 전송 될 수도 있다.&lt;/li&gt;
-  &lt;li&gt;자바에서 데이터는 스트림으로 통해 입출력되므로 스트림의 특징은 단일 방향으로 연속적으로 흘러가는 것을 말한다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;-입력-스트림과-출력-스트림&quot;&gt;-입력 스트림과 출력 스트림&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/1-1.png?raw=true&quot; alt=&quot;1-1&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;입력 스트림 : 항상 프로그램을 기준으로 데이터가 들어오면 입력 스트림이다.&lt;/li&gt;
-  &lt;li&gt;출력 스트림 : 데이터가 나가는 것&lt;/li&gt;
-  &lt;li&gt;스트림의 특성이 단방향이므로 하나의 스트림으로 입력과 출력을 모두 할 수 없기 때문이다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/1-2.png?raw=true&quot; alt=&quot;1-2&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;javaio-패키지의-주요-클래스&quot;&gt;java.io 패키지의 주요 클래스&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/1-3.png?raw=true&quot; alt=&quot;1-3&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;스트림-클래스-종류&quot;&gt;스트림 클래스 종류&lt;/h3&gt;
-
-&lt;p&gt;1) 바이트 기반 스트림&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;그림, 멀티미디어, 문자 등 모든 종류의 데이터를 받고 보낼 수 있다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;2) 문자 기반 스트림&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;문자만 받고 보낼 수 있도록 특화되어 있다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/1-4.png?raw=true&quot; alt=&quot;1-4&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/1-5.png?raw=true&quot; alt=&quot;1-5&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;inpuststream&quot;&gt;InpustStream&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;개요&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;바이트 기반 입력 스트림의 최상위 클래스로 추상 클래스이다.&lt;/li&gt;
-      &lt;li&gt;모든 바이트 기반 입력 스트림은 이 클래스를 상속 받아서 만들어진다.&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/1-6.png?raw=true&quot; alt=&quot;1-6&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/1-7.png?raw=true&quot; alt=&quot;1-7&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;(1) &lt;span style=&quot;color:green&quot;&gt;read()&lt;/span&gt; 메소드&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;입력 스트림으로부터 1byte를 읽고 4byte를 int타입으로 리턴한다. 따라서 리턴된 4byte 중 끝의 1byte만 데이터가 들어있다.&lt;/li&gt;
-  &lt;li&gt;더 이상 입력 스트림으로부터 바이트를 읽을 수 없다면  &lt;span style=&quot;color:green&quot;&gt;read()&lt;/span&gt;메소드는 -1을 리턴한다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;(2)  &lt;span style=&quot;color:green&quot;&gt;read(byte[] b)&lt;/span&gt; 메소드&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;입력 스트림으로부터 매개값으로 주어진 바이트 배열의 길이만큼 바이트를 읽고 배열에 저장한다.&lt;/li&gt;
-  &lt;li&gt;그리고 읽은 바이트 수를 리턴한다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;(3)  &lt;span style=&quot;color:green&quot;&gt;read(byte[] b, int off, int len)&lt;/span&gt; 메소드&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;입력 스트림으로부터 length개의 바이트만큼 읽고, 매개값으로 주어진 바이트 배열b[off]부터 len개 까지 저장한다.&lt;/li&gt;
-  &lt;li&gt;읽은 바이트 수인 len개를 리턴한다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;키보드로-입력된-데이터-처리하기&quot;&gt;키보드로 입력된 데이터 처리하기&lt;/h3&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.FileInputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.InputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ReadExample1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;nc&quot;&gt;InputStream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FileInputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C:/Temp/test.txt&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-				&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readByte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;n&quot;&gt;readByte&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-          &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readByte&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-          &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readByte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.FileInputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.InputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ReadExample2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;InputStream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FileInputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C:/Temp/test.txt&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readByteNo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readBytes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
-            &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-              &lt;span class=&quot;n&quot;&gt;readByteNo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-              &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readByteNo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-              &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readByteNo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.FileInputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.InputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ReadExample3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;InputStream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FileInputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C:/Temp/test.txt&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readByteNo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readBytes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;readByteNo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-   
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    		&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    
-    	&lt;span class=&quot;n&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;outputstream&quot;&gt;OutputStream&lt;/h2&gt;
-
-&lt;h4 id=&quot;개요&quot;&gt;&lt;strong&gt;개요&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/2-1.png?raw=true&quot; alt=&quot;2-1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/2-2.png?raw=true&quot; alt=&quot;2-2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2) 사용 예&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.FileOutputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.OutputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WriteExample1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-		&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nc&quot;&gt;OutputStream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FileOutputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C:/Temp/test.txt&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ABC&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-			&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-					&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]);&lt;/span&gt;
-			&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;flush&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WriteExample2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-		&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;nc&quot;&gt;OutputStream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FileOutputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C:/Temp/test.txt&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-			&lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ABC&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;flush&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-			&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.FileOutputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.OutputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-	
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WriteExample3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      
-      &lt;span class=&quot;nc&quot;&gt;OutputStream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FileOutputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C:/Temp/test.txt&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ABC&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;flush&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;reader&quot;&gt;Reader&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/2-3.png?raw=true&quot; alt=&quot;2-3&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/2-4.png?raw=true&quot; alt=&quot;2-4&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;사용 예&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.FileReader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.Reader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ReadExample1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nc&quot;&gt;Reader&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FileReader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C:/Temp/test.txt&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;readData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-      
-      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-      	&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Reader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.FileReader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.Reader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ReadExample2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		
-		&lt;span class=&quot;nc&quot;&gt;Reader&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FileReader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/Users/corner/trash/test.txt&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		
-		&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readCharNo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cbuf&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
-		
-		&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-		
-		&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;n&quot;&gt;readCharNo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cbuf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-			&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readCharNo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-			
-			&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cbuf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readCharNo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-		&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		
-		&lt;span class=&quot;n&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Reader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.FileReader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.Reader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ReadExample3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;nc&quot;&gt;Reader&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FileReader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/Users/corner/trash/test.txt&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		
-		&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readCharNo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cbuf&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
-		
-		&lt;span class=&quot;n&quot;&gt;readCharNo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cbuf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		
-		&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cbuf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cbuf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]);&lt;/span&gt;
-			
-		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;writer-클래스&quot;&gt;&lt;strong&gt;Writer 클래스&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;개요&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/2-5.png?raw=true&quot; alt=&quot;2-5&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/2-6.png?raw=true&quot; alt=&quot;2-6&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;사용-예&quot;&gt;사용 예&lt;/h4&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Writer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.FileWriter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.Writer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WriterExample1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		
-		&lt;span class=&quot;nc&quot;&gt;Writer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;writer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FileWriter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/Users/corner/trash/test.txt&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;홍길동&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toCharArray&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		
-		&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;n&quot;&gt;writer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]);&lt;/span&gt;
-		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-		
-		&lt;span class=&quot;n&quot;&gt;writer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;flush&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;writer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;콘솔-입출력&quot;&gt;콘솔 입출력&lt;/h3&gt;
-
-&lt;p&gt;콘솔로부터 데이터를 입력 받을 때 System.in&lt;/p&gt;
-
-&lt;p&gt;콘솔에 데이터를 출력할 때 System.out&lt;/p&gt;
-
-&lt;p&gt;에러를 출력할 때 System.err&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/file-input-output/2-7.png?raw=true&quot; alt=&quot;2-7&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;1) System.in 필드&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;프로그램이 콘솔로부터 데이터를 입력 받을 수 있도록 System클래스의 in 정적 필드를 제공한다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;(1) 1 바이트를 읽고 1 바이트 리턴&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;InputStream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 키보드 입력 스트림 얻기&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inputChar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 아스키코드를 읽고 문자로 리턴&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;사용-예-1&quot;&gt;&lt;strong&gt;사용 예&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		
-		&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;== 메뉴 ==&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1. 예금 조회&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2. 예금 출금&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;3. 예금 입금&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;4. 종료 하기&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;메뉴를 선택하세요.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		
-		&lt;span class=&quot;nc&quot;&gt;InputStream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inputChar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		
-		&lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputChar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'1'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;예금 조회를 선택하셨습니다.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'2'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;예금 출금을 선택하셨습니다.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'3'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;예금 입금을 선택하셨습니다.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'4'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;종료 하기를 선택하셨습니다.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-		
-		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;	
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;(2) 한글과 같이 2바이트를 필요로 하는 유니코드는 read(byte[] b) 메소드 사용함&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;byte[] byteData = new byte[15]; // 한글과 같이 2바이트를 필요로하는 유니코드는 read(byte[] b) 메소드 사용함&lt;/p&gt;
-
-&lt;p&gt;int readByteNo = System.inread(byteData);&lt;/p&gt;
-
-&lt;p&gt;이름과 하고 싶은말을 키보드로 입력받아 다시 출력하기&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.InputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SystemInExample2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;nc&quot;&gt;InputStream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-	
-	&lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datas&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
-	
-	&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;이름 : &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nameBytes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;datas&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;datas&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nameBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	
-	&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;하고 싶은 말: &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;commentBytes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;datas&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;datas&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;commentBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	
-	&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;입릭한 이름 : &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;입력한 하고 싶은말 : &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;(3) 바이트 배열에 저장된 아스키 코드를 사용하려면 문자열로 변환해야 한다.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;읽은 바이트수 -2 ==&amp;gt; -2를 하는 이유는 Enter키에 해당하는 마지막 두 바이트를 제외하기 위해서이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;String strDate = new String(byteData, 0, readByteNo-2);&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;​												 &lt;strong&gt;바이트 배열, 시작 인덱스, 읽은 바이트수-2&lt;/strong&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;systemout-필드&quot;&gt;&lt;strong&gt;System.out 필드&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;콘솔로 데이터를 출력하기&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.OutputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SystemOutExample&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		
-		&lt;span class=&quot;nc&quot;&gt;OutputStream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-		
-		&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;48&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;58&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-		
-		&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		
-		
-		&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;97&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		
-		&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hangul&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;가나다라마바사아자차카타파하&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hangulBytes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hangul&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hangulBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		
-		&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;flush&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="JAVA" /><category term="Lecture" /><summary type="html"></summary></entry></feed>
+&lt;/ol&gt;</content><author><name></name></author><category term="JAVA" /><category term="Lecture" /><summary type="html">Member 프로젝트 진행</summary></entry></feed>

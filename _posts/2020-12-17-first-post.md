@@ -1,5 +1,5 @@
 ---
-layout: post
+vlayout: post
 title:  "Blog 시작"
 date: 2020-12-20 14:39:21 +0900
 categories: info update

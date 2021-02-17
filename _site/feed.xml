@@ -1,4 +1,592 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2021-01-07T14:10:52+09:00</updated><id>/feed.xml</id><title type="html">Corner</title><entry><title type="html">오라클Oracle - SQL : 제약 조건</title><link href="/database/2021/01/07/oracle-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4.html" rel="alternate" type="text/html" title="오라클Oracle - SQL : 제약 조건" /><published>2021-01-07T14:00:00+09:00</published><updated>2021-01-07T14:00:00+09:00</updated><id>/database/2021/01/07/oracle-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4</id><content type="html" xml:base="/database/2021/01/07/oracle-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4.html">&lt;h1 id=&quot;제약-조건에-관하여&quot;&gt;&lt;a href=&quot;https://iu-corner.tistory.com/entry/Oracle-SQL-제약조건?category=905491&quot;&gt;제약 조건에 관하여&lt;/a&gt;&lt;/h1&gt;</content><author><name></name></author><category term="Database" /><summary type="html">제약 조건에 관하여</summary></entry><entry><title type="html">오라클Oracle - SQL : 서브 쿼리(Sub Query)</title><link href="/database/2021/01/07/oracle-%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC.html" rel="alternate" type="text/html" title="오라클Oracle - SQL : 서브 쿼리(Sub Query)" /><published>2021-01-07T14:00:00+09:00</published><updated>2021-01-07T14:00:00+09:00</updated><id>/database/2021/01/07/oracle-%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC</id><content type="html" xml:base="/database/2021/01/07/oracle-%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC.html">&lt;h1 id=&quot;sub-query에-관하여&quot;&gt;&lt;a href=&quot;https://iu-corner.tistory.com/entry/Oracle-Sub-Query-서브-쿼리&quot;&gt;(Sub Query)에 관하여&lt;/a&gt;&lt;/h1&gt;</content><author><name></name></author><category term="Database" /><summary type="html">(Sub Query)에 관하여</summary></entry><entry><title type="html">오라클Oracle - SQL : JOIN</title><link href="/database/2021/01/07/oracle-join.html" rel="alternate" type="text/html" title="오라클Oracle - SQL : JOIN" /><published>2021-01-07T11:30:00+09:00</published><updated>2021-01-07T11:30:00+09:00</updated><id>/database/2021/01/07/oracle-join</id><content type="html" xml:base="/database/2021/01/07/oracle-join.html">&lt;h1 id=&quot;oracle-sql--join&quot;&gt;Oracle SQL : JOIN&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2021-02-17T18:17:22+09:00</updated><id>/feed.xml</id><title type="html">Corner</title><entry><title type="html">한동석 강사-day01</title><link href="/lecture/2021/01/20/%ED%95%9C%EB%8F%99%EC%84%9D%EA%B0%95%EC%82%AC-1.html" rel="alternate" type="text/html" title="한동석 강사-day01" /><published>2021-01-20T10:50:00+09:00</published><updated>2021-01-20T10:50:00+09:00</updated><id>/lecture/2021/01/20/%ED%95%9C%EB%8F%99%EC%84%9D%EA%B0%95%EC%82%AC-1</id><content type="html" xml:base="/lecture/2021/01/20/%ED%95%9C%EB%8F%99%EC%84%9D%EA%B0%95%EC%82%AC-1.html">&lt;h1 id=&quot;한동석-강사---day01&quot;&gt;한동석 강사 - day01&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;프로그램&lt;/strong&gt; : 소스코드로 잘 짜여진 틀&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;IDE(ECLIPSE PHOTON)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;최신버전을 쓰게 될 경우 출시된지 얼마되지 않았기 때문에 버그나 오류가 발생하면 구글링을 통해 찾기 수월하지 않기 때문이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;JVM (Java Virtual Machine)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;자바 소스코드로부터 만들어지는 자바 바이너리 파일(.class)을 실행할 수 있다. 또한 JVM은 플랫폼에 의존적이다. 즉, 리눅스의 JVM과 윈도우즈의 JVM은 다르다. 단, 컴파일된 바이너리 코드는 어떤 JVM에서도 동작시킬 수 있다.
+    &lt;ul&gt;
+      &lt;li&gt;바이너리 코드를 읽는다.&lt;/li&gt;
+      &lt;li&gt;바이너리 코드를 검증한다.&lt;/li&gt;
+      &lt;li&gt;바이너리 코드를 실행한다.&lt;/li&gt;
+      &lt;li&gt;실행환경 (Runtime Environment)의 규격을 제공한다. (필요한 라이브러리 및 기타파일)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;JRE&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;JRE는 자바 실행환경(Java Runtime Environment)의 약자이다.&lt;/li&gt;
+  &lt;li&gt;JRE는 JVM이 자바 프로그램을 동작시킬 때 필요한 라이브러리 파일들과 기타 파일들을 가지고 있다. JRE는 JVM의 실행환경을 구현했다고 할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;JDK&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;JDK는 자바 개발도구(Java Development Kit)의 약자이다.&lt;/li&gt;
+  &lt;li&gt;JDK는 JRE + 개발을 위해 필요한 도구(javac, java 등)들을 포함한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;이클립스 단축키&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;윈도우 : 	alt+shift+n&lt;/p&gt;
+
+&lt;p&gt;mac :	 cmd+shift+n&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;변수저장공간&quot;&gt;&lt;strong&gt;변수(저장공간)&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;어떤 값이 들어올지 자료형으로 알려주어 선언한다.&lt;/li&gt;
+  &lt;li&gt;같은 값이 반복하여 사용될 때 (유지보수가 용이해진다.)&lt;/li&gt;
+  &lt;li&gt;값에 의미부여를 할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;연산자최대산쉬관리삼대&quot;&gt;&lt;strong&gt;연산자(최대산쉬관리삼대)&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;결합성
+    &lt;ul&gt;
+      &lt;li&gt;동일한 연산자가 하나의 수식에 여러 개 존재할 때 알맞는 방향으로 결합되어 연산되는 성질&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;우선순위
+    &lt;ul&gt;
+      &lt;li&gt;여러 연산자가 하나의 수식에 존재할 때 순서를 매기는 방법&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;최&lt;/strong&gt;우선&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;단&lt;/strong&gt;항&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;산&lt;/strong&gt;술&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;쉬&lt;/strong&gt;프트&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;관&lt;/strong&gt;계&lt;/li&gt;
+  &lt;li&gt;논&lt;strong&gt;리&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;삼&lt;/strong&gt;항&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;대&lt;/strong&gt;입&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;제어문if-삼항연산자-switch-for-while&quot;&gt;&lt;strong&gt;제어문&lt;/strong&gt;(if, 삼항연산자, switch, for, while)&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;조건문
+    &lt;ul&gt;
+      &lt;li&gt;if문과 삼항연산자
+        &lt;ul&gt;
+          &lt;li&gt;if문은 속도가 삼항연산자보다 상대적으로 느리지만 메모리를 덜 사용한다.&lt;/li&gt;
+          &lt;li&gt;삼항연산자는 속도가 빠르지만 메모리를 더 사용한다.
+            &lt;ul&gt;
+              &lt;li&gt;보통 삼항연산자는 메소드의 리턴값에 자주 사용된다.&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;반복문
+    &lt;ol&gt;
+      &lt;li&gt;몇 번 반복할 지 알 수 있다.
+        &lt;ul&gt;
+          &lt;li&gt;for 문&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;몇 번 반복할 지 알 수 없다.
+        &lt;ul&gt;
+          &lt;li&gt;while 문&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;메모리구조&quot;&gt;&lt;strong&gt;메모리구조&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;Storage Class(저장 기억 부류)&lt;/p&gt;
+
+&lt;p&gt;​					&lt;strong&gt;Stack				Heap				Data영역&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;변수&lt;/strong&gt; 			지역, 매개									전역, static(정적)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;초기화&lt;/strong&gt;			직접											자동, 자동&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;생명주기&lt;/strong&gt;  		 } 				직접해제(GC)	 new, 프로그램 종료시&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;보안성&lt;/strong&gt; 			상											 	중, 하&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;배열index&quot;&gt;&lt;strong&gt;배열(index)&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;​	int[] arData = {3, 5, ,7, 8, 9}&lt;/p&gt;
+
+&lt;p&gt;index가 0부터 시작하는 이유&lt;/p&gt;
+
+&lt;p&gt;배열명은 시작주소를 가지고 있고 해당 주소를 접근할 때 배열명 + 0 으로 접근하기 때문이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;자바에서의 정적배열과 동적배열&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;=&amp;gt; 자바에는 메모리상 정적배열이 존재하지 않는다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;는 정적배열이라고 할 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;arData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;하지만, 위 코드처럼 자바에서 작성이 가능한데, &lt;strong&gt;new&lt;/strong&gt; 사용 자체가 배열 크기를 바꾸는거기 때문에 동적배열이라고 생각한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;모든 배열은 동적 메모리인 Heap메모리에 할당되기 때문이다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;nextInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt; 
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이것은 동적 배열이다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;메소드&quot;&gt;메소드&lt;/h2&gt;
+
+&lt;p&gt;메소드는 작성된 코드의 주소값을 담고 있는 저장공간이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+  
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;메소드 선언 순서&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;예) 두 정수의 덧셈&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;메소드의 이름을 생각한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;addFor2Integers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){}&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;매개변수를 생각한다.&lt;/p&gt;
+
+    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;addFor2Integers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;실행할 문장을 작성한다.&lt;/p&gt;
+
+    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;addFor2Integers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;리턴 값을 생각한다.&lt;/p&gt;
+
+    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;addFor2Integers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;리턴 타입을 결정한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addFor2Integers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;메소드를 사용하는 목적&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;재사용 (특정성을 부여해서는 안된다.)&lt;/p&gt;
+
+    &lt;p&gt;두 정수를 입력받고 합을 구하는 메소드&lt;/p&gt;
+
+    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
+	&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;구현만 해두고, 매개변수를 통해 알아서 사용하도록 전달 해주는 목적&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;소스코드 간결화&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;메소드에서&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;리턴을 해야할 때
+ex) 두 정수의 합을 구하는 메소드 선언
+사용하는 부분에 작업의 결과를 알려주어야 할 때&lt;/li&gt;
+  &lt;li&gt;리턴을 할 필요 없을 때
+ex)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;day01&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MainTest&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;none.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+				&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]);&lt;/span&gt;
+			&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;</content><author><name></name></author><category term="Lecture" /><summary type="html">한동석 강사 - day01</summary></entry><entry><title type="html">한동석 강사-day02</title><link href="/lecture/2021/01/20/%ED%95%9C%EB%8F%99%EC%84%9D%EA%B0%95%EC%82%AC-2.html" rel="alternate" type="text/html" title="한동석 강사-day02" /><published>2021-01-20T09:00:00+09:00</published><updated>2021-01-20T09:00:00+09:00</updated><id>/lecture/2021/01/20/%ED%95%9C%EB%8F%99%EC%84%9D%EA%B0%95%EC%82%AC-2</id><content type="html" xml:base="/lecture/2021/01/20/%ED%95%9C%EB%8F%99%EC%84%9D%EA%B0%95%EC%82%AC-2.html">&lt;h2 id=&quot;this&quot;&gt;this&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;다형성polymorphism---메소드&quot;&gt;다형성(polymorphism) - 메소드&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;오버로딩(Overloading)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;매개변수의 개수 혹은 타입이 서로 다르면, 같은 이름의 메소드로 선언이 가능하다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;오버라이딩 (재정의, Overriding)&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;부모에 있는 메소드가 자식에서 수정이 필요하다면,
+똑같은 이름으로 자식에게 선언해준다.
+부모 필드에 선언된 메소드가 메모리에 먼저 할당되고,
+그 다음 자식 필드에서 재정의된 메소드가 할당된다.
+같은 이름의 저장공간은 선언될 수 없으므로, 
+이미 선언된 부모의 메소드 저장공간에 자식에서 새롭게 재정의한 코드의 주소값이 들어간다.
+&lt;strong&gt;예시&lt;/strong&gt;&lt;/p&gt;
+
+        &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 부모&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 자식 &lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;syso&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 자식 객체로 접근한 메소드. 결과는 자식 값 &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;C:\Users\corne\AppData\Roaming\Typora\typora-user-images\image-20210121101941204.png&quot; alt=&quot;image-20210121101941204&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;메소드는 저장공간이다.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;상속inheritance&quot;&gt;상속(inheritance)&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;기존에 선언된 클래스의 필드를 새롭게 선언하는 클래스의 필드에서 
+사용하고 싶을 때&lt;/li&gt;
+  &lt;li&gt;여러 클래스를 선언할 때 공통 필드가 많다면, 부모 클래스를 선언하고 
+공통 필드 선언 후 여러 클래스들에게 상속해주기 위해서&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;상속 문법&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;A필드&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;no&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B필드&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;A 클래스 :  부모 클래스, 상위 클래스, 슈퍼 클래스, 기반 클래스&lt;/p&gt;
+
+&lt;p&gt;B 클래스 :  자식 클래스, 하위 클래스, 서브 클래스, 파생 클래스&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;부모,자식 =&amp;gt; 구어체
+상위,하위 =&amp;gt; 교재
+슈퍼,서브 =&amp;gt; 
+기반,파생 =&amp;gt; 논문 등
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;상속의 작동 원리&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;자식 객체로 부모 필드에 접근하기 위해서는 당연히 부모 필드가 메모리에 할당 돼야 한다. 
+하지만 자식 객체를 객체화 할 때, 자식 생성자만 호출한다.
+자식 생성자만 호출하게 되면 자식 객체는 자식 필드만 접근이 가능하게 되므로
+자식 생성자 호출 시 자동으로 부모 생성자를 먼저 호출하게 된다.
+&lt;strong&gt;따라서, 부모 필드가 먼저 메모리에 할당된 후 자식 필드가 할당되기 때문에 **
+**자식 객체로 부모 필드에 접근할 수 있게 된다.&lt;/strong&gt;
+자식 필드 내에서 부모 필드에 접근할 때, &lt;span style=&quot;color:green&quot;&gt;super&lt;/span&gt; 키워드를 사용하고,
+부모 생성자는 &lt;span style=&quot;color:brown&quot;&gt;super()&lt;/span&gt;로 작성한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;클래스-배열&quot;&gt;클래스 배열&lt;/h2&gt;
+
+&lt;p&gt;같은 타입의 객체가 여러 개 있을 때 
+객체명도 여러 개이다. 이름이 여러 개이면 관리하기 때문에
+객체 배열로 선언하여 사용한다.&lt;/p&gt;
+
+&lt;h4 id=&quot;클래스-배열-선언&quot;&gt;클래스 배열 선언&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;클래스명[] 배열명 = new 클래스명[길이];&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;클래스명[] 배열명 = {&lt;/p&gt;
+
+    &lt;p&gt;new 클래스명(),
+new 클래스명(),
+new 클래스명(),
+…&lt;/p&gt;
+
+    &lt;p&gt;}&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;클래스-배열-사용&quot;&gt;&lt;strong&gt;클래스 배열 사용&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;​	배열명[i].필드명
+​	배열명[i].메소드명()&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;casting&quot;&gt;Casting&lt;/h2&gt;
+
+&lt;p&gt;up casting&lt;/p&gt;
+
+&lt;p&gt;부모 타입에 자식 값을 넣는 형변환&lt;/p&gt;
+
+&lt;p&gt;down casting&lt;/p&gt;
+
+&lt;p&gt;up casting 된 객체를 자식 타입으로 형변환&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;왜?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;하나의 부모에서 자식은 여러개이다. 모든 자식을 하나로 묶기 위해서는&lt;/p&gt;
+
+&lt;p&gt;Up Casting이 필요하다.&lt;/p&gt;
+
+&lt;p&gt;전달받은 자식 값의 필드를 다시 모두 사용하기 위해서는&lt;/p&gt;
+
+&lt;p&gt;Down Casting으로 복원한다.&lt;/p&gt;
+
+&lt;h4 id=&quot;타입-비교instanceof&quot;&gt;타입 비교(instanceof)&lt;/h4&gt;
+
+&lt;p&gt;a instanceof A : a객체가 A타입이면 true, 아니면 false&lt;/p&gt;
+
+&lt;p&gt;예 ) “안녕” instanceof String : true&lt;/p&gt;
+
+&lt;p&gt;==&amp;gt; 안녕이 스트링 타입이면 참&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;구체적인-커리큘럼&quot;&gt;구체적인 커리큘럼&lt;/h3&gt;
+
+&lt;p&gt;2월 (JAVA, JDBC)&lt;/p&gt;
+
+&lt;p&gt;3월 (HTML, CSS, 크롤링(셀레니움), JavaScript(jQuery, DOM, BOM) ) - 개인프로젝트&lt;/p&gt;
+
+&lt;p&gt;4월 (JSP, MVC, Ajax, JSON, 팀프로젝트(SVN), 출시(리눅스, 네이버클라우드 플랫폼))&lt;/p&gt;
+
+&lt;p&gt;5월 (Spring framework, DI, AOP, IoC, POJO, Tier, Spring MVC, Maven, 썸네일(극악), …)&lt;/p&gt;
+
+&lt;p&gt;6월 (팀 프로젝트-이관, Git, JPA(ORM), 면접)&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;회사에서 직접 가서 보는 코딩테스트(서류합격)
+    &lt;strong&gt;알고리즘 공부&lt;/strong&gt; - 실생활 예제에 관련된 문제 (C언어, JAVA)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;코딩테스트 (순위)
+    &lt;strong&gt;알고리즘 공부&lt;/strong&gt; - 실생활 예제에 관련된 문제 (C언어, JAVA)
+&lt;strong&gt;공부가 필요함&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;qa&quot;&gt;&lt;strong&gt;Q&amp;amp;A&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;h2 id=&quot;q-포트폴리오-개수&quot;&gt;Q. 포트폴리오 개수**&lt;/h2&gt;
+
+&lt;p&gt;취업할 때 포트폴리오가 중요하다고 하는데 잘못된 생각임&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;스타트업&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;중소기업&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;스타트업,중소기업 까지는 포트폴리오가 필요없다.&lt;/p&gt;
+
+&lt;p&gt;내가 원하는 기업을 찾았다면, 포트폴리오로 어필할 수 있다. (+알파)가 된다.&lt;/p&gt;
+
+&lt;p&gt;여러개 보다는, 양보다는 질로 제대로 이해하고 준비하는 것이 좋다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;중견기업&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;대기업&lt;/strong&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;q-자격증-공부-해야하나요&quot;&gt;Q. 자격증 공부 해야하나요?&lt;/h2&gt;
+
+&lt;p&gt;하드웨어의 기초적인 것은 알아야한다.&lt;/p&gt;
+
+&lt;p&gt;정보처리기사 등 관련 자격증은 문제 해결의 능력 자격증이기 때문에 있으면 좋다. 없어도 문제 없지만 인생에 도움되는건 사실이기 때문에 추천하는 편.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;q-파견업체-자체-솔루션-업체-규모-&quot;&gt;Q. (파견업체, 자체 솔루션 업체 (규모) )&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Q&lt;/strong&gt; : 전 SI를 최대한 피하려고 하는데 사람인이나 로켓펀치  회사 소개 볼때 SI 회사의 특징들이 있나여? 유지보수 회사도요&lt;/p&gt;
+
+&lt;p&gt;그냥 자사 플랫폼들은 거의 규모있는 스타트업들인가여?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;A&lt;/strong&gt; :&lt;/p&gt;
+
+&lt;h4 id=&quot;파견si솔루션에-해당될-듯-&quot;&gt;&lt;strong&gt;파견(SI,솔루션에 해당될 듯) :&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;​	**장점 : **&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;단기간 다양한 프로젝트 경험으로 스펙이 좋아짐.&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;대기업 쪽으로 가지 않는다면 굳이 파견쪽에 있을 필요가 없다.&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;치고 빠질 수 있고 스펙에 도움이 되는 대기업 프로젝트에 참여해야 한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;다양한 기술 습득, 트랜드 습득 가능&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;​	&lt;strong&gt;단점 :&lt;/strong&gt; 출근길이 변경된다. (해외, 잦은 출장 등) ,&lt;/p&gt;
+
+&lt;p&gt;팀 단위로 다니는 파견이 좋다. 그래야지 알맞는 위치에서 작업할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;신입사원일 때 체계가 잡혀있기 때문에 괜찮다.&lt;/p&gt;
+
+&lt;h4 id=&quot;유지보수-&quot;&gt;&lt;strong&gt;유지보수&lt;/strong&gt; :&lt;/h4&gt;
+
+&lt;p&gt;주로 경력직을 많이 뽑는 편이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;장점 :&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;안정적이다. 대출에 큰 힘이 된다. 우리나라에서는 대출을 잘 받아야 한다.&lt;/li&gt;
+      &lt;li&gt;(한가지의 )기술을 깊게 배울 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;**단점 : **
+    &lt;ul&gt;
+      &lt;li&gt;우물 안 개구리일 수도 있다. (약간 뒤처짐, 본인 자기개발을 잘 해야함)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;루트-경로&quot;&gt;&lt;strong&gt;루트&lt;/strong&gt; (경로)&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;취업준비(최소 1년) –&amp;gt; 대기업 (요새는 학력도 잘 안보는듯한 눈치)&lt;/li&gt;
+  &lt;li&gt;취업준비(6개월) &amp;gt; 중소기업 신입사원 &amp;gt; 대기업 경력직&lt;/li&gt;
+  &lt;li&gt;취업준비(7개월) &amp;gt; 대기업 인턴(코딩 테스트) &amp;gt; 대기업 정규직&lt;/li&gt;
+  &lt;li&gt;취업준비(5개월) &amp;gt; 스타트업 신입사원 &amp;gt; 중소기업 경력직 &amp;gt; 대기업 경력직&lt;/li&gt;
+  &lt;li&gt;취업준비(?) &amp;gt; 중소기업 신입사원(최소 1년 재직) &amp;gt; 창업&lt;/li&gt;
+  &lt;li&gt;취업준비(?) &amp;gt; 대기업 신입사원(최소 1년 재직) &amp;gt; 창업&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;스타트업은 쉬운게 아니라 인성을 많이 본다. 이제 막 시작한 회사이기 때문에 같이 함께 갈 사람을&lt;/p&gt;
+
+&lt;p&gt;뽑기 때문에 인성적인 면을 보는 것도 많다, 스타트업 같은 경우 인재를 많이 볼 수도 있다.&lt;/p&gt;
+
+&lt;p&gt;협약맺은 학원에서 수강생을 뽑는 회사도 많다.&lt;/p&gt;
+
+&lt;p&gt;**가장 추천 : 2,4번 **&lt;/p&gt;
+
+&lt;p&gt;이유 : 4번 루트로 가서 대기업 경력직이신 분들은 한마디를 하더라도 라떼의 역사를 들으면 예측이 가능함.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;q-신입사원-연령&quot;&gt;Q. 신입사원 연령&lt;/h2&gt;
+
+&lt;p&gt;모토(moto)들이 크게 두 가지가 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;젊은 회사&lt;/li&gt;
+  &lt;li&gt;안정적인 회사&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;결론 : 크게 신경쓰지 말아라.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;q-개발자-평균-연봉&quot;&gt;Q. 개발자 평균 연봉&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;2400~3000&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;q-nodejs-spring-framework&quot;&gt;Q. Node.js, Spring framework&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Spring framework&lt;/strong&gt; (Java, xml, html, …. 공부할 양이 많다. ) : 멀티 쓰레드,&lt;/p&gt;
+
+&lt;p&gt;난이도가 어려운 편. 그 만큼 편하고 공부할 양이 많다.&lt;/p&gt;
+
+&lt;p&gt;복잡한 CPU 연산이 있는 페이지에서는 최고의 성능이다. (노드로 하게 되면 문제가 발생할 수 있다.)&lt;/p&gt;
+
+&lt;p&gt;​	**대기업, 공공기관, 정부(전자정부표준프레임워크 egov)에서 많이 사용한다. **&lt;/p&gt;
+
+&lt;p&gt;–&amp;gt; 소통 X 시키는대로&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Node&lt;/strong&gt; : 싱글 쓰레드, Node.js를 배우면 기존의 프론트엔드 였던 사람들이 백엔드로 갈 수 있다.&lt;/p&gt;
+
+&lt;p&gt;특화 : 입,출력에 빠르다. (SNS, Netflix 등(OTT 서비스))&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Node도 굉장히 어려운 편.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;스타트업, 중소기업에서 많이 선호한다. (풀스택 개발자-인건비 절감)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;–&amp;gt; 소통 O 어쩌면 의견이 반영 될 수도 …&lt;/p&gt;</content><author><name></name></author><category term="Lecture" /><summary type="html">this</summary></entry><entry><title type="html">오라클Oracle - SQL : 제약 조건</title><link href="/database/2021/01/07/oracle-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4.html" rel="alternate" type="text/html" title="오라클Oracle - SQL : 제약 조건" /><published>2021-01-07T14:00:00+09:00</published><updated>2021-01-07T14:00:00+09:00</updated><id>/database/2021/01/07/oracle-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4</id><content type="html" xml:base="/database/2021/01/07/oracle-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4.html">&lt;h1 id=&quot;제약-조건에-관하여&quot;&gt;&lt;a href=&quot;https://iu-corner.tistory.com/entry/Oracle-SQL-제약조건?category=905491&quot;&gt;제약 조건에 관하여&lt;/a&gt;&lt;/h1&gt;</content><author><name></name></author><category term="Database" /><summary type="html">제약 조건에 관하여</summary></entry><entry><title type="html">오라클Oracle - SQL : 서브 쿼리(Sub Query)</title><link href="/database/2021/01/07/oracle-%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC.html" rel="alternate" type="text/html" title="오라클Oracle - SQL : 서브 쿼리(Sub Query)" /><published>2021-01-07T14:00:00+09:00</published><updated>2021-01-07T14:00:00+09:00</updated><id>/database/2021/01/07/oracle-%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC</id><content type="html" xml:base="/database/2021/01/07/oracle-%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC.html">&lt;h1 id=&quot;sub-query에-관하여&quot;&gt;&lt;a href=&quot;https://iu-corner.tistory.com/entry/Oracle-Sub-Query-서브-쿼리&quot;&gt;(Sub Query)에 관하여&lt;/a&gt;&lt;/h1&gt;</content><author><name></name></author><category term="Database" /><summary type="html">(Sub Query)에 관하여</summary></entry><entry><title type="html">오라클Oracle - SQL : JOIN</title><link href="/database/2021/01/07/oracle-join.html" rel="alternate" type="text/html" title="오라클Oracle - SQL : JOIN" /><published>2021-01-07T11:30:00+09:00</published><updated>2021-01-07T11:30:00+09:00</updated><id>/database/2021/01/07/oracle-join</id><content type="html" xml:base="/database/2021/01/07/oracle-join.html">&lt;h1 id=&quot;oracle-sql--join&quot;&gt;Oracle SQL : JOIN&lt;/h1&gt;
 
 &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 oracle-lecture0107.sql
@@ -742,72 +1330,4 @@ init_connect=SET NAMES utf8
 default-character-set=utf8
 [mysql]
 default-character-set=utf8
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="Database" /><category term="MySQL" /><summary type="html">1. 도커 이미지 다운받기</summary></entry><entry><title type="html">MySQL Workbench 사용</title><link href="/database/mysql/2020/12/31/db-mysql.html" rel="alternate" type="text/html" title="MySQL Workbench 사용" /><published>2020-12-31T10:24:00+09:00</published><updated>2020-12-31T10:24:00+09:00</updated><id>/database/mysql/2020/12/31/db-mysql</id><content type="html" xml:base="/database/mysql/2020/12/31/db-mysql.html">&lt;h1 id=&quot;mysql-workbench-사용하기&quot;&gt;🌐MySQL Workbench 사용하기&lt;/h1&gt;
-
-&lt;h2 id=&quot;workbench에서-db-table-생성-시&quot;&gt;workbench에서 DB, table 생성 시&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;이미 생성을 했다면&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/images/workbench1.png?raw=true&quot; alt=&quot;1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;오른쪽 수리 아이콘 클릭&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/images/workbench2.png?raw=true&quot; alt=&quot;2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;위와 같이 charset/collation 설정을 해준다.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/images/workbench3.png?raw=true&quot; alt=&quot;3&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;SQL 문에서 9번,10번줄 실행 (Ctrl + Enter)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;root 권한을 허용하는 것임&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/images/workbench4.png?raw=true&quot; alt=&quot;4&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;**마찬가지로 table 처음 생성하거나 수정에서 charset/collation을 위와 같이 설정해준다. **&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/images/workbench5.png?raw=true&quot; alt=&quot;5&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;왼쪽 바에서 빈 공간에서 우클릭 후 새로고침을 진행한다.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/images/workbench6.png?raw=true&quot; alt=&quot;6&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;새로고침 진행 후 db와 table이 정상적으로 잘 보인다면&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;server -&amp;gt; data export  (내보내기)&lt;/p&gt;
-
-&lt;p&gt;data import (불러오기)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/images/workbench7.png?raw=true&quot; alt=&quot;7&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;export to Dump Project Folde 를 체크&lt;/strong&gt; 한 뒤 본인의 뜻대로 경로를 지정하고 &lt;strong&gt;include create scheme&lt;/strong&gt;를 체크한 뒤&lt;/p&gt;
-
-&lt;p&gt;내보내기 실행하면 끝.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;불러오는-법&quot;&gt;불러오는 법&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/Eight-Corner/eight-corner.github.io/blob/master/_posts/images/workbench8.png?raw=true&quot; alt=&quot;불러오기&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;프로젝트 폴더를 받아 Load Folder Contents를 눌러 새로고침 후&lt;/p&gt;
-
-&lt;p&gt;아래에 뜨는 불러올 스키마(DB)를 체크하여 import&lt;/p&gt;</content><author><name></name></author><category term="Database" /><category term="MySQL" /><summary type="html">🌐MySQL Workbench 사용하기</summary></entry><entry><title type="html">프로젝트 설계</title><link href="/java/lecture/2020/12/30/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%A4%EA%B3%84.html" rel="alternate" type="text/html" title="프로젝트 설계" /><published>2020-12-30T09:11:00+09:00</published><updated>2020-12-30T09:11:00+09:00</updated><id>/java/lecture/2020/12/30/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%A4%EA%B3%84</id><content type="html" xml:base="/java/lecture/2020/12/30/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%A4%EA%B3%84.html">&lt;h1 id=&quot;member-프로젝트-진행&quot;&gt;Member 프로젝트 진행&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;화면설계&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;데이터베이스 설계&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;화면 &amp;lt;–&amp;gt; 데이터베이스 연결&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;sql문을 자바코드&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;예외처리하기&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="JAVA" /><category term="Lecture" /><summary type="html">Member 프로젝트 진행</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="Database" /><category term="MySQL" /><summary type="html">1. 도커 이미지 다운받기</summary></entry></feed>

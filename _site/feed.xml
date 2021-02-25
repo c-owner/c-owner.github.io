@@ -1,4 +1,164 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2021-02-23T14:56:59+09:00</updated><id>/feed.xml</id><title type="html">Corner</title><entry><title type="html">JSP-day01</title><link href="/lecture/jsp/2021/02/22/jsp-day01.html" rel="alternate" type="text/html" title="JSP-day01" /><published>2021-02-22T09:10:00+09:00</published><updated>2021-02-22T09:10:00+09:00</updated><id>/lecture/jsp/2021/02/22/jsp-day01</id><content type="html" xml:base="/lecture/jsp/2021/02/22/jsp-day01.html">&lt;h1 id=&quot;웹-개발을-하려는-이유&quot;&gt;웹 개발을 하려는 이유&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2021-02-25T11:52:16+09:00</updated><id>/feed.xml</id><title type="html">Corner</title><entry><title type="html">JSP-day03</title><link href="/lecture/jsp/2021/02/25/jsp-day03.html" rel="alternate" type="text/html" title="JSP-day03" /><published>2021-02-25T09:10:00+09:00</published><updated>2021-02-25T09:10:00+09:00</updated><id>/lecture/jsp/2021/02/25/jsp-day03</id><content type="html" xml:base="/lecture/jsp/2021/02/25/jsp-day03.html">&lt;h2 id=&quot;ajaxasynchronous-javascript-and-xml-에이잭스&quot;&gt;Ajax(Asynchronous JavaScript and XML, 에이잭스)&lt;/h2&gt;
+
+&lt;p&gt;빠르게 동작하는 동적인 웹 페이지를 만들기 위한 개발 기법이다.&lt;/p&gt;
+
+&lt;p&gt;Ajax는 웹 페이지 전체를 다시 리로딩하지 않고도, 웹 페이지의 일부분만을 갱신할 수 있고&lt;/p&gt;
+
+&lt;p&gt;백그라운드 영역에서 서버와 통신하여, 그 결과를 웹 페이지의 일부분에만 표시할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;이 때 서버와 여러 데이터를 주고 받을 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;JSON&lt;/li&gt;
+  &lt;li&gt;XML&lt;/li&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;텍스트 등&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Ajax의 장점&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;웹 페이지 전체를 다시 로딩하지 않고도, 웹 페이지의 일부분만을 갱신할 수 있다.&lt;/li&gt;
+  &lt;li&gt;**웹 페이지가 로드된 후에 서버로 데이터 요청을 보내거나 받을 수 있다. **
+ex) 회원가입 페이지에서 또 중복 확인이라는 요청을 보낼 수 있는 것.&lt;/li&gt;
+  &lt;li&gt;다양한 UI(동적 페이지)구현이 가능해진다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Ajax의 단점&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;페이지 이동이 없기 때문에 히스토리 관리가 안된다.&lt;/li&gt;
+  &lt;li&gt;반복적인 데이터를 요청하면 느려지거나 작동하지 않게 된다.&lt;/li&gt;
+  &lt;li&gt;페이지 이동이 없다는 것은 보안상의 문제도 발생할 수 있다는 것이다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Ajax 구성 요소&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;웹 페이지의 표현을 위한 HTML과 CSS&lt;/li&gt;
+  &lt;li&gt;데이터에 접근하거나 화면 구성을 동적으로 조작하기 위해 사용되는 DOM 모델이다.&lt;/li&gt;
+  &lt;li&gt;데이터 교환을 위한 JSON이나 XML&lt;/li&gt;
+  &lt;li&gt;웹 서버와의 비동기식 통신을 위한 XMLHttpRequest 객체이다.&lt;/li&gt;
+  &lt;li&gt;위에서 언급한 모든 기술을 결합하여 사용자의 작업 흐름을 제어하는 데 사용되는 자바스크립트&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;★  &lt;strong&gt;XMLHttpRequest 객체&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Ajax의 가장 핵심적인 구성 요소는 바로 XMLHttpRequest 객체이다.&lt;/p&gt;
+
+&lt;p&gt;Ajax에서 XMLHttpRequest 객체는 웹 브라우저가 서버와 데이터를 교환할 때 사용된다.&lt;/p&gt;
+
+&lt;p&gt;웹 브라우저가 백그라운드에서 계속해서 서버와 통신할 수 있는 것은 바로 이 객체를 사용하기 때문이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;XMLHttpRequest 객체 생성&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;객체명&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;XMLHttpReuqest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;서버에-요청request하기&quot;&gt;서버에 요청(request)하기&lt;/h4&gt;
+
+&lt;p&gt;서버에 요청을 보내기 위해서는 우선 XMLHttpRequest 인스턴스를&lt;/p&gt;
+
+&lt;p&gt;생성해야 하고, 인스턴스의 open() 메소드와 send() 메소드를 사용하여&lt;/p&gt;
+
+&lt;p&gt;요청을 보낼 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;open-메소드&quot;&gt;open() 메소드&lt;/h3&gt;
+
+&lt;p&gt;서버로 보낼 Ajax 요청의 형식을 설정한다.&lt;/p&gt;
+
+&lt;p&gt;open(전달방식, URL주소, 동기 여부);&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;전달방식&lt;/strong&gt; : GET방식, POST방식 등 요청방식 선택&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;URL주소&lt;/strong&gt; : 요청을 처리할 서버의 파일 주소 전달&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;동기 여부&lt;/strong&gt; : 요청을 동기식으로 전달할 지, 비동기식으로 전달할 지를 선택&lt;/p&gt;
+
+&lt;h3 id=&quot;send-메소드&quot;&gt;send() 메소드&lt;/h3&gt;
+
+&lt;p&gt;작성한 Ajax요청을 서버로 전달&lt;/p&gt;
+
+&lt;p&gt;전달 방식에 따라서 인수를 가질 수도, 가지지 않을 수도 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// get방식&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;문자열&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// POST방식&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ajax 요청 시 XMLHttpReuqest 객체는 각 상태별로 &lt;strong&gt;readyState&lt;/strong&gt;가 변한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;readyState 프로퍼티&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;처음에는 readyState가 0(객체명.UNSENT, 보내지 않음) 이었다가,&lt;/p&gt;
+
+&lt;p&gt;open 메소드를 호출하는 순간 1(객체명.OPEND)로 바뀌고 send()호출 시 순차적으로&lt;/p&gt;
+
+&lt;p&gt;2(객체명.HEADERS_RECEIVED), 3(객체명.LOADING), 4(객체명.DONE)로 바뀐다.&lt;/p&gt;
+
+&lt;p&gt;최종적으로 readyState가 4(객체명.DONE)가 된다면 상태코드(객체명.status)가 성공을 가리키는&lt;/p&gt;
+
+&lt;p&gt;200, 201일 때 응답을 확인한다.&lt;/p&gt;</content><author><name></name></author><category term="Lecture" /><category term="jsp" /><summary type="html">Ajax(Asynchronous JavaScript and XML, 에이잭스)</summary></entry><entry><title type="html">JSP-day02</title><link href="/lecture/jsp/2021/02/24/jsp-day02.html" rel="alternate" type="text/html" title="JSP-day02" /><published>2021-02-24T09:10:00+09:00</published><updated>2021-02-24T09:10:00+09:00</updated><id>/lecture/jsp/2021/02/24/jsp-day02</id><content type="html" xml:base="/lecture/jsp/2021/02/24/jsp-day02.html">&lt;p&gt;##&lt;/p&gt;
+
+&lt;p&gt;자바빈즈(자바 객체)
+	JSP의 표준 액션 태그를 통해 접근할 수 있는 자바 클래스로서,
+	기본생성자, 멤버 변수(필드)와 setter, getter메소드로 이루어져 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;4. useBean - &amp;lt;jsp:useBean /&amp;gt;		(기본생성자)
+5. setProperty - &amp;lt;jsp:setProperty /&amp;gt;	(setter)
+6. getProperty - &amp;lt;jsp:getProperty /&amp;gt;	(getter)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;자바빈즈 태그 사용 문법
+	-객체 생성
+		MemberVO member = new MemberVO();
+		&lt;jsp:useBean class=&quot;com.koreait.beans.MemberVO&quot; id=&quot;member&quot;&gt;&lt;/jsp:useBean&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;-setter()
+	member.setName(&quot;한동석&quot;);
+	&amp;lt;jsp:setProperty name=&quot;member&quot; property=&quot;name&quot; value=&quot;한동석&quot;/&amp;gt;	
+
+-getter()
+	member.getName();
+	&amp;lt;jsp:getProperty name=&quot;member&quot; property=&quot;name&quot;/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;자바빈즈 규칙
+	1. 패키지화
+	2. 멤버변수 접근자 private으로 설정
+	3. getter, setter메소드 접근자는 public
+	4. 기본 생성자 선언
+———————————————————————————–
+내장 객체
+	객체화 없이 사용할 수 있는 객체이며, jsp파일이 서블릿으로 변환될 때
+	웹 컨테이너가 자동으로 메모리에 할당하며 제공한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;request : 웹 브라우저의 요청 정보를 저장
+response : 웹 브라우저의 요청에 대한 응답 정보를 저장
+out : JSP페이지 body에 출력할 내용 정보를 저장
+session : 하나의 웹 브라우저의 정보를 유지하기 위한 세션 정보를 저장
+pageContext : JSP페이지에 대한 정보를 저장
+config : JSP페이지에 대한 설정 정보를 저장
+exception : JSP페이지에 예외가 발생한 경우 사용되는 객체 ------------------------------------------------------------------------------- GET방식과 POST방식
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;-GET
+	주소에 데이터를 추가해서 전달하는 방식.
+	보통 쿼리 문자열(query string)에 포함되어 전송되므로, 길이에 제한이 있으며
+	주소에 데이터가 보이므로 보안상 취약점이 존재한다.
+	중요한 데이터는 POST 방식을 사용하여 요청하는 것이 좋지만 POST방식보다
+	전송 속도가 빠르다.&lt;/p&gt;
+
+&lt;p&gt;-POST
+	데이터를 별도로 첨부하여 전달하는 방식.
+	브라우저 히스토리에도 남지 않고 데이터는 쿼리 문자열과는 별도로 전송된다.
+	따라서 길이의 제한도 없으며, GET방식 보다는 보안성 높다.
+	하지만 GET방식 보다 상대적으로 느리다.&lt;/p&gt;
+
+&lt;p&gt;**결론
+	전송할 데이터의 양이 작고 노출되어도 무방하다면 GET방식을 사용하고
+	전송할 데이터의 양이 크거나 노출이 되면 안될 데이터라면 POST방식을 사용한다.
+——————————————————————————————
+*회원가입 중복검사 실습(day02/join.jsp 참고)&lt;/p&gt;</content><author><name></name></author><category term="Lecture" /><category term="jsp" /><summary type="html">##</summary></entry><entry><title type="html">JSP-day01</title><link href="/lecture/jsp/2021/02/22/jsp-day01.html" rel="alternate" type="text/html" title="JSP-day01" /><published>2021-02-22T09:10:00+09:00</published><updated>2021-02-22T09:10:00+09:00</updated><id>/lecture/jsp/2021/02/22/jsp-day01</id><content type="html" xml:base="/lecture/jsp/2021/02/22/jsp-day01.html">&lt;h1 id=&quot;웹-개발을-하려는-이유&quot;&gt;웹 개발을 하려는 이유&lt;/h1&gt;
 
 &lt;p&gt;사용자의 편의를 생각하기 위함이다.&lt;/p&gt;
 
@@ -3205,319 +3365,4 @@ ex)&lt;/li&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;hr /&gt;</content><author><name></name></author><category term="Lecture" /><summary type="html">한동석 강사 - day01</summary></entry><entry><title type="html">한동석 강사-day02</title><link href="/lecture/2021/01/20/%ED%95%9C%EB%8F%99%EC%84%9D%EA%B0%95%EC%82%AC-2.html" rel="alternate" type="text/html" title="한동석 강사-day02" /><published>2021-01-20T09:00:00+09:00</published><updated>2021-01-20T09:00:00+09:00</updated><id>/lecture/2021/01/20/%ED%95%9C%EB%8F%99%EC%84%9D%EA%B0%95%EC%82%AC-2</id><content type="html" xml:base="/lecture/2021/01/20/%ED%95%9C%EB%8F%99%EC%84%9D%EA%B0%95%EC%82%AC-2.html">&lt;h2 id=&quot;this&quot;&gt;this&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;다형성polymorphism---메소드&quot;&gt;다형성(polymorphism) - 메소드&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;오버로딩(Overloading)&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;매개변수의 개수 혹은 타입이 서로 다르면, 같은 이름의 메소드로 선언이 가능하다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;오버라이딩 (재정의, Overriding)&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;부모에 있는 메소드가 자식에서 수정이 필요하다면,
-똑같은 이름으로 자식에게 선언해준다.
-부모 필드에 선언된 메소드가 메모리에 먼저 할당되고,
-그 다음 자식 필드에서 재정의된 메소드가 할당된다.
-같은 이름의 저장공간은 선언될 수 없으므로, 
-이미 선언된 부모의 메소드 저장공간에 자식에서 새롭게 재정의한 코드의 주소값이 들어간다.
-&lt;strong&gt;예시&lt;/strong&gt;&lt;/p&gt;
-
-        &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 부모&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 자식 &lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;syso&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 자식 객체로 접근한 메소드. 결과는 자식 값 &lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;C:\Users\corne\AppData\Roaming\Typora\typora-user-images\image-20210121101941204.png&quot; alt=&quot;image-20210121101941204&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;메소드는 저장공간이다.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;상속inheritance&quot;&gt;상속(inheritance)&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;기존에 선언된 클래스의 필드를 새롭게 선언하는 클래스의 필드에서 
-사용하고 싶을 때&lt;/li&gt;
-  &lt;li&gt;여러 클래스를 선언할 때 공통 필드가 많다면, 부모 클래스를 선언하고 
-공통 필드 선언 후 여러 클래스들에게 상속해주기 위해서&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;상속 문법&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;A필드&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;no&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B필드&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;A 클래스 :  부모 클래스, 상위 클래스, 슈퍼 클래스, 기반 클래스&lt;/p&gt;
-
-&lt;p&gt;B 클래스 :  자식 클래스, 하위 클래스, 서브 클래스, 파생 클래스&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;부모,자식 =&amp;gt; 구어체
-상위,하위 =&amp;gt; 교재
-슈퍼,서브 =&amp;gt; 
-기반,파생 =&amp;gt; 논문 등
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;상속의 작동 원리&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;자식 객체로 부모 필드에 접근하기 위해서는 당연히 부모 필드가 메모리에 할당 돼야 한다. 
-하지만 자식 객체를 객체화 할 때, 자식 생성자만 호출한다.
-자식 생성자만 호출하게 되면 자식 객체는 자식 필드만 접근이 가능하게 되므로
-자식 생성자 호출 시 자동으로 부모 생성자를 먼저 호출하게 된다.
-&lt;strong&gt;따라서, 부모 필드가 먼저 메모리에 할당된 후 자식 필드가 할당되기 때문에 **
-**자식 객체로 부모 필드에 접근할 수 있게 된다.&lt;/strong&gt;
-자식 필드 내에서 부모 필드에 접근할 때, &lt;span style=&quot;color:green&quot;&gt;super&lt;/span&gt; 키워드를 사용하고,
-부모 생성자는 &lt;span style=&quot;color:brown&quot;&gt;super()&lt;/span&gt;로 작성한다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;클래스-배열&quot;&gt;클래스 배열&lt;/h2&gt;
-
-&lt;p&gt;같은 타입의 객체가 여러 개 있을 때 
-객체명도 여러 개이다. 이름이 여러 개이면 관리하기 때문에
-객체 배열로 선언하여 사용한다.&lt;/p&gt;
-
-&lt;h4 id=&quot;클래스-배열-선언&quot;&gt;클래스 배열 선언&lt;/h4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;클래스명[] 배열명 = new 클래스명[길이];&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;클래스명[] 배열명 = {&lt;/p&gt;
-
-    &lt;p&gt;new 클래스명(),
-new 클래스명(),
-new 클래스명(),
-…&lt;/p&gt;
-
-    &lt;p&gt;}&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;클래스-배열-사용&quot;&gt;&lt;strong&gt;클래스 배열 사용&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;​	배열명[i].필드명
-​	배열명[i].메소드명()&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;casting&quot;&gt;Casting&lt;/h2&gt;
-
-&lt;p&gt;up casting&lt;/p&gt;
-
-&lt;p&gt;부모 타입에 자식 값을 넣는 형변환&lt;/p&gt;
-
-&lt;p&gt;down casting&lt;/p&gt;
-
-&lt;p&gt;up casting 된 객체를 자식 타입으로 형변환&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;왜?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;하나의 부모에서 자식은 여러개이다. 모든 자식을 하나로 묶기 위해서는&lt;/p&gt;
-
-&lt;p&gt;Up Casting이 필요하다.&lt;/p&gt;
-
-&lt;p&gt;전달받은 자식 값의 필드를 다시 모두 사용하기 위해서는&lt;/p&gt;
-
-&lt;p&gt;Down Casting으로 복원한다.&lt;/p&gt;
-
-&lt;h4 id=&quot;타입-비교instanceof&quot;&gt;타입 비교(instanceof)&lt;/h4&gt;
-
-&lt;p&gt;a instanceof A : a객체가 A타입이면 true, 아니면 false&lt;/p&gt;
-
-&lt;p&gt;예 ) “안녕” instanceof String : true&lt;/p&gt;
-
-&lt;p&gt;==&amp;gt; 안녕이 스트링 타입이면 참&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;구체적인-커리큘럼&quot;&gt;구체적인 커리큘럼&lt;/h3&gt;
-
-&lt;p&gt;2월 (JAVA, JDBC)&lt;/p&gt;
-
-&lt;p&gt;3월 (HTML, CSS, 크롤링(셀레니움), JavaScript(jQuery, DOM, BOM) ) - 개인프로젝트&lt;/p&gt;
-
-&lt;p&gt;4월 (JSP, MVC, Ajax, JSON, 팀프로젝트(SVN), 출시(리눅스, 네이버클라우드 플랫폼))&lt;/p&gt;
-
-&lt;p&gt;5월 (Spring framework, DI, AOP, IoC, POJO, Tier, Spring MVC, Maven, 썸네일(극악), …)&lt;/p&gt;
-
-&lt;p&gt;6월 (팀 프로젝트-이관, Git, JPA(ORM), 면접)&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;회사에서 직접 가서 보는 코딩테스트(서류합격)
-    &lt;strong&gt;알고리즘 공부&lt;/strong&gt; - 실생활 예제에 관련된 문제 (C언어, JAVA)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;코딩테스트 (순위)
-    &lt;strong&gt;알고리즘 공부&lt;/strong&gt; - 실생활 예제에 관련된 문제 (C언어, JAVA)
-&lt;strong&gt;공부가 필요함&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;qa&quot;&gt;&lt;strong&gt;Q&amp;amp;A&lt;/strong&gt;&lt;/h1&gt;
-
-&lt;h2 id=&quot;q-포트폴리오-개수&quot;&gt;Q. 포트폴리오 개수**&lt;/h2&gt;
-
-&lt;p&gt;취업할 때 포트폴리오가 중요하다고 하는데 잘못된 생각임&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;스타트업&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;중소기업&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;스타트업,중소기업 까지는 포트폴리오가 필요없다.&lt;/p&gt;
-
-&lt;p&gt;내가 원하는 기업을 찾았다면, 포트폴리오로 어필할 수 있다. (+알파)가 된다.&lt;/p&gt;
-
-&lt;p&gt;여러개 보다는, 양보다는 질로 제대로 이해하고 준비하는 것이 좋다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;중견기업&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;대기업&lt;/strong&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;q-자격증-공부-해야하나요&quot;&gt;Q. 자격증 공부 해야하나요?&lt;/h2&gt;
-
-&lt;p&gt;하드웨어의 기초적인 것은 알아야한다.&lt;/p&gt;
-
-&lt;p&gt;정보처리기사 등 관련 자격증은 문제 해결의 능력 자격증이기 때문에 있으면 좋다. 없어도 문제 없지만 인생에 도움되는건 사실이기 때문에 추천하는 편.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;q-파견업체-자체-솔루션-업체-규모-&quot;&gt;Q. (파견업체, 자체 솔루션 업체 (규모) )&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Q&lt;/strong&gt; : 전 SI를 최대한 피하려고 하는데 사람인이나 로켓펀치  회사 소개 볼때 SI 회사의 특징들이 있나여? 유지보수 회사도요&lt;/p&gt;
-
-&lt;p&gt;그냥 자사 플랫폼들은 거의 규모있는 스타트업들인가여?&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;A&lt;/strong&gt; :&lt;/p&gt;
-
-&lt;h4 id=&quot;파견si솔루션에-해당될-듯-&quot;&gt;&lt;strong&gt;파견(SI,솔루션에 해당될 듯) :&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;​	**장점 : **&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;단기간 다양한 프로젝트 경험으로 스펙이 좋아짐.&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;대기업 쪽으로 가지 않는다면 굳이 파견쪽에 있을 필요가 없다.&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;치고 빠질 수 있고 스펙에 도움이 되는 대기업 프로젝트에 참여해야 한다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;다양한 기술 습득, 트랜드 습득 가능&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;​	&lt;strong&gt;단점 :&lt;/strong&gt; 출근길이 변경된다. (해외, 잦은 출장 등) ,&lt;/p&gt;
-
-&lt;p&gt;팀 단위로 다니는 파견이 좋다. 그래야지 알맞는 위치에서 작업할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;신입사원일 때 체계가 잡혀있기 때문에 괜찮다.&lt;/p&gt;
-
-&lt;h4 id=&quot;유지보수-&quot;&gt;&lt;strong&gt;유지보수&lt;/strong&gt; :&lt;/h4&gt;
-
-&lt;p&gt;주로 경력직을 많이 뽑는 편이다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;장점 :&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;안정적이다. 대출에 큰 힘이 된다. 우리나라에서는 대출을 잘 받아야 한다.&lt;/li&gt;
-      &lt;li&gt;(한가지의 )기술을 깊게 배울 수 있다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;**단점 : **
-    &lt;ul&gt;
-      &lt;li&gt;우물 안 개구리일 수도 있다. (약간 뒤처짐, 본인 자기개발을 잘 해야함)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;루트-경로&quot;&gt;&lt;strong&gt;루트&lt;/strong&gt; (경로)&lt;/h4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;취업준비(최소 1년) –&amp;gt; 대기업 (요새는 학력도 잘 안보는듯한 눈치)&lt;/li&gt;
-  &lt;li&gt;취업준비(6개월) &amp;gt; 중소기업 신입사원 &amp;gt; 대기업 경력직&lt;/li&gt;
-  &lt;li&gt;취업준비(7개월) &amp;gt; 대기업 인턴(코딩 테스트) &amp;gt; 대기업 정규직&lt;/li&gt;
-  &lt;li&gt;취업준비(5개월) &amp;gt; 스타트업 신입사원 &amp;gt; 중소기업 경력직 &amp;gt; 대기업 경력직&lt;/li&gt;
-  &lt;li&gt;취업준비(?) &amp;gt; 중소기업 신입사원(최소 1년 재직) &amp;gt; 창업&lt;/li&gt;
-  &lt;li&gt;취업준비(?) &amp;gt; 대기업 신입사원(최소 1년 재직) &amp;gt; 창업&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;스타트업은 쉬운게 아니라 인성을 많이 본다. 이제 막 시작한 회사이기 때문에 같이 함께 갈 사람을&lt;/p&gt;
-
-&lt;p&gt;뽑기 때문에 인성적인 면을 보는 것도 많다, 스타트업 같은 경우 인재를 많이 볼 수도 있다.&lt;/p&gt;
-
-&lt;p&gt;협약맺은 학원에서 수강생을 뽑는 회사도 많다.&lt;/p&gt;
-
-&lt;p&gt;**가장 추천 : 2,4번 **&lt;/p&gt;
-
-&lt;p&gt;이유 : 4번 루트로 가서 대기업 경력직이신 분들은 한마디를 하더라도 라떼의 역사를 들으면 예측이 가능함.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;q-신입사원-연령&quot;&gt;Q. 신입사원 연령&lt;/h2&gt;
-
-&lt;p&gt;모토(moto)들이 크게 두 가지가 있다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;젊은 회사&lt;/li&gt;
-  &lt;li&gt;안정적인 회사&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;결론 : 크게 신경쓰지 말아라.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;q-개발자-평균-연봉&quot;&gt;Q. 개발자 평균 연봉&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;2400~3000&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;q-nodejs-spring-framework&quot;&gt;Q. Node.js, Spring framework&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Spring framework&lt;/strong&gt; (Java, xml, html, …. 공부할 양이 많다. ) : 멀티 쓰레드,&lt;/p&gt;
-
-&lt;p&gt;난이도가 어려운 편. 그 만큼 편하고 공부할 양이 많다.&lt;/p&gt;
-
-&lt;p&gt;복잡한 CPU 연산이 있는 페이지에서는 최고의 성능이다. (노드로 하게 되면 문제가 발생할 수 있다.)&lt;/p&gt;
-
-&lt;p&gt;​	**대기업, 공공기관, 정부(전자정부표준프레임워크 egov)에서 많이 사용한다. **&lt;/p&gt;
-
-&lt;p&gt;–&amp;gt; 소통 X 시키는대로&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Node&lt;/strong&gt; : 싱글 쓰레드, Node.js를 배우면 기존의 프론트엔드 였던 사람들이 백엔드로 갈 수 있다.&lt;/p&gt;
-
-&lt;p&gt;특화 : 입,출력에 빠르다. (SNS, Netflix 등(OTT 서비스))&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Node도 굉장히 어려운 편.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;스타트업, 중소기업에서 많이 선호한다. (풀스택 개발자-인건비 절감)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;–&amp;gt; 소통 O 어쩌면 의견이 반영 될 수도 …&lt;/p&gt;</content><author><name></name></author><category term="Lecture" /><summary type="html">this</summary></entry><entry><title type="html">오라클Oracle - SQL : 제약 조건</title><link href="/database/2021/01/07/oracle-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4.html" rel="alternate" type="text/html" title="오라클Oracle - SQL : 제약 조건" /><published>2021-01-07T14:00:00+09:00</published><updated>2021-01-07T14:00:00+09:00</updated><id>/database/2021/01/07/oracle-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4</id><content type="html" xml:base="/database/2021/01/07/oracle-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4.html">&lt;h1 id=&quot;제약-조건에-관하여&quot;&gt;&lt;a href=&quot;https://iu-corner.tistory.com/entry/Oracle-SQL-제약조건?category=905491&quot;&gt;제약 조건에 관하여&lt;/a&gt;&lt;/h1&gt;</content><author><name></name></author><category term="Database" /><summary type="html">제약 조건에 관하여</summary></entry></feed>
+&lt;hr /&gt;</content><author><name></name></author><category term="Lecture" /><summary type="html">한동석 강사 - day01</summary></entry></feed>

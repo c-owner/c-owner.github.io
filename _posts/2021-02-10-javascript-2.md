@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Javascript-2 "
+title:  "Javascript - 2"
 date: 2021-02-10 10:10:00 +0900
 comments: true # 코멘트 허용
 categories: Lecture

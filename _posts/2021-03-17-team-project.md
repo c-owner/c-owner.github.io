@@ -32,7 +32,7 @@ categories: Lecture jsp
 
 
 
-(목)
+(금)
 
 ### 1조
 
@@ -40,7 +40,7 @@ categories: Lecture jsp
 
 
 
-(금)
+(월)
 
 ### 3조
 

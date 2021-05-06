@@ -305,3 +305,19 @@ sudo iptables -I INPUT 5 -i ens3 -p tcp --dport 1521 -m state --state NEW,ESTABL
 \* nginx systemctl restart 후 500 error 발생시 아래 실행
 
 $> sudo semanage permissive -a httpd_t
+
+
+
+```
+[opc@eventmoa ~]$ firewall-cmd --permanent --zone=public --add-port=1521/tcp # 오라클 기본포트 
+[opc@eventmoa ~]$ firewall-cmd --permanent --zone=public --add-port=8080/tcp # 톰캣 포트 
+[opc@eventmoa ~]$ firewall-cmd --permanent --zone=public --add-port=80/tcp # HTTP,HTTPS
+[opc@eventmoa ~]$ firewall-cmd --permanent --zone=public --add-port=443/tcp # HTTP,HTTPS
+[opc@eventmoa ~]$ firewall-cmd --reload # 방화벽 재실행
+```
+
+## 오라클 접속
+
+su oracle
+
+sqlplus "/as sysdba"

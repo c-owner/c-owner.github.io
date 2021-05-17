@@ -52,7 +52,8 @@ plainwhite:
 # - about.md
 
 # Build settings
-theme: plainwhite
+# theme: plainwhite
+theme: jekyll-theme-cayman
 
 plugins:
   - jekyll-seo-tag

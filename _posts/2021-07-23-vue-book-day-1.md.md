@@ -241,5 +241,47 @@ devServer: {
 7. performance 속성 
 
 ```vue
+performance: { 
+	hints: false
+},
 ```
+
+
+
+8. devtool 속성
+
+```vue
+devtool: '#eval-source-map'
+```
+
+9. 배포 옵션
+
+```vue
+if (process.env.NODE_ENV === 'production') {
+  module.exports.devtool = '#source-map'
+  // http://vue-loader.vuejs.org/en/workflow/production.html
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
+      compress: {
+        warnings: false
+      }
+    }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true
+    })
+  ])
+}
+```
+
+애플리케이션의 기능과 화면을 구현한 후 최종적으로 사용자나 사이트에 배포할 때 설정하는 옵션이다.
+
+
+
+==> index.html 파일에서 웹팩으로 빌드한 build.js파일을 로딩하면 애플리케이션 로직을 구성하는 vue 파일, png 파일, 자바스크립트 라이브러리를 로딩한 것과 동일한 방식으로 동작한다.
 

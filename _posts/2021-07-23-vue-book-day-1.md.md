@@ -82,5 +82,164 @@ Vue.js도 jQuery처럼 script 태그로 CDN을 추가할 수 있다. CDN은 웹 
 
 
 
+---
 
+# Vue.js  개발 환경
+
+
+
+
+
+## 웹팩이란?
+
+모듈 번들러이다.
+
+- 서로 연관이 있는 모듈 간의 관계를 해석하여 정적인 자원으로 변환해 주는 변환 도구이다.
+  - = 파일 간의 연관 관계를 파악하여 하나의 자바스크립트 파일로 변환해 주는 변환 도구
+- 기본적인 취지 : 애플리케이션 동작과 관련된 여러개의 파일(html, css, js, images etc) 들을 1개의 자바스크립트 파일 안에 넣고, 해당 자바스크립트 파일만 로딩해도 웹앱이 돌아가게 하자는 것.
+
+
+
+#### 주요 속성
+
+- entry : 웹팩으로 빌드(변환)할 대상 파일을 지정하는 속성**(번들링 파일을 만들려고 할 때)**.  entry로 지정한 파일의 내용에는 전체 애플리케이션의 로직과 필요한 라이브러리를 로딩하는 로직이 들어간다.
+- output : 웹팩으로 빌드한 결과물의 위치와 파일 이름 등 세부 옵션을 설정하는 속성
+- loader : 웹팩으로 빌드할 때 HTML, CSS, 이미지 파일 등을 자바스크립트로 변환하기 위해 필요한 설정을 정의하는 속성
+- plugin : 웹팩으로 빌드하고 나온 결과물에 대해 추가 기능을 제공하는 속성. 예를 들어, 결과물의 사이즈를 줄이거나 결과물(기본적으로 자바스크립트)을 기타 CSS, HTML 파일로 분리하는 기능 등이 있다.
+- resolve : 웹팩으로 빌드할 때 해당 파일이 어떻게 해석되는지 정의하는 속성. 예를들어, 특정 라이브러리를 로딩할 때 버전은 어떤 걸로 하고, 파일 경로는 어디로 지정하는지 등을 정의한다.
+
+
+
+##### 웹팩 데브 서버 (webpack-dev-server)
+
+웹팩 설정 파일 (webpack.config.js)의 변화를 감지하여 빠르게 웹팩을 빌드할 수 있도록 지원하는 유틸리티이자 node.js 서버
+
+
+
+- npm run build 명령어로 /dist/라는 웹팩 빌드 결과물을 만들지 않아도 npm run dev 명령어를 실행했을 때 마치 웹팩으로 빌드한 것 같은 효과를 얻을 수 있다.
+- 이는 npm run dev 명령어로 띄운 서버에서 참조하고 있는 빌드 결과물이 메모리 상에 있기 때문이다.
+- 파일 시스템에 파일을 쓰고 읽는 시간보다 메모리에 저장하고 읽는 시간이 더 빠르기 때문이며 웹팩 데브 서버를 인 메모리(in memory) 기반이라고 한다.
+
+
+
+##### 웹팩 설정 파일
+
+뷰 CLI로 프로젝트를 생성하고 나면 프로젝트 내 최상위 레벨에서 webpackconfig.js 라는 웹팩 설정 파일을 확인할 수 있다. npm run dev 명령을 입력했을 때 이 설정 파일에 따라 .vue파일을 포함한 기타 파일들이 웹팩으로 빌드된다.
+
+
+
+1. 파일 경로와 웹팩 라이브러리 로딩
+
+```javascript
+var path = require('path')
+var webpack = require('webpack')
+```
+
+output 속성에서 사용할 노드 path 라이브러리와 웹팩 플러그인에서 사용할 node_modules의 웹팩 라이브러리를 node_modules 폴더에서 로딩하여 path, webpack에 각각 저장한다.
+
+
+
+2. entry 속성 
+
+```vue
+entry: './src/main.js',
+```
+
+웹팩으로 빌드할 파일을 src 폴더 밑의 main.js 파일로 지정한다. 이 내용에 따라 애플리케이션의 구성 요소 및 파일들이 웹팩으로 빌드된다.
+
+
+
+3. output 속성
+
+```vue
+output : {
+	path: path.resolve(__dirname, './dist'),
+	publicPath: '/dist',
+	filename: 'build.js'
+},
+```
+
+웹팩으로 빌드하고 난 결과물의 파일의 위치와 이름을 지정한다. 결과물 파일의 위치는 dist/build.js이다.
+
+
+
+4. module 속성 
+
+```vue
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ],
+      },      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          loaders: {
+          }
+          // other vue-loader options go here
+        }
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]?[hash]'
+        }
+      }
+    ]
+  },-loader'
+        ],
+```
+
+웹팩으로 애플리케이션 파일들을 빌드(변환)할 때 HTML, CSS, PNG 등의 파일을 자바스크립트로 변환해 주는 로더를 지정한다.
+
+
+
+5. resolve 속성 
+
+```vue
+resolve: {
+	alias: {
+		'vue$': 'vue/dist/vue.esm.js'
+	},
+	extensions: ['*', '.js', '.vue', '.json']
+},
+```
+
+웹팩으로 빌드할 때 사용할 뷰 라이브러리 유형을 지정한다. vue.esm.js는 최신 웹팩 버전과 사용할 수 있는 풀 버전의 라이브러리를 의미한다. 이렇게 별도로 설정하지 않으면 런타임 버전인 vue.runtime.sem.js를 사용한다.
+
+
+
+6. devServer 속성
+
+```vue
+devServer: {
+	historyApiFallback: true,
+	noInfo: true,
+	overlay: true
+},
+```
+
+웹팩 데브 서버 관련 속성을 지정한다.
+
+- historyApiFallback 속성 : 클라이언트 사이드 라우팅인 뷰 라우터와 함께 사용하기 위해 true로 지정.
+
+- noInfo 속성 : 처음 서버를 시작할 때만 웹팩 빌드 정보를 보여주고, 이후 변경 시에는 빌드 정보를 보여주지 않는다.
+- overlay 속성 : 웹팩으로 빌드할 때 오류가 있으면 브라우저 화면 전체에 오류를 표시한다.
+
+
+
+7. performance 속성 
+
+```vue
+```
 

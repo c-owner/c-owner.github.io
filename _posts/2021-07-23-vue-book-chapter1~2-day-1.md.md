@@ -1,3 +1,10 @@
+```
+layout: post
+title:  "vue.js book 챕터1~2 day1"
+date: 2021-07-23 14:00:21 +0900
+categories: vue.js
+```
+
 # Vue.js 첫걸음
 
 

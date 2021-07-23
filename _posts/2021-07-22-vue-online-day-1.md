@@ -1,3 +1,10 @@
+```
+layout: post
+title:  "vue.js online day1"
+date: 2021-07-22 20:00:21 +0900
+categories: vue.js
+```
+
 # vue.js day 1
 
 ## 목차

@@ -1,0 +1,6 @@
+.work_in_box {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    max-width: 30%
+}
